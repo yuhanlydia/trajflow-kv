@@ -1,0 +1,11 @@
+{
+  "date": "2026-08-28",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "family": "interference_chain",
+  "history_roles": ["stale", "irrelevant", "stale", "irrelevant", "useful"],
+  "seeds": 10,
+  "dataset": {"prefixes": 140, "candidate_rows": 290, "critical_prefixes": 10, "critical_rows": 80},
+  "critical_accuracy": 0.6,
+  "difficulty_gate": {"accepted_range": [0.35, 0.85], "passed": true},
+  "status": "GO for matched KV-patch localization; method-performance training not yet claimed."
+}

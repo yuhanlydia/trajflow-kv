@@ -1,0 +1,23 @@
+{
+  "rows": 210,
+  "prefixes": 100,
+  "critical_prefixes": 10,
+  "noncritical_prefixes": 90,
+  "critical_rows": 60,
+  "noncritical_rows": 150,
+  "complete_candidate_groups": true,
+  "memory_source_prefixes": {},
+  "families": {
+    "nonce_visual_binding": {
+      "prefixes": 100,
+      "critical_prefixes": 10,
+      "noncritical_prefixes": 90,
+      "candidate_rows": 210,
+      "critical_rows": 60,
+      "noncritical_rows": 150
+    }
+  },
+  "input": "data/visual_delayed/v3_nonce_pilot10.jsonl",
+  "critical_output": "data/visual_delayed/v3_nonce_pilot10_critical.jsonl",
+  "critical_output_rows": 60
+}

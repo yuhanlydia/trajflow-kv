@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-28",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "family": "interference_chain",
+  "intervention": "same-forward matched decoder KV-span patch",
+  "target": "K",
+  "layers": "middle (12-23 of 36)",
+  "seeds": 10,
+  "baseline_critical_accuracy": 0.6,
+  "blocks": [
+    {"index": 0, "role": "initial", "patch_source": 1, "critical_accuracy": 0.5, "correct_score_effect": 0.046857, "margin_effect": 0.033326},
+    {"index": 1, "role": "reference", "patch_source": 3, "critical_accuracy": 0.6, "correct_score_effect": -0.019419, "margin_effect": -0.052094},
+    {"index": 2, "role": "superseded_update", "patch_source": 1, "critical_accuracy": 1.0, "correct_score_effect": -0.096451, "margin_effect": -0.216702},
+    {"index": 3, "role": "reference", "patch_source": 1, "critical_accuracy": 0.6, "correct_score_effect": 0.001345, "margin_effect": 0.004152},
+    {"index": 4, "role": "latest_update", "patch_source": 1, "critical_accuracy": 0.0, "correct_score_effect": 0.236780, "margin_effect": 0.295856}
+  ],
+  "diagnostic_summary": {
+    "update_block_sign_accuracy": 1.0,
+    "update_vs_reference_localization_auroc": 1.0,
+    "reference_neutrality_threshold": 0.025,
+    "reference_neutrality_accuracy": 1.0
+  },
+  "decision": "DIAGNOSTIC GO: raw frozen-Qwen middle-layer K contains positive latest-update credit, negative superseded-update credit, and near-zero matched-reference credit. This is not yet a trained TANGO performance result."
+}

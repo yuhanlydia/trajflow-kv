@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-27",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "families": ["multi_cue_binding", "interference_update"],
+  "seeds": [100, 101, 102, 103, 104],
+  "dataset": {"prefixes": 80, "candidate_rows": 150, "critical_prefixes": 10, "critical_rows": 40},
+  "critical_accuracy": {
+    "full_history": 1.0,
+    "drop_history_block_0": 0.9,
+    "drop_history_block_1": 0.6,
+    "drop_distractor_block_2": 1.0
+  },
+  "decision": "NO-GO as a comparative benchmark because full-history accuracy is saturated; GO as a causal-memory-path sanity probe.",
+  "next_design": "Use render-only nonce glyphs, update chains, and template/composition OOD splits; require 35-85% base critical accuracy before method comparison."
+}

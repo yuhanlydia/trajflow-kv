@@ -1,0 +1,575 @@
+{
+  "prefixes": 60,
+  "history_blocks": 80,
+  "mean_memory_advantage": 0.03593001893644662,
+  "mean_absolute_memory_advantage": 0.04272713235075344,
+  "positive_blocks": 40,
+  "negative_blocks": 40,
+  "zero_blocks": 0,
+  "records": [
+    {
+      "prefix_id": "distractor_credit-s0-62b9478872",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s0-47aac64f15",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s1-289b00df13",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s1-96e4267264",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s2-15d7016883",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s2-45f88f30ae",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s3-6ce7655409",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s3-eee715e9d0",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s4-580ad39fef",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s4-4f58604856",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s5-2eb45dc6a7",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s5-99e7edefca",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s6-c3913710a7",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s6-36c3baa499",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s7-641e7d4570",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s7-378b6c4376",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s8-110aadb1cc",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s8-4bf326c3f9",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s9-056e02bbad",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s9-626e8e9112",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s10-8a2914a8c3",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s10-c157c53012",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s11-db249fc751",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s11-a57d9be039",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s12-c71e8d8f53",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s12-831a4d0b42",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s13-4e20ae70a4",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s13-bfaa1f43a1",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s14-40a306fe6e",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s14-0ba11449e0",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s15-a92adda43d",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s15-061d8e8da8",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s16-236159711f",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s16-0af5439996",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s17-ca5e936b40",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s17-c4b97f961c",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s18-14d7f8c6bd",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s18-6434818356",
+      "history_index": 0,
+      "Q_memory_full": 0.28874639824518883,
+      "Q_memory_dropped": 0.28874892058214,
+      "memory_advantage": -2.522336951193971e-06
+    },
+    {
+      "prefix_id": "distractor_credit-s19-e511250fa1",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "distractor_credit-s19-46f1c254df",
+      "history_index": 0,
+      "Q_memory_full": 0.27724281179465055,
+      "Q_memory_dropped": 0.21125107941785998,
+      "memory_advantage": 0.06599173237679057
+    },
+    {
+      "prefix_id": "hidden_memory-s0-60f046b080",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s0-60f046b080",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s1-fc64f41290",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s1-fc64f41290",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s2-6bdb4b846d",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s2-6bdb4b846d",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s3-37435c05b4",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s3-37435c05b4",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s4-e47c51dc12",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s4-e47c51dc12",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s5-5f329327f5",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s5-5f329327f5",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s6-b9dd921e03",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s6-b9dd921e03",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s7-212ce5268e",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s7-212ce5268e",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s8-7fcc0ba26f",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s8-7fcc0ba26f",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s9-90926e6b05",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s9-90926e6b05",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s10-ad41a64513",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s10-ad41a64513",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s11-66c7106da4",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s11-66c7106da4",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s12-e34cc83cc3",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s12-e34cc83cc3",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s13-6d65525e39",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s13-6d65525e39",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s14-1095fbd33e",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s14-1095fbd33e",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s15-1e299bc4e3",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s15-1e299bc4e3",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s16-c4669b699d",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s16-c4669b699d",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    },
+    {
+      "prefix_id": "hidden_memory-s17-cd38c5c4ab",
+      "history_index": 0,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.1292663084979949,
+      "memory_advantage": 0.1380851671509021
+    },
+    {
+      "prefix_id": "hidden_memory-s17-cd38c5c4ab",
+      "history_index": 1,
+      "Q_memory_full": 0.267351475648897,
+      "Q_memory_dropped": 0.2697278512827803,
+      "memory_advantage": -0.002376375633883321
+    },
+    {
+      "prefix_id": "hidden_memory-s18-b005d48995",
+      "history_index": 0,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.1940458167307891,
+      "memory_advantage": 0.04646183681768973
+    },
+    {
+      "prefix_id": "hidden_memory-s18-b005d48995",
+      "history_index": 1,
+      "Q_memory_full": 0.24050765354847883,
+      "Q_memory_dropped": 0.25655101440345146,
+      "memory_advantage": -0.016043360854972627
+    },
+    {
+      "prefix_id": "hidden_memory-s19-94df86e4fd",
+      "history_index": 0,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.17668787477121606,
+      "memory_advantage": 0.0961010776175642
+    },
+    {
+      "prefix_id": "hidden_memory-s19-94df86e4fd",
+      "history_index": 1,
+      "Q_memory_full": 0.27278895238878026,
+      "Q_memory_dropped": 0.29354213953808583,
+      "memory_advantage": -0.020753187149305574
+    }
+  ],
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/diagnostics/critical_only.jsonl",
+  "output": "data/visual_delayed/diagnostics/critical_memory_q.jsonl",
+  "temperature": 1.0
+}

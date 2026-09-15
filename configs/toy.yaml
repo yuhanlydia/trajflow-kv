@@ -1,0 +1,12 @@
+seed: 7
+device: cpu
+epochs: 3
+lr: 0.02
+rank: 4
+alpha: 0.5
+target: both
+lambda_energy: 0.001
+lambda_orth: 0.01
+output_dir: outputs/toy
+toy: true
+

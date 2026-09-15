@@ -1,0 +1,13 @@
+{
+  "benchmark": "tango_delayed_gui_toy",
+  "families": ["hidden_cue", "order_dependency", "irreversible_fork"],
+  "seeds": 20,
+  "horizon": 6,
+  "rows": 620,
+  "tabular_policy_smoke": {
+    "action_ce_mean_selected_Q": 0.2364,
+    "global_return_mean_selected_Q": 0.7273,
+    "tango_advantage_mean_selected_Q": 0.7273
+  },
+  "interpretation": "The deterministic protocol separates same-prefix future consequences: advantage training selects high-Q branches in the toy environment. This is an infrastructure smoke test, not evidence on a VLM or a live GUI benchmark."
+}

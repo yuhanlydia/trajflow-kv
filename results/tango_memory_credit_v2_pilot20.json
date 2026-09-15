@@ -1,0 +1,51 @@
+{
+  "protocol": "visual delayed memory v2 with independent cue and distractor history blocks",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "hidden_memory_critical_prefixes": 20,
+  "input_history_ablation": {
+    "full_history_critical_accuracy": 1.0,
+    "drop_cue_history_0_critical_accuracy": 0.35,
+    "drop_distractor_history_1_critical_accuracy": 1.0
+  },
+  "decoder_kv_scan": {
+    "layers": 36,
+    "cue": {
+      "k_early": 0.35,
+      "k_middle": 0.35,
+      "k_late": 1.0,
+      "v_early": 1.0,
+      "v_middle": 0.65,
+      "v_late": 1.0,
+      "both_middle": 0.65,
+      "both_late": 1.0
+    },
+    "distractor": {
+      "v_early": 1.0,
+      "v_middle": 1.0,
+      "v_late": 1.0,
+      "both_middle": 1.0,
+      "both_late": 1.0
+    },
+    "caution": "Zeroing K alone is non-monotonic (including a distractor early-K effect), so the scan selects candidate locations rather than proving semantic localization by itself."
+  },
+  "state_conditioned_gate": {
+    "target": "K+V",
+    "layers": "12-23",
+    "rank": 8,
+    "gate_rank": 16,
+    "energy_lambda": 3000,
+    "training_final_energy": 6.395119953594985e-7,
+    "full_prefixes": 420,
+    "zero_gate_candidate_top1": 0.9523809523809523,
+    "gated_candidate_top1": 0.9523809523809523,
+    "zero_gate_critical_accuracy": 1.0,
+    "gated_critical_accuracy": 1.0,
+    "noncritical_mean_absolute_score_change": 0.01474670497700572,
+    "old_fixed_projector_noncritical_mean_absolute_score_change": 3.40961180401077,
+    "perturbation_reduction_factor": 231.207,
+    "hidden_critical_mean_gate_cue": 0.17271838635206221,
+    "hidden_critical_mean_gate_distractor": 0.15081855654716492,
+    "gate_gap": 0.02189982980489729
+  },
+  "conclusion": "The corrected benchmark has clean memory-specific causal signal. Middle-layer gated transport preserves behavior while nearly eliminating broad score pollution, but cue-vs-distractor gate localization is still weak and there is no policy gain over the saturated zero-gate baseline."
+}

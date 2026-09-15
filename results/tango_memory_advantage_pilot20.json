@@ -1,0 +1,29 @@
+{
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "protocol": "memory-advantage supervised state-conditioned K+V gate, layers 12-23",
+  "critical_only_one_epoch": {
+    "memory_loss_final": 0.6910409331321716,
+    "cue_gate": 0.4518430680036545,
+    "distractor_gate": 0.44596489071846007,
+    "gate_gap": 0.00587817728519443
+  },
+  "critical_only_five_epochs": {
+    "memory_loss_final": 0.38360825181007385,
+    "cue_gate": 0.9605357050895691,
+    "distractor_gate": 0.5177666813135147,
+    "gate_gap": 0.4427690237760544,
+    "candidate_top1_before": 0.9523809523809523,
+    "candidate_top1_after": 1.0,
+    "critical_accuracy_before": 1.0,
+    "critical_accuracy_after": 1.0,
+    "noncritical_mean_absolute_score_change": 0.05038408621707383
+  },
+  "naive_balanced_action_label_control": {
+    "cue_gate": 0.5114985018968582,
+    "distractor_gate": 0.5031935125589371,
+    "gate_gap": 0.0083049893379211,
+    "critical_accuracy": 1.0,
+    "interpretation": "Treating every non-critical action prefix as zero memory advantage collapses localization because memory can be causally useful for a later decision even when the current action is harmless."
+  },
+  "conclusion": "Explicit memory supervision can create a large cue-vs-distractor gate gap, but action-critical labels are not valid negative memory labels. The next dataset must estimate each block with Q(M)-Q(M^-j) over future continuations."
+}

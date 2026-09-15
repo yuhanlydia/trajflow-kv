@@ -1,0 +1,57 @@
+{
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/diagnostics/critical_only.jsonl",
+  "checkpoint": "outputs/tango/visual_critical_only_ce/kv_projectors.pt",
+  "baseline_checkpoint": "outputs/gonogo/initial_v_l8/kv_projectors.pt",
+  "rank": 8,
+  "alpha": 8.0,
+  "target": "v",
+  "last_n_layers": 8,
+  "evaluation": {
+    "prefixes": 60,
+    "candidate_top1_accuracy": 0.45,
+    "critical_prefixes": 60,
+    "critical_fork_accuracy": 0.45,
+    "families": {
+      "distractor_credit": {
+        "prefixes": 40,
+        "candidate_top1_accuracy": 0.5,
+        "critical_prefixes": 40,
+        "critical_fork_accuracy": 0.5
+      },
+      "hidden_memory": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35
+      }
+    }
+  },
+  "baseline_evaluation": {
+    "prefixes": 60,
+    "candidate_top1_accuracy": 0.45,
+    "critical_prefixes": 60,
+    "critical_fork_accuracy": 0.45,
+    "families": {
+      "distractor_credit": {
+        "prefixes": 40,
+        "candidate_top1_accuracy": 0.5,
+        "critical_prefixes": 40,
+        "critical_fork_accuracy": 0.5
+      },
+      "hidden_memory": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35
+      }
+    }
+  },
+  "noncritical_score_change": {
+    "candidates": 0,
+    "mean_delta": null,
+    "mean_absolute_delta": null,
+    "families": {},
+    "rows": []
+  }
+}

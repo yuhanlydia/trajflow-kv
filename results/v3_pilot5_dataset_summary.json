@@ -1,0 +1,31 @@
+{
+  "rows": 150,
+  "prefixes": 80,
+  "critical_prefixes": 10,
+  "noncritical_prefixes": 70,
+  "critical_rows": 40,
+  "noncritical_rows": 110,
+  "complete_candidate_groups": true,
+  "memory_source_prefixes": {},
+  "families": {
+    "interference_update": {
+      "prefixes": 40,
+      "critical_prefixes": 5,
+      "noncritical_prefixes": 35,
+      "candidate_rows": 75,
+      "critical_rows": 20,
+      "noncritical_rows": 55
+    },
+    "multi_cue_binding": {
+      "prefixes": 40,
+      "critical_prefixes": 5,
+      "noncritical_prefixes": 35,
+      "candidate_rows": 75,
+      "critical_rows": 20,
+      "noncritical_rows": 55
+    }
+  },
+  "input": "data/visual_delayed/v3_pilot5.jsonl",
+  "critical_output": "data/visual_delayed/v3_pilot5_critical.jsonl",
+  "critical_output_rows": 40
+}

@@ -1,0 +1,47 @@
+{
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "method": "two-stage counterfactual memory gate then low-energy KV transport",
+  "memory_advantage_estimator": {
+    "definition": "Q(M)-Q(M^-j) using Qwen candidate policy probabilities and environment continuation Q",
+    "critical_prefixes": 60,
+    "history_blocks": 80,
+    "mean_absolute_advantage": 0.04272713235075344,
+    "positive_blocks": 40,
+    "negative_blocks": 40,
+    "hidden_cue_mean_advantage": 0.09132257019760948,
+    "hidden_distractor_mean_advantage": -0.013591704491662368
+  },
+  "stage1_gate_only": {
+    "transport_energy": 0.0,
+    "hidden_cue_gate": 0.7044074773788452,
+    "hidden_distractor_gate": 0.03513185326009989,
+    "gate_gap": 0.6692756241187453
+  },
+  "stage2_train_seeds_0_19": {
+    "prefixes": 420,
+    "baseline_candidate_top1": 0.9523809523809523,
+    "method_candidate_top1": 0.9833333333333333,
+    "top1_delta": 0.030952380952381,
+    "baseline_hidden_top1": 0.8333333333333334,
+    "method_hidden_top1": 0.9416666666666667,
+    "critical_accuracy": 1.0,
+    "noncritical_mean_absolute_score_change": 0.01683908821467091,
+    "final_transport_energy": 2.512082346584066e-6
+  },
+  "heldout_seeds_20_39": {
+    "prefixes": 420,
+    "baseline_candidate_top1": 0.9523809523809523,
+    "method_candidate_top1": 0.9857142857142858,
+    "top1_delta": 0.03333333333333344,
+    "baseline_hidden_top1": 0.8333333333333334,
+    "method_hidden_top1": 0.95,
+    "hidden_top1_delta": 0.11666666666666659,
+    "critical_accuracy_before": 1.0,
+    "critical_accuracy_after": 1.0,
+    "noncritical_mean_absolute_score_change": 0.016826398911721566,
+    "hidden_cue_gate": 0.7051102459430695,
+    "hidden_distractor_gate": 0.03585597202181816,
+    "gate_gap": 0.6692542739212513
+  },
+  "scope": "Controlled visual delayed-memory candidate ranking. Seeds are disjoint but share task templates; this is not an online AndroidWorld or MemGUI success claim."
+}

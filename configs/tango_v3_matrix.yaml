@@ -1,0 +1,55 @@
+experiment: tango_v3_latent_memory_credit
+backbone: models/Qwen2.5-VL-3B-Instruct
+primary_metric: critical_fork_accuracy
+splits:
+  train: {seed_start: 0, seeds: 200, templates: [A, B]}
+  validation: {seed_start: 200, seeds: 50, templates: [A, B]}
+  id_test: {seed_start: 250, seeds: 200, templates: [A, B]}
+  template_ood: {seed_start: 450, seeds: 200, templates: [C, D]}
+families:
+  - nonce_visual_binding
+  - interference_chain
+  - distractor_credit
+  - hidden_memory
+accepted_pilot_family: interference_chain
+common:
+  frozen_backbone: true
+  rank: 8
+  alpha: 8.0
+  optimizer: adamw
+  lr: 0.0003
+  epochs: 5
+  energy_lambda: 3000.0
+  gate_variants: [sigmoid, signed_tanh]
+  signed_credit_loss: {type: huber, beta: 0.1, scale: validation_only}
+  same_candidate_budget: true
+methods:
+  - {id: base, objective: none}
+  - {id: critical_ce, objective: critical_action_ce}
+  - {id: successful_ce, objective: successful_only_ce}
+  - {id: global_return, objective: episode_return_broadcast}
+  - {id: action_advantage, objective: same_prefix_action_advantage}
+  - {id: fork_dpo, objective: fork_preference}
+  - {id: shuffled_memory, objective: shuffled_memory_advantage}
+  - {id: oracle_memory, objective: oracle_memory_advantage, oracle: true}
+  - {id: tango_memory, objective: counterfactual_memory_advantage}
+  - {id: tango_memory_energy, objective: counterfactual_memory_advantage, energy: true}
+  - id: tango_two_stage
+    objective: counterfactual_memory_advantage
+    stages: [gate_only, frozen_gate_transport]
+statistics:
+  bootstrap: task_family_clustered
+  bootstrap_samples: 10000
+  confidence: 0.95
+  paired_test: mcnemar
+gates:
+  base_critical_accuracy: [0.35, 0.85]
+  localization_auroc_min: 0.80
+  critical_gain_pp_min: 5.0
+  noncritical_abs_perturbation_max: 0.05
+  ood_gain_retention_min: 0.70
+  distillation_teacher_gain_retention_min: 0.70
+causal_intervention:
+  primary: matched_in_sequence_kv_patch
+  control: zero_kv_block
+  report_separately_from: input_screenshot_removal

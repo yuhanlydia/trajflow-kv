@@ -1,0 +1,17 @@
+seed: 7
+device: cuda
+epochs: 1
+lr: 0.0001
+rank: 8
+alpha: 0.1
+target: both
+lambda_energy: 0.001
+lambda_orth: 0.01
+lambda_action: 0.1
+model_path: models/Qwen2.5-VL-3B-Instruct
+data_path: data/aitw/train.jsonl
+output_dir: outputs/qwen-aitw
+max_pixels: 401408
+gradient_accumulation_steps: 8
+max_trajectories: 1  # smoke test; raise after checking GPU memory
+toy: false

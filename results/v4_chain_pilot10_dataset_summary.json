@@ -1,0 +1,23 @@
+{
+  "rows": 290,
+  "prefixes": 140,
+  "critical_prefixes": 10,
+  "noncritical_prefixes": 130,
+  "critical_rows": 80,
+  "noncritical_rows": 210,
+  "complete_candidate_groups": true,
+  "memory_source_prefixes": {},
+  "families": {
+    "interference_chain": {
+      "prefixes": 140,
+      "critical_prefixes": 10,
+      "noncritical_prefixes": 130,
+      "candidate_rows": 290,
+      "critical_rows": 80,
+      "noncritical_rows": 210
+    }
+  },
+  "input": "data/visual_delayed/v4_chain_pilot10.jsonl",
+  "critical_output": "data/visual_delayed/v4_chain_pilot10_critical.jsonl",
+  "critical_output_rows": 80
+}

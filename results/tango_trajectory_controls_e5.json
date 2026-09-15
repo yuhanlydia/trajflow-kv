@@ -1,0 +1,35 @@
+{
+  "status": "exploratory_small_sample",
+  "backbone": "Qwen2.5-VL-3B-Instruct",
+  "training": {
+    "data": "data/androidworld/multitask_return_train_v2.jsonl",
+    "trajectories": 41,
+    "epochs": 5,
+    "shared_warm_start": "outputs/gonogo/initial_v_l8/kv_projectors.pt",
+    "target": "v",
+    "last_n_layers": 8,
+    "rank": 8,
+    "alpha": 8
+  },
+  "evaluation": {
+    "data": "data/androidworld/multitask_system_heldout.jsonl",
+    "trajectories": 6,
+    "positive": 2,
+    "negative": 4,
+    "return_margin": {
+      "warm_start": 0.1301525256,
+      "observed_return": 0.1411606224,
+      "shuffled_return": 0.1321858258,
+      "random_return": 0.1374518875,
+      "sign_flipped_return": 0.1231194361,
+      "horizon_1": 0.1397514618,
+      "horizon_3": 0.1438737561,
+      "horizon_5": 0.1430427327,
+      "horizon_full": 0.1430872106,
+      "first_only": 0.1466299698,
+      "final_only": 0.1384275971,
+      "remove_history": 0.1378564649
+    }
+  },
+  "interpretation": "Observed return improves over the shared warm start, within-task shuffle is near-neutral, and sign-flipped return moves the margin in the opposite direction. H=3 improves over H=1, but H=3/5/full plateau and first-only is strongest. With only six held-out trajectories this supports label-direction causality but does not establish a trajectory-horizon advantage; a larger same-prefix delayed-consequence split is required."
+}

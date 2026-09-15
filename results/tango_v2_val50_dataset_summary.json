@@ -1,0 +1,23 @@
+{
+  "rows": 1450,
+  "prefixes": 700,
+  "critical_prefixes": 50,
+  "noncritical_prefixes": 650,
+  "critical_rows": 400,
+  "noncritical_rows": 1050,
+  "complete_candidate_groups": true,
+  "memory_source_prefixes": {},
+  "families": {
+    "interference_chain": {
+      "prefixes": 700,
+      "critical_prefixes": 50,
+      "noncritical_prefixes": 650,
+      "candidate_rows": 1450,
+      "critical_rows": 400,
+      "noncritical_rows": 1050
+    }
+  },
+  "input": "data/visual_delayed/tango_v2/val50.jsonl",
+  "critical_output": "data/visual_delayed/tango_v2/val50_critical.jsonl",
+  "critical_output_rows": 400
+}

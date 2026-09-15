@@ -1,0 +1,126 @@
+diff --git a/android_world/env/adb_utils.py b/android_world/env/adb_utils.py
+index 4689b45..6e3fc54 100644
+--- a/android_world/env/adb_utils.py
++++ b/android_world/env/adb_utils.py
+@@ -28,7 +28,7 @@ import immutabledict
+ 
+ T = TypeVar('T')
+ 
+-_DEFAULT_TIMEOUT_SECS = 10
++_DEFAULT_TIMEOUT_SECS = float(os.environ.get('ANDROID_WORLD_ADB_COMMAND_TIMEOUT', '10'))
+ 
+ # pylint: disable=line-too-long
+ # Maps app names to the activity that should be launched to open the app.
+@@ -701,9 +701,12 @@ def launch_app(
+   if activity is None:
+     #  If the app name is not in the mapping, assume it is a package name.
+     response = issue_generic_request(
+-        ['shell', 'monkey', '-p', app_name, '1'], env, timeout_sec=5
++        ['shell', 'monkey', '-p', app_name, '1'], env,
++        timeout_sec=_DEFAULT_TIMEOUT_SECS,
+     )
+     logging.info('Launching app by package name, response: %r', response)
+     return app_name
+-  start_activity(activity, extra_args=[], env=env, timeout_sec=5)
++  start_activity(
++      activity, extra_args=[], env=env, timeout_sec=_DEFAULT_TIMEOUT_SECS
++  )
+   return app_name
+diff --git a/android_world/env/android_world_controller.py b/android_world/env/android_world_controller.py
+index dda5352..0adc871 100644
+--- a/android_world/env/android_world_controller.py
++++ b/android_world/env/android_world_controller.py
+@@ -325,9 +325,21 @@ def get_controller(
+       ),
+       simulator=config_classes.EmulatorConfig(
+           emulator_launcher=emulator_launcher,
+-          adb_controller=config_classes.AdbControllerConfig(adb_path=adb_path),
++          # Software-emulated Android can require several minutes to install
++          # the accessibility forwarder. The upstream 120s default is tuned
++          # for KVM and causes a false timeout in nested containers.
++          adb_controller=config_classes.AdbControllerConfig(
++              adb_path=adb_path, default_timeout=600.0
++          ),
+       ),
+   )
+   android_env_instance = loader.load(config)
+   logging.info('Setting up AndroidWorldController.')
+-  return AndroidWorldController(android_env_instance)
++  # The forwarder performs several synchronous APK/broadcast operations that
++  # are prohibitively slow under TCG software emulation. Screenshot-only VLM
++  # rollouts do not consume the accessibility tree, so allow an explicit local
++  # fallback while retaining the upstream default for normal KVM runs.
++  a11y_method = A11yMethod(
++      os.environ.get('ANDROID_WORLD_A11Y_METHOD', A11yMethod.A11Y_FORWARDER_APP.value)
++  )
++  return AndroidWorldController(android_env_instance, a11y_method=a11y_method)
+diff --git a/android_world/env/interface.py b/android_world/env/interface.py
+index 0aab475..23a58af 100644
+--- a/android_world/env/interface.py
++++ b/android_world/env/interface.py
+@@ -16,6 +16,7 @@
+ 
+ import abc
+ import dataclasses
++import os
+ import time
+ from typing import Any, Optional, Self
+ 
+@@ -344,7 +345,15 @@ class AsyncAndroidEnv(AsyncEnv):
+ 
+   @property
+   def logical_screen_size(self) -> tuple[int, int]:
+-    return adb_utils.get_logical_screen_size(self.controller)
++    if os.environ.get('ANDROID_WORLD_USE_PHYSICAL_SCREEN_SIZE', '0') == '1':
++      return self.device_screen_size
++    try:
++      return adb_utils.get_logical_screen_size(self.controller)
++    except Exception:  # Software-emulated system_server can reject dumpsys.
++      logging.warning(
++          'Falling back to physical screen size after logical-size query failed.'
++      )
++      return self.device_screen_size
+ 
+   def close(self) -> None:
+     try:
+diff --git a/server/android_server.py b/server/android_server.py
+index 583b40e..bf8f313 100644
+--- a/server/android_server.py
++++ b/server/android_server.py
+@@ -19,6 +19,7 @@ and manage task execution on AndroidWorld tasks.
+ """
+ 
+ import contextlib
++import os
+ import typing
+ from typing import Any
+ 
+@@ -44,8 +45,8 @@ async def lifespan(fast_api_app: fastapi.FastAPI):
+   """Manages the lifecycle of the Android environment and task suite."""
+   fast_api_app.state.app_android_env = env_launcher.load_and_setup_env(
+       console_port=5554,
+-      emulator_setup=True,
+-      freeze_datetime=True,
++      emulator_setup=os.environ.get("ANDROID_WORLD_SETUP_APPS", "1") == "1",
++      freeze_datetime=os.environ.get("ANDROID_WORLD_FREEZE_DATETIME", "1") == "1",
+       adb_path="/opt/android/platform-tools/adb",
+   )
+   task_registry = aw_registry_module.TaskRegistry()
+diff --git a/android_world/task_evals/task_eval.py b/android_world/task_evals/task_eval.py
+index bce5a4e..a30f27f 100644
+--- a/android_world/task_evals/task_eval.py
++++ b/android_world/task_evals/task_eval.py
+@@ -18,3 +18,4 @@
+ import abc
++import os
+ import random
+ from typing import Any
+@@ -145,4 +146,5 @@ class TaskEval(abc.ABC):
+     env.interaction_cache = ""  # pyrefly: ignore[read-only]
+-    self.initialize_device_time(env)
+-    self._initialize_apps(env)
++    if os.environ.get("ANDROID_WORLD_LIGHTWEIGHT_TASK_INIT", "0") != "1":
++      self.initialize_device_time(env)
++      self._initialize_apps(env)
+     logging.info("Initializing %s", self.name)
+     if self.initialized:

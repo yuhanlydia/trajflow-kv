@@ -1,0 +1,1081 @@
+{
+  "prefixes": 10,
+  "history_blocks": 50,
+  "mean_memory_advantage": 0.000323242887696947,
+  "positive_blocks": 19,
+  "negative_blocks": 31,
+  "records": [
+    {
+      "prefix_id": "interference_chain-s0-e9a8a2cca9",
+      "history_index": 0,
+      "Q_memory_full": 0.0752419636013238,
+      "memory_advantage": -0.0005927515402601238,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07565327295522913,
+          "effect": -0.0004113093539053203
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07601615732793873,
+          "effect": -0.0007741937266149274
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0007741937266149274,
+        -0.0004113093539053203
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s0-e9a8a2cca9",
+      "history_index": 1,
+      "Q_memory_full": 0.0752419636013238,
+      "memory_advantage": 0.007990399730950198,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.0672515638703736,
+          "effect": 0.007990399730950198
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.007990399730950198,
+        0.007990399730950198
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s0-e9a8a2cca9",
+      "history_index": 2,
+      "Q_memory_full": 0.0752419636013238,
+      "memory_advantage": -0.004024467907086389,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07787460817019236,
+          "effect": -0.002632644568868553
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08065825484662803,
+          "effect": -0.005416291245304225
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.005416291245304225,
+        -0.002632644568868553
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s0-e9a8a2cca9",
+      "history_index": 3,
+      "Q_memory_full": 0.0752419636013238,
+      "memory_advantage": 0.007746253891551258,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06749570970977255,
+          "effect": 0.007746253891551258
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.007746253891551258,
+        0.007746253891551258
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s0-e9a8a2cca9",
+      "history_index": 4,
+      "Q_memory_full": 0.0752419636013238,
+      "memory_advantage": 0.01684872835781554,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.059994300214386,
+          "effect": 0.015247663386937803
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.056792170272630525,
+          "effect": 0.01844979332869328
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.015247663386937803,
+        0.01844979332869328
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s1-44e8780b4d",
+      "history_index": 0,
+      "Q_memory_full": 0.06588791775867653,
+      "memory_advantage": -0.0031880488194827236,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06967791242997531,
+          "effect": -0.0037899946712987853
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06847402072634319,
+          "effect": -0.002586102967666662
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0037899946712987853,
+        -0.002586102967666662
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s1-44e8780b4d",
+      "history_index": 1,
+      "Q_memory_full": 0.06588791775867653,
+      "memory_advantage": -0.002708385971847138,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06859630373052367,
+          "effect": -0.002708385971847138
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.002708385971847138,
+        -0.002708385971847138
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s1-44e8780b4d",
+      "history_index": 2,
+      "Q_memory_full": 0.06588791775867653,
+      "memory_advantage": -0.0037931299397937213,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06937410248721361,
+          "effect": -0.003486184728537081
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06998799290972689,
+          "effect": -0.004100075151050361
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.004100075151050361,
+        -0.003486184728537081
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s1-44e8780b4d",
+      "history_index": 3,
+      "Q_memory_full": 0.06588791775867653,
+      "memory_advantage": -0.002098004958436747,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06798592271711328,
+          "effect": -0.002098004958436747
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.002098004958436747,
+        -0.002098004958436747
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s1-44e8780b4d",
+      "history_index": 4,
+      "Q_memory_full": 0.06588791775867653,
+      "memory_advantage": 0.005060619949466081,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.05993034746926106,
+          "effect": 0.005957570289415466
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06172424814915983,
+          "effect": 0.004163669609516696
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.004163669609516696,
+        0.005957570289415466
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s2-c6b1d0d7b3",
+      "history_index": 0,
+      "Q_memory_full": 0.08155057990881227,
+      "memory_advantage": -0.0009044260846836905,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.0825619256772196,
+          "effect": -0.0010113457684073207
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08234808630977233,
+          "effect": -0.0007975064009600602
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0010113457684073207,
+        -0.0007975064009600602
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s2-c6b1d0d7b3",
+      "history_index": 1,
+      "Q_memory_full": 0.08155057990881227,
+      "memory_advantage": -0.0008123432291161775,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08236292313792845,
+          "effect": -0.0008123432291161775
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0008123432291161775,
+        -0.0008123432291161775
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s2-c6b1d0d7b3",
+      "history_index": 2,
+      "Q_memory_full": 0.08155057990881227,
+      "memory_advantage": -8.572174242658936e-05,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07983021079620514,
+          "effect": 0.0017203691126071313
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08344239250627258,
+          "effect": -0.00189181259746031
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.00189181259746031,
+        0.0017203691126071313
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s2-c6b1d0d7b3",
+      "history_index": 3,
+      "Q_memory_full": 0.08155057990881227,
+      "memory_advantage": 0.005597031996394011,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07595354791241826,
+          "effect": 0.005597031996394011
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.005597031996394011,
+        0.005597031996394011
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s2-c6b1d0d7b3",
+      "history_index": 4,
+      "Q_memory_full": 0.08155057990881227,
+      "memory_advantage": 0.01468237532188138,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06530152842528487,
+          "effect": 0.0162490514835274
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06843488074857691,
+          "effect": 0.013115699160235361
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.013115699160235361,
+        0.0162490514835274
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s3-fc6e8e4691",
+      "history_index": 0,
+      "Q_memory_full": 0.07139001794706201,
+      "memory_advantage": 0.0045102491861427965,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06773365399710476,
+          "effect": 0.0036563639499572476
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06602588352473367,
+          "effect": 0.0053641344223283455
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.0036563639499572476,
+        0.0053641344223283455
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s3-fc6e8e4691",
+      "history_index": 1,
+      "Q_memory_full": 0.07139001794706201,
+      "memory_advantage": -0.0031193467960504984,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07450936474311251,
+          "effect": -0.0031193467960504984
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0031193467960504984,
+        -0.0031193467960504984
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s3-fc6e8e4691",
+      "history_index": 2,
+      "Q_memory_full": 0.07139001794706201,
+      "memory_advantage": -0.0018914502752033421,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07436678601514773,
+          "effect": -0.0029767680680857223
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07219615042938297,
+          "effect": -0.000806132482320962
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0029767680680857223,
+        -0.000806132482320962
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s3-fc6e8e4691",
+      "history_index": 3,
+      "Q_memory_full": 0.07139001794706201,
+      "memory_advantage": -0.0029671851600589355,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07435720310712095,
+          "effect": -0.0029671851600589355
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0029671851600589355,
+        -0.0029671851600589355
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s3-fc6e8e4691",
+      "history_index": 4,
+      "Q_memory_full": 0.07139001794706201,
+      "memory_advantage": 0.013292926623271532,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.05836324215479546,
+          "effect": 0.013026775792266555
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.057830940492785504,
+          "effect": 0.013559077454276508
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.013026775792266555,
+        0.013559077454276508
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s4-29b6ecab9f",
+      "history_index": 0,
+      "Q_memory_full": 0.07921654041663383,
+      "memory_advantage": 0.0028148470928034616,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07718340458840622,
+          "effect": 0.002033135828227603
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.0756199820592545,
+          "effect": 0.0035965583573793203
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.002033135828227603,
+        0.0035965583573793203
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s4-29b6ecab9f",
+      "history_index": 1,
+      "Q_memory_full": 0.07921654041663383,
+      "memory_advantage": 0.003997598085624013,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07521894233100981,
+          "effect": 0.003997598085624013
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.003997598085624013,
+        0.003997598085624013
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s4-29b6ecab9f",
+      "history_index": 2,
+      "Q_memory_full": 0.07921654041663383,
+      "memory_advantage": -0.001533474433015311,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.08128798658949946,
+          "effect": -0.002071446172865629
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08021204310979882,
+          "effect": -0.000995502693164993
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.002071446172865629,
+        -0.000995502693164993
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s4-29b6ecab9f",
+      "history_index": 3,
+      "Q_memory_full": 0.07921654041663383,
+      "memory_advantage": -0.001350054528797967,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.0805665949454318,
+          "effect": -0.001350054528797967
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.001350054528797967,
+        -0.001350054528797967
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s4-29b6ecab9f",
+      "history_index": 4,
+      "Q_memory_full": 0.07921654041663383,
+      "memory_advantage": 0.010600638073866596,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.0691241400768391,
+          "effect": 0.010092400339794722
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06810766460869536,
+          "effect": 0.01110887580793847
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.010092400339794722,
+        0.01110887580793847
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s5-a600434962",
+      "history_index": 0,
+      "Q_memory_full": 0.06953225511924896,
+      "memory_advantage": -0.001923350920620924,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07081440096486298,
+          "effect": -0.0012821458456140217
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07209681111487679,
+          "effect": -0.0025645559956278263
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0025645559956278263,
+        -0.0012821458456140217
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s5-a600434962",
+      "history_index": 1,
+      "Q_memory_full": 0.06953225511924896,
+      "memory_advantage": -0.0033608823553774314,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07289313747462639,
+          "effect": -0.0033608823553774314
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0033608823553774314,
+        -0.0033608823553774314
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s5-a600434962",
+      "history_index": 2,
+      "Q_memory_full": 0.06953225511924896,
+      "memory_advantage": -0.010812134470644358,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07892514213652257,
+          "effect": -0.009392887017273616
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08176363704326406,
+          "effect": -0.0122313819240151
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0122313819240151,
+        -0.009392887017273616
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s5-a600434962",
+      "history_index": 3,
+      "Q_memory_full": 0.06953225511924896,
+      "memory_advantage": -0.005172060205627077,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07470431532487604,
+          "effect": -0.005172060205627077
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.005172060205627077,
+        -0.005172060205627077
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s5-a600434962",
+      "history_index": 4,
+      "Q_memory_full": 0.06953225511924896,
+      "memory_advantage": 0.0038866953577315205,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06533629680020572,
+          "effect": 0.004195958319043236
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06595482272282915,
+          "effect": 0.003577432396419805
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.003577432396419805,
+        0.004195958319043236
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s6-6c60977d8a",
+      "history_index": 0,
+      "Q_memory_full": 0.06582556377861204,
+      "memory_advantage": -0.0006373829428119315,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06514723543657555,
+          "effect": 0.0006783283420364883
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06777865800627239,
+          "effect": -0.0019530942276603513
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0019530942276603513,
+        0.0006783283420364883
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s6-6c60977d8a",
+      "history_index": 1,
+      "Q_memory_full": 0.06582556377861204,
+      "memory_advantage": -0.0012627187155935943,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06708828249420563,
+          "effect": -0.0012627187155935943
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0012627187155935943,
+        -0.0012627187155935943
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s6-6c60977d8a",
+      "history_index": 2,
+      "Q_memory_full": 0.06582556377861204,
+      "memory_advantage": -0.01499050620681492,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.08282405958904705,
+          "effect": -0.016998495810435013
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07880808038180687,
+          "effect": -0.012982516603194827
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.016998495810435013,
+        -0.012982516603194827
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s6-6c60977d8a",
+      "history_index": 3,
+      "Q_memory_full": 0.06582556377861204,
+      "memory_advantage": 0.0018294669979706107,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06399609678064143,
+          "effect": 0.0018294669979706107
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.0018294669979706107,
+        0.0018294669979706107
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s6-6c60977d8a",
+      "history_index": 4,
+      "Q_memory_full": 0.06582556377861204,
+      "memory_advantage": 0.005189417134144659,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.060029942845402584,
+          "effect": 0.0057956209332094555
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06124235044353218,
+          "effect": 0.004583213335079862
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.004583213335079862,
+        0.0057956209332094555
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s7-7c2e7c4543",
+      "history_index": 0,
+      "Q_memory_full": 0.08014130828746922,
+      "memory_advantage": 0.005292647656349035,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.075818197919933,
+          "effect": 0.004323110367536229
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07387912334230738,
+          "effect": 0.006262184945161842
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.004323110367536229,
+        0.006262184945161842
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s7-7c2e7c4543",
+      "history_index": 1,
+      "Q_memory_full": 0.08014130828746922,
+      "memory_advantage": 0.007549324108257122,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.0725919841792121,
+          "effect": 0.007549324108257122
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.007549324108257122,
+        0.007549324108257122
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s7-7c2e7c4543",
+      "history_index": 2,
+      "Q_memory_full": 0.08014130828746922,
+      "memory_advantage": -0.004372523539906942,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.08662343224034069,
+          "effect": -0.006482123952871469
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08240423141441164,
+          "effect": -0.002262923126942415
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.006482123952871469,
+        -0.002262923126942415
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s7-7c2e7c4543",
+      "history_index": 3,
+      "Q_memory_full": 0.08014130828746922,
+      "memory_advantage": -0.000694112763237692,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.08083542105070692,
+          "effect": -0.000694112763237692
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.000694112763237692,
+        -0.000694112763237692
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s7-7c2e7c4543",
+      "history_index": 4,
+      "Q_memory_full": 0.08014130828746922,
+      "memory_advantage": 0.00915648120912927,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07245321258514154,
+          "effect": 0.007688095702327688
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06951644157153837,
+          "effect": 0.010624866715930853
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.007688095702327688,
+        0.010624866715930853
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s8-d958951ed6",
+      "history_index": 0,
+      "Q_memory_full": 0.06133309706591219,
+      "memory_advantage": -0.0056289905526266185,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06671759317724776,
+          "effect": -0.005384496111335575
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06720658205982985,
+          "effect": -0.005873484993917662
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.005873484993917662,
+        -0.005384496111335575
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s8-d958951ed6",
+      "history_index": 1,
+      "Q_memory_full": 0.06133309706591219,
+      "memory_advantage": -0.0034417428797232433,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.06477483994563543,
+          "effect": -0.0034417428797232433
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0034417428797232433,
+        -0.0034417428797232433
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s8-d958951ed6",
+      "history_index": 2,
+      "Q_memory_full": 0.06133309706591219,
+      "memory_advantage": -0.004315066857882292,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06525710530240317,
+          "effect": -0.003924008236490979
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.0660392225451858,
+          "effect": -0.004706125479273605
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.004706125479273605,
+        -0.003924008236490979
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s8-d958951ed6",
+      "history_index": 3,
+      "Q_memory_full": 0.06133309706591219,
+      "memory_advantage": -0.0033057363342717597,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06463883340018395,
+          "effect": -0.0033057363342717597
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0033057363342717597,
+        -0.0033057363342717597
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s8-d958951ed6",
+      "history_index": 4,
+      "Q_memory_full": 0.06133309706591219,
+      "memory_advantage": 0.00017608689148483625,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06209933074668711,
+          "effect": -0.0007662336807749207
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.060214689602167595,
+          "effect": 0.0011184074637445932
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.0007662336807749207,
+        0.0011184074637445932
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s9-0b05e66ea3",
+      "history_index": 0,
+      "Q_memory_full": 0.06899386469753625,
+      "memory_advantage": -0.0037675941262283533,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07530205473556587,
+          "effect": -0.006308190038029612
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07022086291196335,
+          "effect": -0.0012269982144270941
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.006308190038029612,
+        -0.0012269982144270941
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s9-0b05e66ea3",
+      "history_index": 1,
+      "Q_memory_full": 0.06899386469753625,
+      "memory_advantage": -0.006951233193917411,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.07594509789145366,
+          "effect": -0.006951233193917411
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.006951233193917411,
+        -0.006951233193917411
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s9-0b05e66ea3",
+      "history_index": 2,
+      "Q_memory_full": 0.06899386469753625,
+      "memory_advantage": -0.008156555503655218,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07179004461914401,
+          "effect": -0.002796179921607758
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.08251079578323893,
+          "effect": -0.013516931085702677
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.013516931085702677,
+        -0.002796179921607758
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s9-0b05e66ea3",
+      "history_index": 3,
+      "Q_memory_full": 0.06899386469753625,
+      "memory_advantage": -0.009316007815858618,
+      "donor_count": 1,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.07830987251339487,
+          "effect": -0.009316007815858618
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        -0.009316007815858618,
+        -0.009316007815858618
+      ]
+    },
+    {
+      "prefix_id": "interference_chain-s9-0b05e66ea3",
+      "history_index": 4,
+      "Q_memory_full": 0.06899386469753625,
+      "memory_advantage": 0.007117747491071174,
+      "donor_count": 2,
+      "donors": [
+        {
+          "history_index": 1,
+          "Q_memory_patch": 0.06173217538532672,
+          "effect": 0.007261689312209531
+        },
+        {
+          "history_index": 3,
+          "Q_memory_patch": 0.062020059027603436,
+          "effect": 0.006973805669932817
+        }
+      ],
+      "donor_bootstrap_ci95": [
+        0.006973805669932817,
+        0.007261689312209531
+      ]
+    }
+  ],
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/tango_v2/train200_critical.jsonl",
+  "target": "k",
+  "layers": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "donor_indices": [
+    1,
+    3
+  ],
+  "temperature": 1.0
+}

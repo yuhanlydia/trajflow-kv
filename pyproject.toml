@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trajflow-kv"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "numpy>=1.26", "pyyaml>=6", "pillow>=10", "requests>=2.31"]
+
+[project.optional-dependencies]
+train = [
+  "transformers>=4.49,<5",
+  "accelerate>=1.2",
+  "qwen-vl-utils>=0.0.8",
+  "datasets>=3.2",
+  "fsspec[http]<=2026.6.0",
+  "huggingface-hub>=0.27",
+  "safetensors>=0.4"
+]
+test = ["pytest>=8"]
+browser = ["browsergym-miniwob==0.14.3"]
+
+[tool.setuptools.packages.find]
+include = ["trajflow_kv*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

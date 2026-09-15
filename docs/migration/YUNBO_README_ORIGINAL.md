@@ -1,26 +1,3 @@
-# SIGMA / TrajFlow-KV
-
-Canonical working repository: `yuhanlydia/trajflow-kv`.
-
-The original tracked code, configuration, tests, and result files from
-`Yunbo-max/trajflow-kv` are imported below, together with their Git history.
-The source repository has not been changed or deleted.
-
-## SIGMA ICLR 2027 execution
-
-- [Pending experiments, S00 and E01-E17](docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md)
-- [Machine-readable experiment plan](experiments/sigma_iclr2027_pending.json)
-- [Migration manifest](docs/migration/YUNBO_IMPORT.json)
-
-Start with S00 to reconcile the existing implementation and the newer manuscript
-configuration. Migration is not evidence that the pending experiments were run.
-Model weights, generated screenshots, local datasets, and uncommitted files were
-not present in the source Git tree and are not fabricated by this migration.
-The previously delivered TANGO ICLR code overlay is a separate artifact; this
-commit imports the legacy repository only.
-
-## Original project documentation
-
 # TrajFlow-KV
 
 Minimal, reproducible Phase-1 implementation of return-driven low-rank KV

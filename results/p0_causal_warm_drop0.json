@@ -1,0 +1,31 @@
+{
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/diagnostics/critical_only.jsonl",
+  "checkpoint": null,
+  "baseline_checkpoint": null,
+  "rank": 8,
+  "alpha": 8.0,
+  "target": "v",
+  "last_n_layers": 8,
+  "drop_history_index": 0,
+  "evaluation": {
+    "prefixes": 60,
+    "candidate_top1_accuracy": 0.45,
+    "critical_prefixes": 60,
+    "critical_fork_accuracy": 0.45,
+    "families": {
+      "distractor_credit": {
+        "prefixes": 40,
+        "candidate_top1_accuracy": 0.5,
+        "critical_prefixes": 40,
+        "critical_fork_accuracy": 0.5
+      },
+      "hidden_memory": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35
+      }
+    }
+  }
+}

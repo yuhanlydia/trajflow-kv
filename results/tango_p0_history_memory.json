@@ -1,0 +1,41 @@
+{
+  "protocol": "visual_delayed_pilot20_with_history_images",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "rows": 800,
+  "prefixes": 400,
+  "critical_prefixes": 60,
+  "diagnostic": {
+    "critical_only": {
+      "rows": 140,
+      "prefixes": 60,
+      "warm_critical_fork_accuracy": 0.45,
+      "critical_only_ce_critical_fork_accuracy": 0.45,
+      "critical_only_tango_critical_fork_accuracy": 0.45,
+      "interpretation": "Before the protocol fix, historical screenshots were not supplied to the VLM."
+    },
+    "history_oracle_text": {
+      "warm_candidate_top1": 0.9775,
+      "warm_critical_fork_accuracy": 1.0
+    }
+  },
+  "history_visual_rerun": {
+    "warm_candidate_top1": 0.9825,
+    "warm_critical_fork_accuracy": 1.0,
+    "ce_candidate_top1": 1.0,
+    "ce_critical_fork_accuracy": 1.0,
+    "tango_candidate_top1": 1.0,
+    "tango_critical_fork_accuracy": 1.0,
+    "tango_noncritical_mean_delta": -3.0696379912671437,
+    "tango_noncritical_mean_absolute_delta": 3.40961180401077,
+    "ce_noncritical_mean_delta": -1.7134124942914104,
+    "ce_noncritical_mean_absolute_delta": 1.9907101297807512,
+    "interpretation": "Supplying visual history restores critical decisions, but one-epoch projector training saturates both CE and TANGO and causes large non-critical score shifts; this is a protocol/mechanism diagnostic, not an online win."
+  },
+  "causal_visual_history_ablation": {
+    "data": "critical_only.jsonl (60 prefixes)",
+    "warm_full_history_critical_fork_accuracy": 1.0,
+    "warm_drop_history_index_0_critical_fork_accuracy": 0.45,
+    "warm_drop_history_index_1_critical_fork_accuracy": 1.0,
+    "interpretation": "Removing the earliest cue screenshot destroys the delayed decision. In this v1 dataset, history index 1 was absent at the critical prefix, so that condition was an empty-operation control and is superseded by tango_memory_credit_v2_pilot20.json."
+  }
+}

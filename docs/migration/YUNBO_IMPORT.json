@@ -1,0 +1,867 @@
+{
+  "schema": "sigma.repository_migration.v1",
+  "source_repository": "Yunbo-max/trajflow-kv",
+  "source_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7",
+  "destination_repository": "yuhanlydia/trajflow-kv",
+  "destination_before_migration": "f22e8e19e8ad6524e68771bcb6195df36b32a20f",
+  "source_history_preserved": true,
+  "source_reachable_commit_count": 40,
+  "source_repository_modified": false,
+  "source_file_count": 170,
+  "verification": "All tracked source blobs matched before README integration; staged blobs and modes checked before commit.",
+  "original_readme_copy": "docs/migration/YUNBO_README_ORIGINAL.md",
+  "code_overlay_imported": false,
+  "gpu_or_gui_experiments_run": false,
+  "source_files": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "blob_sha": "a0848b62b95c31636bbbe3af9cb0a13e5ebccf92"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "blob_sha": "28989c1c0db5183c380340b98042437bb0f5f305"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "blob_sha": "597d8b775066be7a0d57d05708f9e33d4856e7e8"
+    },
+    {
+      "path": "configs/qwen_aitw.yaml",
+      "mode": "100644",
+      "blob_sha": "eac55881c6e772878a732055139d4a7dfe2ddfc6"
+    },
+    {
+      "path": "configs/qwen_androidworld.yaml",
+      "mode": "100644",
+      "blob_sha": "aac6d91cea6edc972b01f00080cd1de8cd6b7a03"
+    },
+    {
+      "path": "configs/tango_androidworld_offline.yaml",
+      "mode": "100644",
+      "blob_sha": "a35bc822e4440c845d6207c2c7a5144c67873113"
+    },
+    {
+      "path": "configs/tango_counterfactual_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "f91bdf1dab3651242622d72d730fd86e86015dc4"
+    },
+    {
+      "path": "configs/tango_iclr.yaml",
+      "mode": "100644",
+      "blob_sha": "8367c049726fa07e623ed684c86b9d2703a35546"
+    },
+    {
+      "path": "configs/tango_memory_advantage_gate_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "91faa6f7edbd94de216aa34ef5cf516977127459"
+    },
+    {
+      "path": "configs/tango_memory_gate_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "fbcd45d792d2949a44207d6ce45fb9e10d4d42a5"
+    },
+    {
+      "path": "configs/tango_memory_gate_stage1_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "46a3437ea76e72826f25787b654d83b254a969c6"
+    },
+    {
+      "path": "configs/tango_memory_transport_stage2_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "27d388ce585427ff4663be03abd1694635287e5e"
+    },
+    {
+      "path": "configs/tango_v2_signed_gate_stage1_qwen.yaml",
+      "mode": "100644",
+      "blob_sha": "1cefb4d8c0ffbf9118c4ee9a349f138835cacc01"
+    },
+    {
+      "path": "configs/tango_v3_matrix.yaml",
+      "mode": "100644",
+      "blob_sha": "47a9e37f2b7a88e2c271794a57648264630591e6"
+    },
+    {
+      "path": "configs/toy.yaml",
+      "mode": "100644",
+      "blob_sha": "7ed96ffc9e74a6474f4610339e168a4dbd96810b"
+    },
+    {
+      "path": "docs/TANGO_EXPERIMENTS.md",
+      "mode": "100644",
+      "blob_sha": "f38d518d43475475181c6f8e24ccae4a9414c973"
+    },
+    {
+      "path": "docs/tango_v3_experiment_protocol.md",
+      "mode": "100644",
+      "blob_sha": "8a2f8a75557d598317d91e7b81a35f79be82bbe4"
+    },
+    {
+      "path": "patches/androidworld-tcg.patch",
+      "mode": "100644",
+      "blob_sha": "e88ee0f62ee6f2868f5571cf5d32d2363272ef72"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "blob_sha": "7cb2f501dbe91325ccc952e908fc6ff6a936a167"
+    },
+    {
+      "path": "results/androidworld_round2_seed101.json",
+      "mode": "100644",
+      "blob_sha": "e3eb76f542c4038b36bdd1532cb2da2c9b5b1507"
+    },
+    {
+      "path": "results/gonogo_current.json",
+      "mode": "100644",
+      "blob_sha": "b5dc0591266173e05f108841be1b31841913425f"
+    },
+    {
+      "path": "results/p0_causal_warm_drop0.json",
+      "mode": "100644",
+      "blob_sha": "6314db8fd2a6e4f974148abea5ba21aaa1752d1e"
+    },
+    {
+      "path": "results/p0_causal_warm_drop1.json",
+      "mode": "100644",
+      "blob_sha": "143d1c78c3e21635f248127605094f5db3b0f8cb"
+    },
+    {
+      "path": "results/p0_causal_warm_full.json",
+      "mode": "100644",
+      "blob_sha": "b303cfc7f36ba2124f85a9401e811d1ce1a3380a"
+    },
+    {
+      "path": "results/p0_critical_only_ce.json",
+      "mode": "100644",
+      "blob_sha": "7f970e4494e0f84af9a0ef39a709bab00ed3e653"
+    },
+    {
+      "path": "results/p0_critical_only_tango.json",
+      "mode": "100644",
+      "blob_sha": "08aacfc07222a9ec1337899aace9e6c2f836384c"
+    },
+    {
+      "path": "results/p0_history_ce.json",
+      "mode": "100644",
+      "blob_sha": "6376fab67554b12cbb3fa8c7d529cb42b6175c6e"
+    },
+    {
+      "path": "results/p0_history_oracle_warm.json",
+      "mode": "100644",
+      "blob_sha": "82ca5b89730d7309973436959547da66d786c0c3"
+    },
+    {
+      "path": "results/p0_history_tango.json",
+      "mode": "100644",
+      "blob_sha": "3d03cba00bb003901b3cae2def49be7a7c1541b9"
+    },
+    {
+      "path": "results/p0_v2_drop0.json",
+      "mode": "100644",
+      "blob_sha": "6314db8fd2a6e4f974148abea5ba21aaa1752d1e"
+    },
+    {
+      "path": "results/p0_v2_drop1.json",
+      "mode": "100644",
+      "blob_sha": "143d1c78c3e21635f248127605094f5db3b0f8cb"
+    },
+    {
+      "path": "results/p0_v2_full.json",
+      "mode": "100644",
+      "blob_sha": "b303cfc7f36ba2124f85a9401e811d1ce1a3380a"
+    },
+    {
+      "path": "results/tango_counterfactual_qwen_smoke.json",
+      "mode": "100644",
+      "blob_sha": "72a5e23c25c25900439d5cb12ce0b84215c4fda6"
+    },
+    {
+      "path": "results/tango_counterfactual_toy_smoke.json",
+      "mode": "100644",
+      "blob_sha": "c68233cea0ea129b1de426e5a6bef1cbaa374af3"
+    },
+    {
+      "path": "results/tango_kv_causal_scan_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "6b1e9086de30760e63ede89d6cc39b9d0f3f514f"
+    },
+    {
+      "path": "results/tango_memory_advantage_gate_balanced_e5_critical.json",
+      "mode": "100644",
+      "blob_sha": "65d4adf4b25c874138782ec536d70b666ae114b0"
+    },
+    {
+      "path": "results/tango_memory_advantage_gate_e5_full_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "43f95db13bc29ae5a3541eaec859f40ae2be9456"
+    },
+    {
+      "path": "results/tango_memory_advantage_gate_e5_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "782fc0940ee809b2878385947de5098a44aa8481"
+    },
+    {
+      "path": "results/tango_memory_advantage_gate_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "be587d0486abae2576948d5cc7d7bf9e7df818d1"
+    },
+    {
+      "path": "results/tango_memory_advantage_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "45ac6e24591d4f1b20f7bda0a104be530282013d"
+    },
+    {
+      "path": "results/tango_memory_credit_two_stage_heldout.json",
+      "mode": "100644",
+      "blob_sha": "1ad8f3d523c8426c75ac135206581ea6294e63da"
+    },
+    {
+      "path": "results/tango_memory_credit_v2_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "e7ae501005d0c9e24442e68c3955ee8fed7d05dc"
+    },
+    {
+      "path": "results/tango_memory_gate_critical_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "9f0ad1e8003637b734e8929f33feeb9619aed0ba"
+    },
+    {
+      "path": "results/tango_memory_gate_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "9fd62064de042f1a1702a0ed61cf168d493edb3e"
+    },
+    {
+      "path": "results/tango_memory_gate_stage1_fixed_critical.json",
+      "mode": "100644",
+      "blob_sha": "ad6a265a356c009ac0c8c4fa560bcbafd1af1c4b"
+    },
+    {
+      "path": "results/tango_memory_q_estimator_critical_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "37867864929bc4a6567cb148f4c09284c8888197"
+    },
+    {
+      "path": "results/tango_memory_q_gate_e5_critical_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "6f81b6138d3247496f7de9dc80b3c8bd0d4d6d79"
+    },
+    {
+      "path": "results/tango_memory_q_gate_e5_full_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "1dce9686f3d51e5873af18ef2461920a709f28bd"
+    },
+    {
+      "path": "results/tango_memory_q_gate_splitlr_e5_critical.json",
+      "mode": "100644",
+      "blob_sha": "d1f81675412746fa39be5485782d23ace7e1d884"
+    },
+    {
+      "path": "results/tango_memory_transport_stage2_critical.json",
+      "mode": "100644",
+      "blob_sha": "c0ef149b4989f3d9d5440f430221f9690d304755"
+    },
+    {
+      "path": "results/tango_memory_transport_stage2_full.json",
+      "mode": "100644",
+      "blob_sha": "07df419161f2bd32924d7470703048b9f190f32f"
+    },
+    {
+      "path": "results/tango_memory_transport_stage2_test20_39.json",
+      "mode": "100644",
+      "blob_sha": "61ba7d76690a76fffcec08555200737a2e6e795e"
+    },
+    {
+      "path": "results/tango_miniwob_click4_s701_800.json",
+      "mode": "100644",
+      "blob_sha": "142b92e4093c4649d1d0d5ddaf4d1098d4cde46a"
+    },
+    {
+      "path": "results/tango_p0_history_memory.json",
+      "mode": "100644",
+      "blob_sha": "2b723ddce03297ddc8c6c71b13c249889e5937f3"
+    },
+    {
+      "path": "results/tango_trajectory_controls_e5.json",
+      "mode": "100644",
+      "blob_sha": "307242426518138735ddbff7286ab9bf39c07b58"
+    },
+    {
+      "path": "results/tango_v2_teacher_credit200.json",
+      "mode": "100644",
+      "blob_sha": "e5cb40e4e5c9bc0159c9b9833df8a4d4decbaed1"
+    },
+    {
+      "path": "results/tango_v2_teacher_credit_smoke10.json",
+      "mode": "100644",
+      "blob_sha": "e3be4139a6dce04de93f0d35df2523c242775862"
+    },
+    {
+      "path": "results/tango_v2_train200_dataset_summary.json",
+      "mode": "100644",
+      "blob_sha": "df7026f2bd8c2cfc204d1ba5cbc357a475caf0a6"
+    },
+    {
+      "path": "results/tango_v2_val50_dataset_summary.json",
+      "mode": "100644",
+      "blob_sha": "7741e44f1ba3ef7855ca6dbc8a53f152b1967210"
+    },
+    {
+      "path": "results/tango_v3_nonce_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "45e640f08fb6ddcf3e4eeeb3527e2bfc8a95928a"
+    },
+    {
+      "path": "results/tango_v3_semantic_pilot5.json",
+      "mode": "100644",
+      "blob_sha": "443198a0a46248805e420c7e7b71e85ad65ffc26"
+    },
+    {
+      "path": "results/tango_v4_interference_chain_kv_credit_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "7f99a0255826365fcac19a675ec50ee1ae1244f4"
+    },
+    {
+      "path": "results/tango_v4_interference_chain_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "a566d35926bed285e0f42a30ab7d5d814ba6f077"
+    },
+    {
+      "path": "results/tango_visual_counterfactual_pilot20.json",
+      "mode": "100644",
+      "blob_sha": "7864df0d4438579c9406a73b9cc169374a201bdd"
+    },
+    {
+      "path": "results/v3_interference_kv_patch_signed_pilot5.json",
+      "mode": "100644",
+      "blob_sha": "6539f4fb16e05cb1d91d668e8845c5f1fac50d60"
+    },
+    {
+      "path": "results/v3_interference_kv_scan_pilot5.json",
+      "mode": "100644",
+      "blob_sha": "b83996924624bb4f4fe59044aa10cdfb63aba394"
+    },
+    {
+      "path": "results/v3_interference_kv_signed_scan_pilot5.json",
+      "mode": "100644",
+      "blob_sha": "8263b763c8e6b2489309f1864dcf0b9d98afa2c6"
+    },
+    {
+      "path": "results/v3_nonce_pilot10_base_critical.json",
+      "mode": "100644",
+      "blob_sha": "134a9166932f760c43659030ff9451d7b56e7fff"
+    },
+    {
+      "path": "results/v3_nonce_pilot10_dataset_summary.json",
+      "mode": "100644",
+      "blob_sha": "7aa480773287f6d4946c7fcfcb80e1efd3cca232"
+    },
+    {
+      "path": "results/v3_pilot5_base_critical.json",
+      "mode": "100644",
+      "blob_sha": "97744229257a37ccb04ed012383eb51e74da0b25"
+    },
+    {
+      "path": "results/v3_pilot5_base_drop0.json",
+      "mode": "100644",
+      "blob_sha": "08e4e754977a14efe5e17d2ca3e754542a365602"
+    },
+    {
+      "path": "results/v3_pilot5_base_drop1.json",
+      "mode": "100644",
+      "blob_sha": "922d13f95850487e84958cf3012fae4e48ee79fd"
+    },
+    {
+      "path": "results/v3_pilot5_base_drop2.json",
+      "mode": "100644",
+      "blob_sha": "eda8692a6d74ce027c1540270e8e7b8f27b3b2f2"
+    },
+    {
+      "path": "results/v3_pilot5_dataset_summary.json",
+      "mode": "100644",
+      "blob_sha": "c41489d69c63fdfd6730240974e7d98cc91657a0"
+    },
+    {
+      "path": "results/v4_chain_kv_patch_controls_middle_k_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "0f6931bdffba8ccb276eeaeab395f5063f08c211"
+    },
+    {
+      "path": "results/v4_chain_kv_patch_reference1_middle_k_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "0a8810cec05be84986d4e30cd5055bca744bb7f6"
+    },
+    {
+      "path": "results/v4_chain_kv_patch_update_middle_k_pilot10.json",
+      "mode": "100644",
+      "blob_sha": "151fe690f25046f7c6b3002bec08f0124da39d05"
+    },
+    {
+      "path": "results/v4_chain_pilot10_base_critical.json",
+      "mode": "100644",
+      "blob_sha": "9f6996e119efce9bdeebce05dd770ef7716fdf54"
+    },
+    {
+      "path": "results/v4_chain_pilot10_dataset_summary.json",
+      "mode": "100644",
+      "blob_sha": "9e1d099d353374afd374fa502a527b1690ee0046"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "mode": "100644",
+      "blob_sha": "bc9ed9ddb8ef2f9cc2142d35405a91f25b8a98e6"
+    },
+    {
+      "path": "scripts/androidworld_to_jsonl.py",
+      "mode": "100755",
+      "blob_sha": "1272c3360d0c594aad0ec03126e502948ad757da"
+    },
+    {
+      "path": "scripts/collect_adaptive_system.py",
+      "mode": "100644",
+      "blob_sha": "da8e9ca172ed158b4f59b8a5632b58415dc2afc6"
+    },
+    {
+      "path": "scripts/collect_androidworld.py",
+      "mode": "100755",
+      "blob_sha": "15cbbee7d2f092a253e29ab52d9350358c3b98ed"
+    },
+    {
+      "path": "scripts/collect_miniwob_random.py",
+      "mode": "100644",
+      "blob_sha": "201eeb1bcc4571ce91caf72f00a38c601845dfb4"
+    },
+    {
+      "path": "scripts/collect_scripted_androidworld.py",
+      "mode": "100755",
+      "blob_sha": "b13048a57cd755de62dee7a6853eef2123dd8e5c"
+    },
+    {
+      "path": "scripts/compare_rollouts.py",
+      "mode": "100755",
+      "blob_sha": "3d048c95ab4dede15f1c0dc7c4f8ad829a4e07b2"
+    },
+    {
+      "path": "scripts/download_aitw_sample.sh",
+      "mode": "100755",
+      "blob_sha": "b8487561fe365af944566d745ae29caddad560d6"
+    },
+    {
+      "path": "scripts/download_mind2web_sample.sh",
+      "mode": "100755",
+      "blob_sha": "459196f25b42b4caabc779acc15ffed25f10671b"
+    },
+    {
+      "path": "scripts/download_model.sh",
+      "mode": "100755",
+      "blob_sha": "f44c90e5d6a9baf7a60cd0d72ba3c6cdd5d5a75d"
+    },
+    {
+      "path": "scripts/estimate_kv_memory_credit_qwen.py",
+      "mode": "100644",
+      "blob_sha": "5e7e38f6d24a4d2d92599f50d665c48478d78e42"
+    },
+    {
+      "path": "scripts/estimate_memory_advantages_qwen.py",
+      "mode": "100644",
+      "blob_sha": "b4be3404ae1518ddd2d4063bb5ae55a5b0ab4d33"
+    },
+    {
+      "path": "scripts/evaluate_action_ranking.py",
+      "mode": "100644",
+      "blob_sha": "6009bb4476a9823cde026b0f640c2ffe0146c459"
+    },
+    {
+      "path": "scripts/evaluate_counterfactual_qwen.py",
+      "mode": "100644",
+      "blob_sha": "da0379addfaff09febfdf477b8e51f9edeaf017c"
+    },
+    {
+      "path": "scripts/evaluate_kv_causal_scan.py",
+      "mode": "100644",
+      "blob_sha": "0af151a93ca79afe2a3b291af10f0dda1a97817a"
+    },
+    {
+      "path": "scripts/evaluate_mind2web_ranking.py",
+      "mode": "100755",
+      "blob_sha": "cdf0949c952711a4822b0a8c0128a072e9b27829"
+    },
+    {
+      "path": "scripts/evaluate_miniwob_online.py",
+      "mode": "100755",
+      "blob_sha": "0411f1a591bb6dacf3d53c0828e5cde5ca2124c7"
+    },
+    {
+      "path": "scripts/evaluate_return_margin.py",
+      "mode": "100755",
+      "blob_sha": "d2ff2f211a6aa0f8a1f1622016d046e241a85067"
+    },
+    {
+      "path": "scripts/filter_rollouts.py",
+      "mode": "100644",
+      "blob_sha": "f40929bbfb9f893fe2f87463ddc91d26de36b7f2"
+    },
+    {
+      "path": "scripts/generate_visual_delayed.py",
+      "mode": "100644",
+      "blob_sha": "9d813a56dc49cb2b0d2d90b74491983edf3696a1"
+    },
+    {
+      "path": "scripts/make_coordinate_forks.py",
+      "mode": "100644",
+      "blob_sha": "b9633e4bf09face4c7c519854e7ebc862bf22aa7"
+    },
+    {
+      "path": "scripts/make_fork_pairs.py",
+      "mode": "100644",
+      "blob_sha": "c80c3afbf27dee6b9f0d4adc32b4c8ff64f34e36"
+    },
+    {
+      "path": "scripts/make_mixed_return_smoke.py",
+      "mode": "100755",
+      "blob_sha": "2203b8f83e29406cc8a5e5c36b53eb231161b610"
+    },
+    {
+      "path": "scripts/merge_projector_checkpoint.py",
+      "mode": "100644",
+      "blob_sha": "0c51acfd3a85e797302a8e2fcfd274572a251951"
+    },
+    {
+      "path": "scripts/merge_rollouts.py",
+      "mode": "100755",
+      "blob_sha": "31b2082898d85691af75749010423d7bb845f88b"
+    },
+    {
+      "path": "scripts/paired_significance.py",
+      "mode": "100755",
+      "blob_sha": "3424a788a4f9d460520b69f915d8c7d2c256c2dd"
+    },
+    {
+      "path": "scripts/preflight_androidworld.py",
+      "mode": "100755",
+      "blob_sha": "8c63637d8c1c4c332e99d82d0a360d0f6d55816a"
+    },
+    {
+      "path": "scripts/prepare_aitw.py",
+      "mode": "100755",
+      "blob_sha": "661c511fe1d5af3326b18018c29c09ff4c861fb1"
+    },
+    {
+      "path": "scripts/prepare_credit_diagnostics.py",
+      "mode": "100644",
+      "blob_sha": "ecc8f8781b193f38ec24137da8ed5f8829b0b230"
+    },
+    {
+      "path": "scripts/prepare_mind2web.py",
+      "mode": "100755",
+      "blob_sha": "5e285a8419a7dc6945c239c9eee9cf4c41b71f6a"
+    },
+    {
+      "path": "scripts/resize_projector_checkpoint.py",
+      "mode": "100644",
+      "blob_sha": "a0f3ee218085428bd12df361e7258d0d08b12a9b"
+    },
+    {
+      "path": "scripts/run_androidworld_software.sh",
+      "mode": "100755",
+      "blob_sha": "c393f1f6bc3a52669ae1fdbca11d15ab1b53985d"
+    },
+    {
+      "path": "scripts/run_miniwob_gate.sh",
+      "mode": "100755",
+      "blob_sha": "7d87249caf0329c45e34256de28e84d9f1a15e11"
+    },
+    {
+      "path": "scripts/run_miniwob_return_gate.sh",
+      "mode": "100755",
+      "blob_sha": "5b19454044d2a4f7291209298ba7a3f19809c205"
+    },
+    {
+      "path": "scripts/run_paired_online_gate.py",
+      "mode": "100755",
+      "blob_sha": "a471de02a6dd0e18760696eef535eef0b1a186d8"
+    },
+    {
+      "path": "scripts/run_tango_trajectory_controls.sh",
+      "mode": "100755",
+      "blob_sha": "e76305f87e75b384f20de08e120a7273ff741a67"
+    },
+    {
+      "path": "scripts/setup_androidworld_software.sh",
+      "mode": "100755",
+      "blob_sha": "b8d60cbd02bff07762e89d07d2835c8da51d8eba"
+    },
+    {
+      "path": "scripts/setup_cuda126.sh",
+      "mode": "100755",
+      "blob_sha": "9a38130777facc3b9ef379c3d2e6ee981ae69bf0"
+    },
+    {
+      "path": "scripts/split_rollouts.py",
+      "mode": "100755",
+      "blob_sha": "c0e24f1530f9f167206b745e1c0d18c394d21a07"
+    },
+    {
+      "path": "scripts/subset_projector_checkpoint.py",
+      "mode": "100644",
+      "blob_sha": "ba04dce1f7a052243e555a9787922e90c762f216"
+    },
+    {
+      "path": "scripts/summarize_credit_diagnostics.py",
+      "mode": "100644",
+      "blob_sha": "59503e805b62395427e09027dc5200bf9ed36a0e"
+    },
+    {
+      "path": "scripts/summarize_miniwob_pair.py",
+      "mode": "100755",
+      "blob_sha": "b20f6070ac501bf1fcd44dec06ddf571e04cabcb"
+    },
+    {
+      "path": "scripts/summarize_online_gonogo.py",
+      "mode": "100755",
+      "blob_sha": "a96d6548cacf9ee38bb9bf46850908b37ca6509e"
+    },
+    {
+      "path": "scripts/train_action_flow.py",
+      "mode": "100644",
+      "blob_sha": "8237b61e488a0b39722a61477d5875934aad2bea"
+    },
+    {
+      "path": "scripts/train_fork_preferences.py",
+      "mode": "100644",
+      "blob_sha": "641e31c7fc16cc753cf7037082b1b9f567a51db8"
+    },
+    {
+      "path": "scripts/train_state_router.py",
+      "mode": "100644",
+      "blob_sha": "0de110a1688d430499bd9ed03d7c4816487e551f"
+    },
+    {
+      "path": "scripts/train_trajectory_critic.py",
+      "mode": "100644",
+      "blob_sha": "c9ab894d40b45eadfbcf1fbb8f122bce6956fc63"
+    },
+    {
+      "path": "scripts/validate_rollouts.py",
+      "mode": "100755",
+      "blob_sha": "74368962caf196b04f235e864c17d350172ddca7"
+    },
+    {
+      "path": "tests/test_actions_rollout.py",
+      "mode": "100644",
+      "blob_sha": "107638ac98e3d024f3ad25e4f9045f66442df503"
+    },
+    {
+      "path": "tests/test_androidworld_http.py",
+      "mode": "100644",
+      "blob_sha": "2d9d8ff45b6ce1f817b77293ccda76355f04620f"
+    },
+    {
+      "path": "tests/test_androidworld_preflight.py",
+      "mode": "100644",
+      "blob_sha": "636e1a928ec7e073ee5a5af48588090845074c8c"
+    },
+    {
+      "path": "tests/test_causal_ablation.py",
+      "mode": "100644",
+      "blob_sha": "e3402f360650b6551dc6b3503ff94c7635fdc9ef"
+    },
+    {
+      "path": "tests/test_core.py",
+      "mode": "100644",
+      "blob_sha": "f0217172d2f372e6ac57d690d8509e6a5efdf833"
+    },
+    {
+      "path": "tests/test_counterfactual.py",
+      "mode": "100644",
+      "blob_sha": "c18d94af1e2a02d5a041b2c4c9d0eb6fc7bd2e79"
+    },
+    {
+      "path": "tests/test_counterfactual_eval.py",
+      "mode": "100644",
+      "blob_sha": "7217067fd5de4f7fbb423c66c7ca57d621f87a59"
+    },
+    {
+      "path": "tests/test_credit_diagnostics.py",
+      "mode": "100644",
+      "blob_sha": "74c5a5882d4c4db904e87688ad975b429c9795f6"
+    },
+    {
+      "path": "tests/test_gated_projector.py",
+      "mode": "100644",
+      "blob_sha": "9d2fa216436691fb8cf82f256d595f247e859678"
+    },
+    {
+      "path": "tests/test_kv_causal_scan.py",
+      "mode": "100644",
+      "blob_sha": "882e6f8603ca51ad6b1778a6de6969bf26e92d8c"
+    },
+    {
+      "path": "tests/test_kv_memory_credit_estimator.py",
+      "mode": "100644",
+      "blob_sha": "be465d89e694db68e7dcfe3a77df95e237fa21a7"
+    },
+    {
+      "path": "tests/test_masking.py",
+      "mode": "100644",
+      "blob_sha": "5b6da085defc82080e03b5132b49e895442234fa"
+    },
+    {
+      "path": "tests/test_memory_advantage_estimator.py",
+      "mode": "100644",
+      "blob_sha": "7ca6b8169f349f742c1caa9c249580c914c37626"
+    },
+    {
+      "path": "tests/test_mind2web.py",
+      "mode": "100644",
+      "blob_sha": "4c125bdbeaffdd8f250959aeff87ac064429d10f"
+    },
+    {
+      "path": "tests/test_miniwob.py",
+      "mode": "100644",
+      "blob_sha": "44c93637b945b1876a28b990d1ee1c44b8e9262d"
+    },
+    {
+      "path": "tests/test_paired_significance.py",
+      "mode": "100644",
+      "blob_sha": "80d868d7839b52b6e97b8b4be2158f1826d58db9"
+    },
+    {
+      "path": "tests/test_return_guard.py",
+      "mode": "100644",
+      "blob_sha": "e42bd301d35a2c7d1c1ffc533e46ac0d6c506727"
+    },
+    {
+      "path": "tests/test_signed_memory_loss.py",
+      "mode": "100644",
+      "blob_sha": "cbd840f103fa39ff21a95543594545b18afa2d84"
+    },
+    {
+      "path": "tests/test_training_controls.py",
+      "mode": "100644",
+      "blob_sha": "91b446975352c21a17eda6aee047b847a45252d9"
+    },
+    {
+      "path": "tests/test_visual_delayed.py",
+      "mode": "100644",
+      "blob_sha": "57f8ca9743a21fe9cecb754faf800e2c1bebf3cf"
+    },
+    {
+      "path": "trajflow_kv/__init__.py",
+      "mode": "100644",
+      "blob_sha": "00b13d866769e8266dba3ec6581088b03daeb2b1"
+    },
+    {
+      "path": "trajflow_kv/action_flow.py",
+      "mode": "100644",
+      "blob_sha": "e2dd08d18bb69959875db4af2b7add71c3ea641e"
+    },
+    {
+      "path": "trajflow_kv/actions.py",
+      "mode": "100644",
+      "blob_sha": "3ab919ab6e8905c0931ab2b628cf5c53f8accfef"
+    },
+    {
+      "path": "trajflow_kv/androidworld_http.py",
+      "mode": "100644",
+      "blob_sha": "1dd2081f867ec3933093413c47700896a9f1d527"
+    },
+    {
+      "path": "trajflow_kv/androidworld_preflight.py",
+      "mode": "100644",
+      "blob_sha": "3ec92d8bfa5b7655e25a6ec7762267a84e768dc3"
+    },
+    {
+      "path": "trajflow_kv/causal_ablation.py",
+      "mode": "100644",
+      "blob_sha": "afd4ae2e1bda0e041cc26e76dbb7d4dba9d02da6"
+    },
+    {
+      "path": "trajflow_kv/counterfactual.py",
+      "mode": "100644",
+      "blob_sha": "9359c5fd183b490c118508b5e95d6bb208d511ca"
+    },
+    {
+      "path": "trajflow_kv/credit_diagnostics.py",
+      "mode": "100644",
+      "blob_sha": "acd5f37aab1b41fcb36b55799f89572056e6de2f"
+    },
+    {
+      "path": "trajflow_kv/critic.py",
+      "mode": "100644",
+      "blob_sha": "769bcc854ad61cd018918ec5424af4e437dc7363"
+    },
+    {
+      "path": "trajflow_kv/data.py",
+      "mode": "100644",
+      "blob_sha": "430462ffa88322342a1349931ca302e932b19977"
+    },
+    {
+      "path": "trajflow_kv/forks.py",
+      "mode": "100644",
+      "blob_sha": "bdf6814ffe728268d16f61d9bfa650ca6afd0fe2"
+    },
+    {
+      "path": "trajflow_kv/mind2web.py",
+      "mode": "100644",
+      "blob_sha": "0df588016a6a9c068412fdb8155ee3c3d8e3faaf"
+    },
+    {
+      "path": "trajflow_kv/miniwob.py",
+      "mode": "100644",
+      "blob_sha": "433eb6003399d1fde5225cce48751b403e68fed0"
+    },
+    {
+      "path": "trajflow_kv/objective.py",
+      "mode": "100644",
+      "blob_sha": "12f4fb5d4283e47075d2f4704bfa2d1ddab6b3f4"
+    },
+    {
+      "path": "trajflow_kv/projector.py",
+      "mode": "100644",
+      "blob_sha": "d82c35a9186f6059989465b0e69b01145eb66086"
+    },
+    {
+      "path": "trajflow_kv/qwen_policy.py",
+      "mode": "100644",
+      "blob_sha": "5fb3b0b2663a82f3b5a37bf01f8dcecc0e2d3bd1"
+    },
+    {
+      "path": "trajflow_kv/rollout.py",
+      "mode": "100644",
+      "blob_sha": "d31b99bc9177f78efd4f058ca9f4afc545430364"
+    },
+    {
+      "path": "trajflow_kv/state_router.py",
+      "mode": "100644",
+      "blob_sha": "74aff1acf94422f24c3368976b9e7ab9a241b6c0"
+    },
+    {
+      "path": "trajflow_kv/statistics.py",
+      "mode": "100644",
+      "blob_sha": "52827997b20f2f471f0dd772f2613afb47d14a38"
+    },
+    {
+      "path": "trajflow_kv/tango_advantage.py",
+      "mode": "100644",
+      "blob_sha": "097d4032d6e4c5e4425d67c7fdace96164388bde"
+    },
+    {
+      "path": "trajflow_kv/train.py",
+      "mode": "100644",
+      "blob_sha": "17c6579cb4dd3551de46e04ab11a69d5a98de4be"
+    },
+    {
+      "path": "trajflow_kv/training_controls.py",
+      "mode": "100644",
+      "blob_sha": "75472c85125cd1f9ad7c642f4e9bb3c2a59df890"
+    },
+    {
+      "path": "trajflow_kv/visual_delayed.py",
+      "mode": "100644",
+      "blob_sha": "a8c1e4c9785877e5910b7f8e6bb3af534271b9a2"
+    }
+  ]
+}

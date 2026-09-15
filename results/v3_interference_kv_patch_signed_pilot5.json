@@ -1,0 +1,1534 @@
+{
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/v3_pilot5_critical.jsonl",
+  "family": "interference_update",
+  "layer_count": 36,
+  "baseline": {
+    "prefixes": 5,
+    "candidate_top1_accuracy": 1.0,
+    "critical_prefixes": 5,
+    "critical_fork_accuracy": 1.0,
+    "families": {
+      "interference_update": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0
+      }
+    }
+  },
+  "conditions": [
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.00343609731644392,
+        "mean_absolute_correct_score_effect": 0.00343609731644392,
+        "memory_sign_accuracy": 0.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.004533328115940094,
+            "margin_effect": 0.1250612512230873,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0019554104655981064,
+            "margin_effect": -8.139759302139282e-07,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.00039658043533563614,
+            "margin_effect": 0.3124451348558068,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.00576183944940567,
+            "margin_effect": 0.12503580003976822,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.004533328115940094,
+            "margin_effect": 0.1250612512230873,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.026210296526551248,
+        "mean_absolute_correct_score_effect": 0.026210296526551248,
+        "memory_sign_accuracy": 0.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.024982493370771408,
+            "margin_effect": 0.5625353865325451,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.04694034531712532,
+            "margin_effect": 0.43750448897480965,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.001328473910689354,
+            "margin_effect": 0.812210088595748,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.03281767666339874,
+            "margin_effect": 0.5625386983156204,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.024982493370771408,
+            "margin_effect": 0.5625353865325451,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": -0.000933755561709404,
+        "mean_absolute_correct_score_effect": 0.001285426691174507,
+        "memory_sign_accuracy": 0.8,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.002273019403219223,
+            "margin_effect": -0.15631597861647606,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.00041436031460762024,
+            "margin_effect": -1.0658055543899536e-05,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0008791778236627579,
+            "margin_effect": -0.09401189349591732,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0005875565111637115,
+            "margin_effect": -0.03126797452569008,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.002273019403219223,
+            "margin_effect": -0.15631597861647606,
+            "predicted_sign": -1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.004503929615020752,
+        "mean_absolute_correct_score_effect": 0.004503929615020752,
+        "memory_sign_accuracy": 0.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0056760795414447784,
+            "margin_effect": 0.25007085874676704,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.008517690002918243,
+            "margin_effect": 0.12499935179948807,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0008243024349212646,
+            "margin_effect": 0.21856555342674255,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0018254965543746948,
+            "margin_effect": 0.0625172108411789,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0056760795414447784,
+            "margin_effect": 0.25007085874676704,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.022545172087848186,
+        "mean_absolute_correct_score_effect": 0.022545172087848186,
+        "memory_sign_accuracy": 0.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.021598462015390396,
+            "margin_effect": 0.5312365926802158,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.016410265117883682,
+            "margin_effect": 0.18732497468590736,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0012041954323649406,
+            "margin_effect": 0.9059615759178996,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.05191447585821152,
+            "margin_effect": 0.6562824472784996,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.021598462015390396,
+            "margin_effect": 0.5312365926802158,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": -6.021931767463684e-05,
+        "mean_absolute_correct_score_effect": 0.0009893551468849182,
+        "memory_sign_accuracy": 0.6,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0009914860129356384,
+            "margin_effect": -0.15621402114629745,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0006409641355276108,
+            "margin_effect": -7.068738341331482e-06,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0017300024628639221,
+            "margin_effect": -0.12543150037527084,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0005928371101617813,
+            "margin_effect": -0.06249653361737728,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0009914860129356384,
+            "margin_effect": -0.15621402114629745,
+            "predicted_sign": -1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.004856593534350395,
+        "mean_absolute_correct_score_effect": 0.0051329854875802996,
+        "memory_sign_accuracy": 0.2,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.006484203040599823,
+            "margin_effect": 0.2188456580042839,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.004396989941596985,
+            "margin_effect": 0.03125496208667755,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0006909798830747604,
+            "margin_effect": 0.3127328921109438,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.007608551532030106,
+            "margin_effect": 0.15628238394856453,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.006484203040599823,
+            "margin_effect": 0.2188456580042839,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.024260593205690385,
+        "mean_absolute_correct_score_effect": 0.024260593205690385,
+        "memory_sign_accuracy": 0.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.038784418255090714,
+            "margin_effect": 0.6875525154173374,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.01598009467124939,
+            "margin_effect": 0.2811109721660614,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.002190016210079193,
+            "margin_effect": 0.9994943365454674,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.02556401863694191,
+            "margin_effect": 0.5312810577452183,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.038784418255090714,
+            "margin_effect": 0.6875525154173374,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 0,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": -0.0004970775917172432,
+        "mean_absolute_correct_score_effect": 0.0017101099714636804,
+        "memory_sign_accuracy": 0.6,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0020548487082123756,
+            "margin_effect": -0.15628162864595652,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0014082714915275574,
+            "margin_effect": -0.03126620501279831,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.001541544683277607,
+            "margin_effect": -0.09415156673640013,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": -1,
+            "correct_score_effect": 0.0014910362660884857,
+            "margin_effect": -0.09376553073525429,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": -1,
+            "correct_score_effect": -0.0020548487082123756,
+            "margin_effect": -0.15628162864595652,
+            "predicted_sign": -1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.0017156954854726791,
+        "mean_absolute_correct_score_effect": 0.001993938907980919,
+        "memory_sign_accuracy": 0.8,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.00163225457072258,
+            "margin_effect": 0.03124801442027092,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": -0.0006956085562705994,
+            "margin_effect": 1.5869736671447754e-06,
+            "predicted_sign": -1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.003086686134338379,
+            "margin_effect": -0.09450638294219971,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0029228907078504562,
+            "margin_effect": 1.0250136256217957e-05,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.00163225457072258,
+            "margin_effect": 0.03124801442027092,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 0.6,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 0.6,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 0.6,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 0.6
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.4,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.116959298402071,
+        "mean_absolute_correct_score_effect": 0.116959298402071,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.05254983529448509,
+            "margin_effect": 0.6251009665429592,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.2323543019592762,
+            "margin_effect": 0.9687587358057499,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.04813118278980255,
+            "margin_effect": 1.3943146616220474,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.19921133667230606,
+            "margin_effect": 1.1250405833125114,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.05254983529448509,
+            "margin_effect": 0.6251009665429592,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "k",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.00208879541605711,
+        "mean_absolute_correct_score_effect": 0.00208879541605711,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0006860606372356415,
+            "margin_effect": 0.1250193826854229,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.006198499351739883,
+            "margin_effect": 0.12499741092324257,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.000928499735891819,
+            "margin_effect": 0.2810185933485627,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0019448567181825638,
+            "margin_effect": 0.12499852664768696,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0006860606372356415,
+            "margin_effect": 0.1250193826854229,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.002136562392115593,
+        "mean_absolute_correct_score_effect": 0.002136562392115593,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0013214237987995148,
+            "margin_effect": 5.8300793170928955e-06,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0018891841173171997,
+            "margin_effect": 0.03125293552875519,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0013134069740772247,
+            "margin_effect": 0.062174756079912186,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.004837373271584511,
+            "margin_effect": 4.390254616737366e-06,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0013214237987995148,
+            "margin_effect": 5.8300793170928955e-06,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 0.6,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 0.6,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 0.6,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 0.6
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.4,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.17028625160455704,
+        "mean_absolute_correct_score_effect": 0.17028625160455704,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.07673103734850883,
+            "margin_effect": 0.7500781826674938,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.36183904483914375,
+            "margin_effect": 1.1562683172523975,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.03252074494957924,
+            "margin_effect": 1.3669525124132633,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.3036093935370445,
+            "margin_effect": 1.2500424310564995,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.07673103734850883,
+            "margin_effect": 0.7500781826674938,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "v",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.0035588072612881662,
+        "mean_absolute_correct_score_effect": 0.0035588072612881662,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.003911595791578293,
+            "margin_effect": 0.18752018734812737,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.006996553391218185,
+            "margin_effect": 0.09374414011836052,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.00011327583342790604,
+            "margin_effect": 0.12498810607939959,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.002861015498638153,
+            "margin_effect": 0.031248800456523895,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.003911595791578293,
+            "margin_effect": 0.18752018734812737,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.0027655329555273055,
+        "mean_absolute_correct_score_effect": 0.0027655329555273055,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.002940293401479721,
+            "margin_effect": 1.0486692190170288e-05,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0032200291752815247,
+            "margin_effect": 0.06250578910112381,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0022333208471536636,
+            "margin_effect": -0.09428257308900356,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0024937279522418976,
+            "margin_effect": 1.1809170246124268e-06,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.002940293401479721,
+            "margin_effect": 1.0486692190170288e-05,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 0.6,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 0.6,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 0.6,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 0.6
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.4,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.14402676075696946,
+        "mean_absolute_correct_score_effect": 0.14402676075696946,
+        "memory_sign_accuracy": 1.0,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.06134646013379097,
+            "margin_effect": 0.6875908263027668,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.2880506403744221,
+            "margin_effect": 1.0625085718929768,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.041248027235269547,
+            "margin_effect": 1.396032515913248,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.2681422159075737,
+            "margin_effect": 1.2187902256846428,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.06134646013379097,
+            "margin_effect": 0.6875908263027668,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    },
+    {
+      "image_index": 1,
+      "intervention": "patch",
+      "patch_source_index": 2,
+      "target": "both",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 5,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 5,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "interference_update": {
+            "prefixes": 5,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 5,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0,
+      "signed_score_effects": {
+        "prefixes": 5,
+        "mean_correct_score_effect": 0.0030780158936977386,
+        "mean_absolute_correct_score_effect": 0.003079536557197571,
+        "memory_sign_accuracy": 0.8,
+        "rows": [
+          {
+            "prefix_id": "interference_update-s100-ee2fc0f894",
+            "seed": 100,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0024903789162635803,
+            "margin_effect": 0.1875307336449623,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s101-6a8d990e2b",
+            "seed": 101,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.007318522781133652,
+            "margin_effect": 0.12499835714697838,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s102-faf7458d03",
+            "seed": 102,
+            "ground_truth_sign": 1,
+            "correct_score_effect": -3.8016587495803833e-06,
+            "margin_effect": 0.28125287406146526,
+            "predicted_sign": 0
+          },
+          {
+            "prefix_id": "interference_update-s103-0a2f366c6a",
+            "seed": 103,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0030946005135774612,
+            "margin_effect": 0.09374766238033772,
+            "predicted_sign": 1
+          },
+          {
+            "prefix_id": "interference_update-s104-5ea46d0c7a",
+            "seed": 104,
+            "ground_truth_sign": 1,
+            "correct_score_effect": 0.0024903789162635803,
+            "margin_effect": 0.1875307336449623,
+            "predicted_sign": 1
+          }
+        ]
+      }
+    }
+  ]
+}

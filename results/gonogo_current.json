@@ -1,0 +1,188 @@
+{
+  "status": "single_task_online_go_cross_task_pending",
+  "conclusion": "Return-conditioned KV learning produces a repeatable held-out trajectory-separation signal and a paired online gain on Bluetooth under the same structured action policy. Wi-Fi still fails, so cross-task online validation is not yet complete.",
+  "architecture": {
+    "backbone": "Qwen2.5-VL-3B-Instruct",
+    "target": "V only",
+    "last_n_layers": 8,
+    "rank": 8,
+    "alpha": 8.0,
+    "epochs": 20,
+    "peak_gpu_gib": 11.3658
+  },
+  "data": {
+    "training_trajectories": 41,
+    "training_tasks": 3,
+    "training_successes": 20,
+    "heldout_trajectories": 6,
+    "heldout_tasks": 2,
+    "adaptive_scripted_success": {
+      "SystemBluetoothTurnOn": "4/4",
+      "SystemWifiTurnOff": "5/5 after detector correction"
+    }
+  },
+  "heldout_return_margin": {
+    "initial": 0.1965097303,
+    "return_kv_epoch_20": 0.2598086340,
+    "shuffled_return_epoch_20": 0.1955088403,
+    "successful_action_ce_epoch_20": 0.1874009235,
+    "return_delta_vs_initial": 0.0632989037,
+    "return_delta_vs_shuffled": 0.0642997938,
+    "return_delta_vs_action_ce": 0.0724077105
+  },
+  "heldout_action_ranking": {
+    "steps": 6,
+    "initial": {"top1": 0.5, "mrr": 0.6071428571, "margin": -0.2568987415},
+    "return_kv_epoch_20": {"top1": 0.5, "mrr": 0.625, "margin": -0.2136565124},
+    "shuffled_return_epoch_20": {"top1": 0.5, "mrr": 0.6210317460, "margin": -0.2358597300},
+    "successful_action_ce_epoch_20": {"top1": 0.5, "mrr": 0.6210317460, "margin": -0.2009545847}
+  },
+  "positive_only_action_auxiliary": {
+    "lambda": 0.01,
+    "epochs": 20,
+    "return_margin": 0.2601817833,
+    "top1": 0.5,
+    "mrr": 0.6349206349,
+    "mean_correct_margin": -0.1718801452,
+    "interpretation": "Best joint offline result: preserves return separation and improves ranking, but does not change top-1 decisions."
+  },
+  "fork_and_coordinate_preferences": {
+    "fork_pairs": 65,
+    "synthetic_coordinate_pairs": 126,
+    "best_return_margin": 0.3684685985,
+    "top1": 0.5,
+    "mrr": 0.6722222222,
+    "type_conditioned_top1": 0.8333333333,
+    "type_conditioned_mrr": 0.8888888889,
+    "overfit_control": "Ten click-focused epochs increased return margin to 0.4130 but collapsed Top-1 to 0.1667; rejected by the ranking gate."
+  },
+  "state_router": {
+    "input": "64x64 RGB screenshot, normalized history length, and hashed instruction features",
+    "train_examples": 46,
+    "train_accuracy": 0.9565217391,
+    "heldout_examples": 6,
+    "heldout_accuracy": 0.8333333333,
+    "heldout_click_accuracy": "3/3",
+    "online_status": "Pending rerun after software-emulator rendering/system_server instability; black-screen router probes are excluded."
+  },
+  "low_energy_transport": {
+    "evaluation": "Contemporaneous 10-epoch held-out comparison",
+    "unregularized": {"return_margin": 0.2208706249, "mean_transport_energy": 0.0003004442},
+    "lambda_3000": {"return_margin": 0.2160150197, "mean_transport_energy": 0.0000671636, "top1": 0.5, "mrr": 0.6210317460, "mean_correct_margin": -0.2117515951},
+    "lambda_10000": {"return_margin": 0.2087020434, "mean_transport_energy": 0.0000240002},
+    "lambda_100000": {"return_margin": 0.1855829112, "mean_transport_energy": 0.0000008194},
+    "interpretation": "lambda=3000 reduces measured activation transport energy 4.47x while retaining 97.8% of the unregularized return margin; lambda=100000 is over-regularized."
+  },
+  "critic_guidance_gate": {
+    "system_train_trajectories": 29,
+    "heldout_trajectories": 6,
+    "mlp_critic_heldout_auc_seeds": [0.8125, 0.75, 0.8125],
+    "mlp_issue": "Train AUC=1.0 and held-out probabilities saturate, indicating overfit.",
+    "linear_critic_heldout_auc_seeds": [0.375, 0.625, 0.625],
+    "raw_logprob_heldout_auc": 0.75,
+    "decision": "No-go for critic-guided KV backprop on the current sample. Preserve the implementation, collect substantially more independent trajectories, and do not claim critic improvement."
+  },
+  "flow_sampler_gate": {
+    "model": "Task/screenshot-conditioned rectified flow over four-step structured action chunks",
+    "train_success_trajectories": 11,
+    "heldout_success_trajectories": 2,
+    "samples_per_task": 128,
+    "mean_endpoint_mse": 0.1579961777,
+    "gaussian_mean_mse": 1.1474364996,
+    "mean_bc_mse": {"wifi": 0.0580632314, "bluetooth": 0.0995547920},
+    "projected_best_of_128_mse": {"wifi": 0.0024686565, "bluetooth": 0.0924078152},
+    "decision": "Candidate-coverage go, average-policy no-go. Flow reaches strong best-of-N endpoints after structured projection, but mean samples trail behavior cloning and the current critic cannot reliably select them."
+  },
+  "internalization": {
+    "method": "Exact algebraic folding of each linear KV residual into its underlying V-projection weight and bias; no inference hook.",
+    "merged_layers": 8,
+    "merged_tensors": 16,
+    "hooked_teacher": {"return_margin": 0.3766525348, "top1": 0.5, "mrr": 0.6722222222, "type_conditioned_top1": 0.8333333333, "type_conditioned_mrr": 0.8888888889},
+    "merged_student": {"return_margin": 0.3836079829, "top1": 0.5, "mrr": 0.6722222222, "type_conditioned_top1": 0.8333333333, "type_conditioned_mrr": 0.8888888889},
+    "decision": "Go. Ranking metrics are identical without hooks; the small bf16 margin difference is positive."
+  },
+  "k_vs_v_ablation": {
+    "k_initial_margin": 0.1818198454,
+    "k_return_epoch_10_margin": 0.2368525110,
+    "k_return_delta": 0.0550326656,
+    "v_initial_margin": 0.1835253235,
+    "v_return_epoch_10_margin": 0.2208706249,
+    "v_return_delta": 0.0373453014,
+    "k_after_fork_margin": 0.2818318635,
+    "k_after_fork_mrr": 0.6388888889,
+    "v_after_fork_coordinate_margin": 0.3766525348,
+    "v_after_fork_coordinate_mrr": 0.6722222222,
+    "interpretation": "K learns the larger pure-return separation increment, while V responds more strongly to state/fork/coordinate preference shaping."
+  },
+  "rank_ablation_epoch_10": {
+    "initialization": "SVD reparameterization of the same rank-8 AITW warm-start effective residual",
+    "rank_4": {"return_margin": 0.2093837360, "mean_transport_energy": 0.0000523077, "top1": 0.5, "mrr": 0.6210317460, "mean_correct_margin": -0.2155212741},
+    "rank_8": {"return_margin": 0.2208706249, "mean_transport_energy": 0.0003004442, "top1": 0.5, "mrr": 0.6210317460, "mean_correct_margin": -0.2316913779},
+    "rank_16": {"return_margin": 0.2129268866, "mean_transport_energy": 0.0000365378, "top1": 0.5, "mrr": 0.6210317460, "mean_correct_margin": -0.2125677976},
+    "interpretation": "Rank 8 gives the strongest return separation; rank 16 is saturated on the current sample, and rank 4 is the lower-energy budget option."
+  },
+  "aitw_cross_dataset_retention": {
+    "trajectories": 16,
+    "metric": "overall teacher-forced mean action-token log-probability",
+    "warm_start": -5.9998406470,
+    "androidworld_return_epoch_10": -6.0107172430,
+    "low_energy_lambda_3000": -6.0237765014,
+    "fork_coordinate_checkpoint": -6.1119962037,
+    "interpretation": "Pure return training causes only a 0.18% relative log-prob degradation. Strong fork/coordinate shaping costs about 1.87%. The low-energy setting reduces transport energy but does not outperform unregularized return training on AITW retention."
+  },
+  "mind2web_cross_dataset_ranking": {
+    "source": "Official public train_10 shard; 32 untouched evaluation actions from sports.yahoo, kohls, and travelzoo, with one positive and four seeded negative DOM candidates per action",
+    "base": {"top1": 0.5, "mrr": 0.6765625, "mean_correct_margin": -0.0140187668},
+    "androidworld_return_epoch_10": {"top1": 0.5, "mrr": 0.6765625, "mean_correct_margin": -0.0132385029},
+    "low_energy_lambda_3000": {"top1": 0.46875, "mrr": 0.6609375, "mean_correct_margin": -0.0158976230},
+    "fork_coordinate_merged_student": {"top1": 0.46875, "mrr": 0.6557291667, "mean_correct_margin": -0.0180646428},
+    "interpretation": "The pure return projector preserves base Web element ranking and slightly improves the mean margin, but provides no discrete cross-domain gain. Low-energy and stronger fork/coordinate shaping each regress one of 32 Top-1 decisions. This is a bounded cross-dataset probe, not a Mind2Web benchmark claim."
+  },
+  "miniwob_cross_environment_online": {
+    "runtime": "BrowserGym MiniWoB 0.14.3 with MiniWoB++ commit 7fd85d71a4b60325c6585396ec4f48377d049838",
+    "policy": "Identical screenshot plus accessibility-tree candidate ranking in both arms, with a generic checked-control loop guard",
+    "tasks": ["click-button", "click-button-sequence", "click-tab", "click-checkboxes", "click-option", "click-color"],
+    "paired_episodes": 24,
+    "base_successes": 22,
+    "fork_coordinate_kv_successes": 22,
+    "improved_pairs": 0,
+    "regressed_pairs": 0,
+    "identical_action_episodes": 24,
+    "base_mean_top1_margin": 0.1107958802,
+    "kv_mean_top1_margin": 0.1107153340,
+    "failure_audit": "Both arms fail click-button-sequence seed 403 because Playwright reports button TWO intercepting a click on overlapping button ONE; both also choose the wrong unlabeled colored box on click-color seed 415.",
+    "interpretation": "Online cross-environment no-regression: the Android-trained KV residual preserves browser-task return, but changes no action, provides no success-rate gain, and very slightly decreases aggregate candidate-score margin."
+  },
+  "miniwob_return_training_gate": {
+    "training_data": {"trajectories": 40, "successes": 19, "tasks": ["click-button", "click-button-sequence", "click-tab", "click-color"], "seeds": "501-510"},
+    "heldout_data": {"trajectories": 20, "successes": 5, "seeds": "511-515"},
+    "heldout_return_margin": {
+      "shared_aitw_warm_start": 0.1279193530,
+      "return_weighted": 0.1398944217,
+      "shuffled_return": 0.1264714572,
+      "successful_only_action_ce": 0.1355738173
+    },
+    "online_click_color_seeds_601_630_alpha_16": {
+      "shared_aitw_warm_start": "12/30",
+      "return_weighted": "14/30",
+      "shuffled_return": "13/30",
+      "successful_only_action_ce": "14/30",
+      "return_vs_warm_paired": {"improved": 2, "regressed": 0, "identical_action_episodes": 28},
+      "mean_top1_margin": {"warm": 0.0523772798, "return": 0.0542707813, "shuffled": 0.0525591362, "action_ce": 0.0483351204}
+    },
+    "interpretation": "The return objective passes the held-out offline specificity check and produces a small paired online gain over the shared warm start. It ties successful-only action CE online, so this 30-episode probe is a weak positive but does not establish return-specific or broad cross-task superiority."
+  },
+  "online": {
+    "earlier_open_app_pairs": {"baseline": "6/10", "return_kv": "7/10"},
+    "system_task_free_form": "No successful learned-policy rollout observed, including alpha=8 and eight-step evaluations. The positive-only action auxiliary produced legal JSON (0 invalid actions) but repeated swipe-down for all eight Wi-Fi steps and returned 0.",
+    "candidate_ranking": "Hierarchical type-then-parameter ranking plus a generic loop guard converts the learned coordinate preference into executable actions.",
+    "bluetooth_paired": {
+      "deterministic": {"baseline": "0/1", "return_fork_coordinate_kv": "1/1"},
+      "temperature_0.2_seeds_201_202_203": {"baseline": "0/3", "return_fork_coordinate_kv": "3/3"},
+      "combined": {"baseline": "0/4", "return_fork_coordinate_kv": "4/4"}
+    },
+    "wifi_probe": "A fresh deterministic seed-301 pair with the 64x64 task-conditioned router remained baseline 0/1 versus KV 0/1 (zero invalid actions). Base emitted swipe/click/click/swipe; KV emitted swipe/click/swipe/click. The first swipe rendered the Internet tile correctly, but the subsequent nominal tap returned to the launcher with a long-press menu under software TCG, so this run does not separate policy error from emulator input-timing failure.",
+    "software_emulator_acceptance": "After a cold boot, the previously verified scripted sequence swipe/swipe/click(260,200)/click(870,920) also returned 0 with wifi_on=1. The emulator ActivityController log records ANRs in SystemUI, networkstack, Bluetooth, system_server, phone, and other services. A direct ADB tap reproduced a system-not-responding dialog. Stable KVM is now a mandatory preflight condition for further multi-seed claims.",
+    "go_no_go": "Single-task online gate passed reproducibly; cross-task gate remains pending. Do not claim broad end-to-end success until a learned state router or equivalent structured policy passes Wi-Fi and additional tasks."
+  }
+}

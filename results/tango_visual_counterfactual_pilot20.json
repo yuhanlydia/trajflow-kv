@@ -1,0 +1,15 @@
+{
+  "status": "counterfactual_credit_gate_failed",
+  "benchmark": "tango_visual_delayed_gui",
+  "families": ["distractor_credit", "hidden_memory"],
+  "training": {"seeds": 20, "prefixes": 400, "candidate_rows": 800, "critical_candidate_rows": 140, "screenshots": 400},
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "projector": {"target": "v", "last_n_layers": 8, "rank": 8, "alpha": 8, "epochs": 1},
+  "evaluation": {
+    "shared_warm_start": {"candidate_top1": 0.895, "critical_fork_accuracy": 0.45},
+    "global_return_kv": {"candidate_top1": 0.9175, "critical_fork_accuracy": 0.45, "noncritical_mean_delta": -2.3795621480, "noncritical_mean_absolute_delta": 3.0507364721},
+    "tango_advantage": {"candidate_top1": 0.9175, "critical_fork_accuracy": 0.45, "noncritical_mean_delta": -2.4246330176, "noncritical_mean_absolute_delta": 3.0928614502},
+    "oracle_action_ce": {"candidate_top1": 0.9175, "critical_fork_accuracy": 0.45, "noncritical_mean_delta": -1.3833723676, "noncritical_mean_absolute_delta": 1.7077685254}
+  },
+  "interpretation": "All three trained projectors improve aggregate candidate Top-1 over the shared warm start, but none improves critical-fork accuracy. TANGO and global-return are identical on this pilot, and TANGO perturbs non-critical candidate scores more than CE. This is a valid negative credit-localization gate: the protocol and visual VLM training path work, but this data/one-epoch setting does not yet identify delayed causal credit."
+}

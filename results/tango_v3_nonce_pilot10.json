@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-27",
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "family": "nonce_visual_binding",
+  "seeds": 10,
+  "dataset": {"prefixes": 100, "candidate_rows": 210, "critical_prefixes": 10, "critical_rows": 60},
+  "critical_accuracy": 1.0,
+  "decision": "NO-GO: neutral slot actions and nonce OCR codes remain saturated.",
+  "implication": "Difficulty must come from longer interference chains, matched visual distractors, larger candidate sets, and composition/template OOD rather than semantic-label removal alone."
+}

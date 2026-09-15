@@ -1,0 +1,19 @@
+seed: 7
+device: cuda
+epochs: 1
+lr: 0.0001
+rank: 8
+alpha: 0.1
+target: both
+lambda_energy: 0.001
+lambda_orth: 0.01
+lambda_action: 0.0
+model_path: models/Qwen2.5-VL-3B-Instruct
+projector_checkpoint: outputs/qwen-aitw/kv_projectors.pt
+data_path: data/androidworld/open_app_rollouts.jsonl
+output_dir: outputs/qwen-androidworld-return
+# 16 GiB GPUs need a smaller activation budget for backward through all 72
+# hooked K/V projections. Inference collection can retain the larger default.
+max_pixels: 200704
+gradient_accumulation_steps: 8
+toy: false

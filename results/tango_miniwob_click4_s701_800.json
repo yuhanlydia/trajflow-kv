@@ -1,0 +1,36 @@
+{
+  "status": "online_gate_failed",
+  "benchmark": "BrowserGym MiniWoB 0.14.3",
+  "paired_cases": 400,
+  "tasks": ["click-color", "click-button", "click-button-sequence", "click-tab"],
+  "seeds": "701-800",
+  "alpha": 16,
+  "successes": {
+    "base": 329,
+    "shared_warm_start": 330,
+    "return_weighted": 330,
+    "successful_only_action_ce": 333,
+    "shuffled_return": 328
+  },
+  "per_task_successes": {
+    "base": {"click-button": 97, "click-button-sequence": 90, "click-color": 42, "click-tab": 100},
+    "shared_warm_start": {"click-button": 97, "click-button-sequence": 90, "click-color": 43, "click-tab": 100},
+    "return_weighted": {"click-button": 97, "click-button-sequence": 90, "click-color": 43, "click-tab": 100},
+    "successful_only_action_ce": {"click-button": 97, "click-button-sequence": 90, "click-color": 46, "click-tab": 100},
+    "shuffled_return": {"click-button": 97, "click-button-sequence": 90, "click-color": 41, "click-tab": 100}
+  },
+  "paired_tests": {
+    "return_vs_base": {"delta": 0.0025, "ci95": [0.0, 0.0075], "improved": 3, "regressed": 2, "mcnemar_p": 1.0},
+    "return_vs_warm": {"delta": 0.0, "ci95": [0.0, 0.0], "improved": 2, "regressed": 2, "mcnemar_p": 1.0},
+    "return_vs_ce": {"delta": -0.0075, "ci95": [-0.0225, 0.0], "improved": 0, "regressed": 3, "mcnemar_p": 0.25},
+    "return_vs_shuffle": {"delta": 0.005, "ci95": [0.0, 0.015], "improved": 3, "regressed": 1, "mcnemar_p": 0.625}
+  },
+  "mean_top1_margin": {
+    "base": 0.1501688442,
+    "warm": 0.1502295122,
+    "return": 0.1711009738,
+    "action_ce": 0.1471229739,
+    "shuffle": 0.1481007709
+  },
+  "interpretation": "Return weighting raises candidate-score confidence but produces no success gain over the shared warm start and trails successful-only CE by 0.75 percentage points. All discrete differences occur on click-color; three other families are unchanged or saturated. Every confidence interval includes zero and every exact McNemar test is non-significant. This expanded online gate fails, so MiniWoB remains a diagnostic sanity check rather than a positive main result."
+}

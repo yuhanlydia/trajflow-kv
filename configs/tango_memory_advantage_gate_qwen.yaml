@@ -1,0 +1,23 @@
+# Stronger memory-localization optimization; transport remains energy-limited.
+seed: 7
+device: cuda
+epochs: 5
+lr: 0.0001
+gate_lr: 0.001
+rank: 8
+alpha: 8.0
+target: both
+state_conditioned_gate: true
+gate_rank: 16
+gated_layers: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+lambda_energy: 3000.0
+lambda_orth: 0.01
+lambda_memory: 5.0
+memory_advantage_scale: 0.1
+model_path: models/Qwen2.5-VL-3B-Instruct
+counterfactual_data: data/visual_delayed/diagnostics/critical_only.jsonl
+output_dir: outputs/tango/memory_advantage_gate_qwen
+max_pixels: 100352
+gradient_accumulation_steps: 1
+objective: tango
+toy: false

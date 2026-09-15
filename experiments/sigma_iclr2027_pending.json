@@ -37,7 +37,9 @@
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
       "dependencies": [],
-      "manuscript_targets": ["app:protocol"],
+      "manuscript_targets": [
+        "app:protocol"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/S00",
       "command_argv": null,
@@ -48,8 +50,13 @@
       "title": "数据冻结与外部迁移切分",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["S00"],
-      "manuscript_targets": ["sec:experiments", "app:protocol"],
+      "dependencies": [
+        "S00"
+      ],
+      "manuscript_targets": [
+        "sec:experiments",
+        "app:protocol"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E01",
       "command_argv": null,
@@ -60,8 +67,13 @@
       "title": "部署与 GPU 接口 smoke（不是重复因果发现）",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["S00", "E01"],
-      "manuscript_targets": ["app:protocol"],
+      "dependencies": [
+        "S00",
+        "E01"
+      ],
+      "manuscript_targets": [
+        "app:protocol"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E02",
       "command_argv": null,
@@ -72,8 +84,13 @@
       "title": "正式 teacher labels：可迁移的 clean donor 信号",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E02"],
-      "manuscript_targets": ["sec:utility", "app:protocol"],
+      "dependencies": [
+        "E02"
+      ],
+      "manuscript_targets": [
+        "sec:utility",
+        "app:protocol"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E03",
       "command_argv": null,
@@ -84,8 +101,13 @@
       "title": "冻结骨干的 SIGMA 正式训练与主对照",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E03"],
-      "manuscript_targets": ["sec:baselines", "app:loss"],
+      "dependencies": [
+        "E03"
+      ],
+      "manuscript_targets": [
+        "sec:baselines",
+        "app:loss"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E04",
       "command_argv": null,
@@ -96,15 +118,28 @@
       "title": "MemGUI-Bench真实主性能表",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:real", "F4"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:real",
+        "F4"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E05",
       "command_argv": null,
       "code_status_note": "Resolve and test an actual entrypoint in S00; plan presence does not imply implementation.",
       "task_count": 128,
-      "training_seeds": [11, 23, 37],
-      "evaluation_seeds": [101, 202, 303],
+      "training_seeds": [
+        11,
+        23,
+        37
+      ],
+      "evaluation_seeds": [
+        101,
+        202,
+        303
+      ],
       "planned_episodes_per_learned_arm": 1152,
       "planned_base_episodes": 384,
       "requires_native_runtime": true
@@ -114,15 +149,29 @@
       "title": "AndroidWorld真实移动端迁移",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:real", "F4", "F8"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:real",
+        "F4",
+        "F8"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E06",
       "command_argv": null,
       "code_status_note": "Resolve and test an actual entrypoint in S00; plan presence does not imply implementation.",
       "task_count": 116,
-      "training_seeds": [11, 23, 37],
-      "evaluation_seeds": [101, 202, 303],
+      "training_seeds": [
+        11,
+        23,
+        37
+      ],
+      "evaluation_seeds": [
+        101,
+        202,
+        303
+      ],
       "planned_episodes_per_learned_arm": 1044,
       "planned_base_episodes": 348,
       "requires_native_runtime": true
@@ -132,15 +181,29 @@
       "title": "WorkArena++真实浏览器迁移",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:real", "F4", "F8"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:real",
+        "F4",
+        "F8"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E07",
       "command_argv": null,
       "code_status_note": "Resolve and test an actual entrypoint in S00; plan presence does not imply implementation.",
       "task_count": 200,
-      "training_seeds": [11, 23, 37],
-      "evaluation_seeds": [101, 202, 303],
+      "training_seeds": [
+        11,
+        23,
+        37
+      ],
+      "evaluation_seeds": [
+        101,
+        202,
+        303
+      ],
       "planned_episodes_per_learned_arm": 1800,
       "planned_base_episodes": 600,
       "requires_native_runtime": true
@@ -150,8 +213,13 @@
       "title": "Credit符号、额外容量和简单记忆策略对照",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:ablation", "F5"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:ablation",
+        "F5"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E08",
       "command_argv": null,
@@ -162,8 +230,14 @@
       "title": "Controller结构和损失消融",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:ablation", "F5", "F7"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:ablation",
+        "F5",
+        "F7"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E09",
       "command_argv": null,
@@ -174,8 +248,13 @@
       "title": "KV目标、层与rank",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["tab:ablation", "F5"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "tab:ablation",
+        "F5"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E10",
       "command_argv": null,
@@ -186,8 +265,15 @@
       "title": "Donor稳健性、绝对中性与符号泛化",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E03"],
-      "manuscript_targets": ["app:protocol", "F3", "F5", "F6"],
+      "dependencies": [
+        "E03"
+      ],
+      "manuscript_targets": [
+        "app:protocol",
+        "F3",
+        "F5",
+        "F6"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E11",
       "command_argv": null,
@@ -198,8 +284,14 @@
       "title": "非recency捷径、长历史与OOD",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["sec:ablation", "F5", "F6"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "sec:ablation",
+        "F5",
+        "F6"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E12",
       "command_argv": null,
@@ -210,8 +302,14 @@
       "title": "从局部score到真实future return的验证",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E02", "E03"],
-      "manuscript_targets": ["app:protocol", "F6"],
+      "dependencies": [
+        "E02",
+        "E03"
+      ],
+      "manuscript_targets": [
+        "app:protocol",
+        "F6"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E13",
       "command_argv": null,
@@ -222,8 +320,14 @@
       "title": "Energy、保留性、效率和失败分析",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["sec:distillation", "F7", "F8"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "sec:distillation",
+        "F7",
+        "F8"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E14",
       "command_argv": null,
@@ -234,8 +338,14 @@
       "title": "同模型no-hook policy distillation（有条件后做）",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E04"],
-      "manuscript_targets": ["sec:distillation", "app:loss", "F7"],
+      "dependencies": [
+        "E04"
+      ],
+      "manuscript_targets": [
+        "sec:distillation",
+        "app:loss",
+        "F7"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E15",
       "command_argv": null,
@@ -247,8 +357,16 @@
       "title": "模型规模复制",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E02", "E04"],
-      "manuscript_targets": ["sec:experiments", "app:protocol", "F4", "F7"],
+      "dependencies": [
+        "E02",
+        "E04"
+      ],
+      "manuscript_targets": [
+        "sec:experiments",
+        "app:protocol",
+        "F4",
+        "F7"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E16",
       "command_argv": null,
@@ -259,8 +377,14 @@
       "title": "主表、消融、图与提交前结果闭环",
       "status": "NOT_RUN",
       "implementation_status": "AUDIT_REQUIRED",
-      "dependencies": ["E01"],
-      "manuscript_targets": ["tab:real", "tab:ablation", "app:evidence"],
+      "dependencies": [
+        "E01"
+      ],
+      "manuscript_targets": [
+        "tab:real",
+        "tab:ablation",
+        "app:evidence"
+      ],
       "protocol_file": "docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md",
       "artifact_root": "results/sigma/E17",
       "command_argv": null,
@@ -270,17 +394,19 @@
   ],
   "publication_status": {
     "delivery_mode": "repository_files",
-    "scope": "pending experiment plans and README; no training-code changes or new results"
+    "scope": "Pending experiment plans plus migrated legacy source, configs, tests, and committed results; no new experiment results."
   },
   "source_repository": {
     "repository": "Yunbo-max/trajflow-kv",
     "previously_observed_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7",
-    "purpose": "provenance for original code; not the write target"
+    "purpose": "provenance for original code; not the write target",
+    "migrated_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7"
   },
   "repository_bootstrap": {
     "target_was_empty_before_this_upload": true,
-    "code_migrated_in_this_commit": false,
+    "code_migrated_in_this_commit": true,
     "required_stage": "S00",
-    "note": "This upload contains plans and README only. Import original code and apply the previously delivered code overlay, then reconcile with manuscript settings before running."
+    "note": "Original tracked source and full reachable Git history imported; code overlay and manuscript alignment still require S00. No experiments rerun.",
+    "source_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7"
   }
 }

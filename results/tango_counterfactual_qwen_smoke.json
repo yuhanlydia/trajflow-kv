@@ -1,0 +1,13 @@
+{
+  "benchmark": "tango_delayed_gui_toy",
+  "rows": 93,
+  "model": "Qwen2.5-VL-3B-Instruct",
+  "projector": "V-only, last 8 layers, rank 8, alpha 8",
+  "objectives": {
+    "tango": {"completed": true, "final_loss": -0.4479504228},
+    "global_return": {"completed": true, "final_loss": -0.9167256951},
+    "ce": {"completed": true, "final_loss": 0.1541420966}
+  },
+  "peak_memory_note": "The objectives were run serially after a deliberate concurrent-run OOM; no method failure occurred.",
+  "interpretation": "All three objectives execute through Qwen teacher-forced candidate scoring, temporary K/V hooks, and backward on the 3B model. This validates the real-VLM training path, but it is a text-only toy smoke test and has no benchmark success claim."
+}

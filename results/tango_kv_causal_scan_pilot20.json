@@ -1,0 +1,982 @@
+{
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/diagnostics/critical_only.jsonl",
+  "family": "hidden_memory",
+  "layer_count": 36,
+  "baseline": {
+    "prefixes": 20,
+    "candidate_top1_accuracy": 1.0,
+    "critical_prefixes": 20,
+    "critical_fork_accuracy": 1.0,
+    "families": {
+      "hidden_memory": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0
+      }
+    }
+  },
+  "conditions": [
+    {
+      "image_index": 0,
+      "target": "k",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 0,
+      "target": "k",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 0,
+      "target": "k",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 0,
+      "target": "k",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 0,
+      "target": "v",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 0,
+      "target": "v",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.65,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.65,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.65,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.65
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.35
+    },
+    {
+      "image_index": 0,
+      "target": "v",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 0,
+      "target": "v",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 0,
+      "target": "both",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 0,
+      "target": "both",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.65,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.65,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.65,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.65
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.35
+    },
+    {
+      "image_index": 0,
+      "target": "both",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 0,
+      "target": "both",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 1,
+      "target": "k",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.35,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.35,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.35,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.35
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.65
+    },
+    {
+      "image_index": 1,
+      "target": "k",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "k",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "k",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 0.65,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 0.65,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 0.65,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 0.65
+          }
+        }
+      },
+      "critical_accuracy_delta": -0.35
+    },
+    {
+      "image_index": 1,
+      "target": "v",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "v",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "v",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "v",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "both",
+      "layer_group": "early",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "both",
+      "layer_group": "middle",
+      "layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "both",
+      "layer_group": "late",
+      "layers": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    },
+    {
+      "image_index": 1,
+      "target": "both",
+      "layer_group": "all",
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "evaluation": {
+        "prefixes": 20,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0,
+        "families": {
+          "hidden_memory": {
+            "prefixes": 20,
+            "candidate_top1_accuracy": 1.0,
+            "critical_prefixes": 20,
+            "critical_fork_accuracy": 1.0
+          }
+        }
+      },
+      "critical_accuracy_delta": 0.0
+    }
+  ]
+}

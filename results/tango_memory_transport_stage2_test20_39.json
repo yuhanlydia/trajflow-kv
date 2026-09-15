@@ -1,0 +1,5564 @@
+{
+  "model": "models/Qwen2.5-VL-3B-Instruct",
+  "data": "data/visual_delayed/test20_39.jsonl",
+  "checkpoint": "outputs/tango/memory_transport_stage2_e5_pilot20/kv_projectors.pt",
+  "baseline_checkpoint": null,
+  "compare_zero": true,
+  "rank": 8,
+  "alpha": 8.0,
+  "target": "both",
+  "last_n_layers": 8,
+  "drop_history_index": null,
+  "state_conditioned_gate": true,
+  "gated_layers": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "evaluation": {
+    "prefixes": 420,
+    "candidate_top1_accuracy": 0.9857142857142858,
+    "critical_prefixes": 60,
+    "critical_fork_accuracy": 1.0,
+    "families": {
+      "distractor_credit": {
+        "prefixes": 300,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 40,
+        "critical_fork_accuracy": 1.0
+      },
+      "hidden_memory": {
+        "prefixes": 120,
+        "candidate_top1_accuracy": 0.95,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0
+      }
+    }
+  },
+  "memory_gate_summary": {
+    "distractor_credit|noncritical|history_0": {
+      "prefixes": 240,
+      "mean_gate": 0.41783545911312103
+    },
+    "distractor_credit|noncritical|history_1": {
+      "prefixes": 240,
+      "mean_gate": 0.1790990506609281
+    },
+    "distractor_credit|noncritical|history_2": {
+      "prefixes": 160,
+      "mean_gate": 0.07804486714303493
+    },
+    "distractor_credit|critical|history_0": {
+      "prefixes": 40,
+      "mean_gate": 0.41684773564338684
+    },
+    "hidden_memory|noncritical|history_0": {
+      "prefixes": 80,
+      "mean_gate": 0.7041160345077515
+    },
+    "hidden_memory|noncritical|history_1": {
+      "prefixes": 60,
+      "mean_gate": 0.03877064387003581
+    },
+    "hidden_memory|noncritical|history_2": {
+      "prefixes": 60,
+      "mean_gate": 0.2892738545934359
+    },
+    "hidden_memory|critical|history_0": {
+      "prefixes": 20,
+      "mean_gate": 0.7051102459430695
+    },
+    "hidden_memory|critical|history_1": {
+      "prefixes": 20,
+      "mean_gate": 0.03585597202181816
+    }
+  },
+  "baseline_evaluation": {
+    "prefixes": 420,
+    "candidate_top1_accuracy": 0.9523809523809523,
+    "critical_prefixes": 60,
+    "critical_fork_accuracy": 1.0,
+    "families": {
+      "distractor_credit": {
+        "prefixes": 300,
+        "candidate_top1_accuracy": 1.0,
+        "critical_prefixes": 40,
+        "critical_fork_accuracy": 1.0
+      },
+      "hidden_memory": {
+        "prefixes": 120,
+        "candidate_top1_accuracy": 0.8333333333333334,
+        "critical_prefixes": 20,
+        "critical_fork_accuracy": 1.0
+      }
+    }
+  },
+  "noncritical_score_change": {
+    "candidates": 680,
+    "mean_delta": -0.004911577504347352,
+    "mean_absolute_delta": 0.016826398911721566,
+    "families": {
+      "distractor_credit": {
+        "candidates": 520,
+        "mean_delta": -0.008148353833418626,
+        "mean_absolute_delta": 0.016905507216086753
+      },
+      "hidden_memory": {
+        "candidates": 160,
+        "mean_delta": 0.005607945565134287,
+        "mean_absolute_delta": 0.016569296922534706
+      }
+    },
+    "rows": [
+      {
+        "prefix_id": "distractor_credit-s20-28b493838d",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s20-28b493838d",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s20-7625aad409",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s20-7625aad409",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s20-8531566c14",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s20-8531566c14",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s20-706bf3cc61",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s20-706bf3cc61",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s20-602db8b9ba",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s20-602db8b9ba",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s20-b194307c23",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s20-b194307c23",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s20-fed232829a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s20-fed232829a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s20-6887cfb309",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s20-6887cfb309",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s20-1a39291567",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s20-1a39291567",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s20-4302bd9012",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s20-4302bd9012",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s20-534d89ce11",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s20-534d89ce11",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s20-106da69f9a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s20-106da69f9a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s20-1d1518fac4",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s20-1d1518fac4",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s21-b9039672d8",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s21-b9039672d8",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s21-783e031905",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s21-783e031905",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s21-9e674350b5",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s21-9e674350b5",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s21-2fea75e495",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s21-2fea75e495",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s21-6a2146b426",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s21-6a2146b426",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s21-43647a5bcf",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s21-43647a5bcf",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s21-422a15d892",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s21-422a15d892",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s21-08391cf34b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s21-08391cf34b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s21-4165258c89",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s21-4165258c89",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s21-2954be6050",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s21-2954be6050",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s21-eec0dab612",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s21-eec0dab612",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s21-b7aed87be9",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s21-b7aed87be9",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s21-29889f3547",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s21-29889f3547",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s22-47c5ccd200",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s22-47c5ccd200",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s22-9d69d7b673",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s22-9d69d7b673",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s22-a644560eca",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s22-a644560eca",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s22-a758188bd9",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s22-a758188bd9",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s22-f5781b6cf2",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s22-f5781b6cf2",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s22-5759173b27",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s22-5759173b27",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s22-dde9e9de36",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s22-dde9e9de36",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s22-0573e388e1",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s22-0573e388e1",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s22-10092862ed",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s22-10092862ed",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s22-4042548c5c",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s22-4042548c5c",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s22-3a00fa49ff",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s22-3a00fa49ff",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s22-be3aecdce1",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s22-be3aecdce1",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s22-0907d35a8f",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s22-0907d35a8f",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s23-9cc06bbd7b",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s23-9cc06bbd7b",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s23-caf79d1345",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s23-caf79d1345",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s23-87ebc0288c",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s23-87ebc0288c",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s23-5a1fb730f0",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s23-5a1fb730f0",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s23-8928a345d3",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s23-8928a345d3",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s23-45cccc88fb",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s23-45cccc88fb",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s23-702a15b64e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s23-702a15b64e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s23-eabd610533",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s23-eabd610533",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s23-a20cb38e54",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s23-a20cb38e54",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s23-a684e974dc",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s23-a684e974dc",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s23-72bf8ae081",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s23-72bf8ae081",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s23-42c2f5ec7d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s23-42c2f5ec7d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s23-db76366281",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s23-db76366281",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s24-827b531f06",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s24-827b531f06",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s24-799e20d9f5",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s24-799e20d9f5",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s24-f0db19fa03",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s24-f0db19fa03",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s24-770b7f0da6",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s24-770b7f0da6",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s24-5221da9c2a",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s24-5221da9c2a",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s24-56f131405e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s24-56f131405e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s24-02b2402a16",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s24-02b2402a16",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s24-3eb25c9c29",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s24-3eb25c9c29",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s24-e9037f6ede",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s24-e9037f6ede",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s24-2d3936060e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s24-2d3936060e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s24-8ae4ae6804",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s24-8ae4ae6804",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s24-621044bb03",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s24-621044bb03",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s24-65a934f0bf",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s24-65a934f0bf",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s25-3731b16537",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s25-3731b16537",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s25-cae76898f9",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s25-cae76898f9",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s25-95ca6d57d2",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s25-95ca6d57d2",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s25-2cea0c6579",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s25-2cea0c6579",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s25-e722346c0f",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s25-e722346c0f",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s25-d7dc85cd1d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s25-d7dc85cd1d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s25-485c717b30",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s25-485c717b30",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s25-721eb2c5ff",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s25-721eb2c5ff",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s25-f7b08b54cc",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s25-f7b08b54cc",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s25-69ff4c86c9",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s25-69ff4c86c9",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s25-5cca98cafe",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s25-5cca98cafe",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s25-ceb97cc632",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s25-ceb97cc632",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s25-ffbd15ce3f",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s25-ffbd15ce3f",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s26-cb9fcc988b",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s26-cb9fcc988b",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s26-4757508758",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s26-4757508758",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f1ba5c98c3",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f1ba5c98c3",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s26-66b4c73717",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s26-66b4c73717",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s26-abcc474dbb",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s26-abcc474dbb",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s26-4283fa135a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s26-4283fa135a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s26-59d595b6ae",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s26-59d595b6ae",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s26-456d1554a3",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s26-456d1554a3",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s26-2eb8d64083",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s26-2eb8d64083",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f29f804286",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f29f804286",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f251410529",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s26-f251410529",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s26-bd47c11095",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s26-bd47c11095",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s26-7399d46603",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s26-7399d46603",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s27-6cdd645512",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s27-6cdd645512",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s27-2a8ea410bc",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s27-2a8ea410bc",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s27-6933dfdcf2",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s27-6933dfdcf2",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s27-5a2605af65",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s27-5a2605af65",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s27-89170c4992",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s27-89170c4992",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s27-1079363e69",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s27-1079363e69",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s27-8be8eb68df",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s27-8be8eb68df",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s27-5dd9916c3b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s27-5dd9916c3b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s27-e11ce4e3ed",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s27-e11ce4e3ed",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s27-4288a9f41c",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s27-4288a9f41c",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s27-04b4ad4407",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s27-04b4ad4407",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s27-d1ccb0b33e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s27-d1ccb0b33e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s27-fe15c574ee",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s27-fe15c574ee",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s28-cf42b08bb9",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s28-cf42b08bb9",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s28-810062ae4d",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s28-810062ae4d",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s28-79fb2a3be0",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s28-79fb2a3be0",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s28-84cd4ac4c1",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s28-84cd4ac4c1",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0f0ac754f3",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0f0ac754f3",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0378fbcc48",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0378fbcc48",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s28-e3ad0c0f0c",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s28-e3ad0c0f0c",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s28-a4a01035b5",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s28-a4a01035b5",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s28-7a9a4a242d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s28-7a9a4a242d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s28-1ebfddc911",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s28-1ebfddc911",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s28-f655350f0e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s28-f655350f0e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0be7248816",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s28-0be7248816",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s28-d08196a44d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s28-d08196a44d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s29-631014c175",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s29-631014c175",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s29-adfbc085e3",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s29-adfbc085e3",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s29-65c7007915",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s29-65c7007915",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s29-332f198aef",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s29-332f198aef",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s29-394162858a",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s29-394162858a",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b880de80cf",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b880de80cf",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s29-bd1e8c44ef",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s29-bd1e8c44ef",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s29-ac05114acc",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s29-ac05114acc",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s29-8dad586df2",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s29-8dad586df2",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s29-d4300d7d79",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s29-d4300d7d79",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b77400ad3c",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b77400ad3c",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b7a23ddff7",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s29-b7a23ddff7",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s29-97938ed663",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s29-97938ed663",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s30-be6f6e918c",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s30-be6f6e918c",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s30-8d55c7c6c4",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s30-8d55c7c6c4",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s30-ba15e3007d",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s30-ba15e3007d",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s30-6be0eee326",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s30-6be0eee326",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s30-380a279270",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s30-380a279270",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s30-1db4712bf9",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s30-1db4712bf9",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s30-d41b0301e7",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s30-d41b0301e7",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s30-c194a8f8f5",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s30-c194a8f8f5",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s30-296bcc0a7a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s30-296bcc0a7a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s30-1b44344b13",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s30-1b44344b13",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s30-a5e43663ba",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s30-a5e43663ba",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s30-2f81ab8e9e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s30-2f81ab8e9e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s30-c8e883dd51",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s30-c8e883dd51",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s31-48426a7706",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s31-48426a7706",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s31-95d982cce4",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s31-95d982cce4",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s31-bc28524e94",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s31-bc28524e94",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ba534853c9",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ba534853c9",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2eff59bd31",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2eff59bd31",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s31-998ba77053",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s31-998ba77053",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2959d0df8d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2959d0df8d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s31-59ee557c19",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s31-59ee557c19",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ee8575c16e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ee8575c16e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ddbc521d34",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ddbc521d34",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ea7062acc4",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s31-ea7062acc4",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2529f1150b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s31-2529f1150b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s31-7b28a9a413",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s31-7b28a9a413",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s32-8d29f4d0c5",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s32-8d29f4d0c5",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s32-9545d85837",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s32-9545d85837",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f1de0e4103",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f1de0e4103",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s32-cdc2368357",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s32-cdc2368357",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s32-05c334ae82",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s32-05c334ae82",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s32-02d0444d29",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s32-02d0444d29",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s32-be89f77163",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s32-be89f77163",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f796f6a8d4",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f796f6a8d4",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s32-d2f37c90c5",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s32-d2f37c90c5",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s32-e6893fe6df",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s32-e6893fe6df",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s32-2a92e70d4b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s32-2a92e70d4b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f8f6544ec1",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s32-f8f6544ec1",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s32-1aa8e37665",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s32-1aa8e37665",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s33-b4e1f633e0",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s33-b4e1f633e0",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s33-0e0015ef5b",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s33-0e0015ef5b",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s33-3aef8ea9e7",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s33-3aef8ea9e7",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s33-677569f89f",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s33-677569f89f",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s33-bacc1aa94a",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s33-bacc1aa94a",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s33-d265110a09",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s33-d265110a09",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s33-57eabae038",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s33-57eabae038",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s33-369d14dc0d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s33-369d14dc0d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s33-15b651d78d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s33-15b651d78d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s33-035bcd1b24",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s33-035bcd1b24",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s33-04ced209bd",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s33-04ced209bd",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s33-7e2553ac65",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s33-7e2553ac65",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s33-5033a2ea8f",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s33-5033a2ea8f",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ef8d318450",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ef8d318450",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s34-3b390fe97a",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s34-3b390fe97a",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s34-5d90ebe4b0",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s34-5d90ebe4b0",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s34-6de1aab64f",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s34-6de1aab64f",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s34-7edee5e401",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s34-7edee5e401",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s34-90d6373da2",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s34-90d6373da2",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s34-e4929177c0",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s34-e4929177c0",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s34-0b67962cce",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s34-0b67962cce",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s34-bd44540073",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s34-bd44540073",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ec2a0ee457",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ec2a0ee457",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s34-b2f7b61987",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s34-b2f7b61987",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ada49f5715",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s34-ada49f5715",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s34-a9295d8f05",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s34-a9295d8f05",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s35-27d729d212",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s35-27d729d212",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s35-87c609c060",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s35-87c609c060",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s35-24ec28a732",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s35-24ec28a732",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s35-87fd6b70c6",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s35-87fd6b70c6",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s35-9f971204ad",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s35-9f971204ad",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s35-82b552ac1e",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s35-82b552ac1e",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s35-ea740e3fb2",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s35-ea740e3fb2",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s35-9c67433ae3",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s35-9c67433ae3",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s35-7c8d7fa931",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s35-7c8d7fa931",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s35-0967396f79",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s35-0967396f79",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s35-3168b9fb1a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s35-3168b9fb1a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s35-ea34533a62",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s35-ea34533a62",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s35-246b6e50bb",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s35-246b6e50bb",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0a5eae2e58",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0a5eae2e58",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s36-29256d6344",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s36-29256d6344",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s36-1a8e9745cd",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s36-1a8e9745cd",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s36-b19fbfe699",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s36-b19fbfe699",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s36-53d690c485",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s36-53d690c485",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0232b94ff8",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0232b94ff8",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s36-a0c70d82e6",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s36-a0c70d82e6",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s36-b65bd9dd49",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s36-b65bd9dd49",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s36-1ee7113520",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s36-1ee7113520",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s36-8642f8c721",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s36-8642f8c721",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s36-d1854cd943",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s36-d1854cd943",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0aafa8a75a",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s36-0aafa8a75a",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s36-e643bdcebb",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s36-e643bdcebb",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s37-839a868902",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s37-839a868902",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s37-24ba846f42",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s37-24ba846f42",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s37-8dcfed3cd2",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s37-8dcfed3cd2",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s37-625e93430e",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s37-625e93430e",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s37-00676e486c",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s37-00676e486c",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s37-f9ee959181",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s37-f9ee959181",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s37-3040d607cb",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s37-3040d607cb",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s37-8d2c2242ab",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s37-8d2c2242ab",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s37-518496ba3d",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s37-518496ba3d",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s37-7eab8889e0",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s37-7eab8889e0",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s37-aa745fa310",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s37-aa745fa310",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s37-7554e1587b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s37-7554e1587b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s37-9157e0eef7",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s37-9157e0eef7",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s38-af6322876c",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.03873251751065254,
+        "target_score": -0.03873251751065254,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s38-af6322876c",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.8169320821762085,
+        "target_score": -0.8169320821762085,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s38-eb9ccd62a3",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s38-eb9ccd62a3",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s38-02b46dc423",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s38-02b46dc423",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s38-2a11ad81d7",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s38-2a11ad81d7",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s38-6157aa6695",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.08261626213788986,
+        "target_score": -0.08172241598367691,
+        "delta": 0.0008938461542129517
+      },
+      {
+        "prefix_id": "distractor_credit-s38-6157aa6695",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.6090481877326965,
+        "target_score": -0.6079060435295105,
+        "delta": 0.0011421442031860352
+      },
+      {
+        "prefix_id": "distractor_credit-s38-8aa04b6c73",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s38-8aa04b6c73",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s38-559fbff46b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s38-559fbff46b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s38-9dcd65c1eb",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s38-9dcd65c1eb",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s38-92dd20fb72",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s38-92dd20fb72",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s38-015469e3e5",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s38-015469e3e5",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s38-c9dbef3587",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.39714813232421875,
+        "target_score": -0.3684525489807129,
+        "delta": 0.02869558334350586
+      },
+      {
+        "prefix_id": "distractor_credit-s38-c9dbef3587",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6054996848106384,
+        "target_score": -0.6601266860961914,
+        "delta": -0.05462700128555298
+      },
+      {
+        "prefix_id": "distractor_credit-s38-a098853358",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s38-a098853358",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s38-f9faf39f4f",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4770532548427582,
+        "target_score": -0.502750039100647,
+        "delta": -0.025696784257888794
+      },
+      {
+        "prefix_id": "distractor_credit-s38-f9faf39f4f",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6437100768089294,
+        "target_score": -0.6277417540550232,
+        "delta": 0.01596832275390625
+      },
+      {
+        "prefix_id": "distractor_credit-s39-f32250d974",
+        "task_family": "distractor_credit",
+        "action": "click_x",
+        "baseline_score": -0.05813957005739212,
+        "target_score": -0.05813957005739212,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s39-f32250d974",
+        "task_family": "distractor_credit",
+        "action": "skip_x",
+        "baseline_score": -0.6486677527427673,
+        "target_score": -0.6486677527427673,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "distractor_credit-s39-66a61186da",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s39-66a61186da",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s39-58fb86d911",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s39-58fb86d911",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s39-f09706f464",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s39-f09706f464",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s39-6ef9d5fc89",
+        "task_family": "distractor_credit",
+        "action": "click_y",
+        "baseline_score": -0.09110758453607559,
+        "target_score": -0.09368225187063217,
+        "delta": -0.0025746673345565796
+      },
+      {
+        "prefix_id": "distractor_credit-s39-6ef9d5fc89",
+        "task_family": "distractor_credit",
+        "action": "skip_y",
+        "baseline_score": -0.5552203059196472,
+        "target_score": -0.5532440543174744,
+        "delta": 0.0019762516021728516
+      },
+      {
+        "prefix_id": "distractor_credit-s39-59206c4109",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s39-59206c4109",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s39-713be43748",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s39-713be43748",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s39-ffa694ae21",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s39-ffa694ae21",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s39-13cf4c876f",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s39-13cf4c876f",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s39-5088a17730",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s39-5088a17730",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s39-fc5a42ca3c",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4322560131549835,
+        "target_score": -0.43468084931373596,
+        "delta": -0.0024248361587524414
+      },
+      {
+        "prefix_id": "distractor_credit-s39-fc5a42ca3c",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.5572309494018555,
+        "target_score": -0.6013442277908325,
+        "delta": -0.04411327838897705
+      },
+      {
+        "prefix_id": "distractor_credit-s39-85d744cab0",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s39-85d744cab0",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "distractor_credit-s39-116b278e7b",
+        "task_family": "distractor_credit",
+        "action": "submit",
+        "baseline_score": -0.4660167396068573,
+        "target_score": -0.4577713906764984,
+        "delta": 0.008245348930358887
+      },
+      {
+        "prefix_id": "distractor_credit-s39-116b278e7b",
+        "task_family": "distractor_credit",
+        "action": "cancel",
+        "baseline_score": -0.6326870322227478,
+        "target_score": -0.6661005616188049,
+        "delta": -0.03341352939605713
+      },
+      {
+        "prefix_id": "hidden_memory-s20-105ce08474",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s20-889dbb8ea8",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s20-7293b330fc",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s20-7293b330fc",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s20-ef0864a125",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s20-ef0864a125",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s20-96477f8ba0",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s20-96477f8ba0",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s21-71a8c8d8fe",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s21-a240bf53f4",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s21-f61ed1b0f9",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s21-f61ed1b0f9",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s21-119354f6f1",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s21-119354f6f1",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s21-76b29279a9",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s21-76b29279a9",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s22-480379d8da",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s22-a6c1ef5d80",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s22-d874f9831a",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s22-d874f9831a",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s22-81ba2f0fa2",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s22-81ba2f0fa2",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s22-581e2e34d9",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s22-581e2e34d9",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s23-031991b324",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s23-059f9e6298",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s23-f09202237d",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s23-f09202237d",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s23-59707823fe",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s23-59707823fe",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s23-0dc89a455a",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s23-0dc89a455a",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s24-f363bb1533",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s24-f9ebe60b75",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s24-9effa0b938",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s24-9effa0b938",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s24-d489ea3a44",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s24-d489ea3a44",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s24-1ea8aa93a1",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s24-1ea8aa93a1",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s25-00dab3e37e",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s25-f823a5c1fd",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s25-5ecce2941c",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s25-5ecce2941c",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s25-249d351508",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s25-249d351508",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s25-634b4ad58e",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s25-634b4ad58e",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s26-a419ef755e",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s26-b4d1489756",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s26-8dc3a5e137",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s26-8dc3a5e137",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s26-ba95f8f359",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s26-ba95f8f359",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s26-9b59149021",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s26-9b59149021",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s27-373434ee62",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s27-2d7785d0e6",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s27-5ae8363824",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s27-5ae8363824",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s27-9274ffcba1",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s27-9274ffcba1",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s27-3e38a1c41f",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s27-3e38a1c41f",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s28-a4774259d1",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s28-4f562f39c1",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s28-2621b935a2",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s28-2621b935a2",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s28-03a4c0c0e6",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s28-03a4c0c0e6",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s28-b72e8c9e41",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s28-b72e8c9e41",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s29-32517a6bb4",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s29-2b4f60e4d6",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s29-b4d31ee5a2",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s29-b4d31ee5a2",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s29-5aad220bb0",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s29-5aad220bb0",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s29-e82d081712",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s29-e82d081712",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s30-448b8ce48c",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s30-cead7a27ca",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s30-d8662bf305",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s30-d8662bf305",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s30-c8808843c9",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s30-c8808843c9",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s30-450dd30bd7",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s30-450dd30bd7",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s31-d17485555f",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s31-9eaaca5607",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s31-a136bce78f",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s31-a136bce78f",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s31-a5f0d6da3a",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s31-a5f0d6da3a",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s31-6ce87903bf",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s31-6ce87903bf",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s32-9b6a23dab5",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s32-583be7ad66",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s32-2e8d5e0573",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s32-2e8d5e0573",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s32-b8359fca49",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s32-b8359fca49",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s32-7429a6cbc6",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s32-7429a6cbc6",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s33-edb4753efc",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s33-ffe90b6a64",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s33-1902cf3d6d",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s33-1902cf3d6d",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s33-2716890fec",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s33-2716890fec",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s33-944cdf8039",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s33-944cdf8039",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s34-ed9ba651c8",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s34-5aae9951f7",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s34-4e52a76f52",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s34-4e52a76f52",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s34-3b43fbad6c",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s34-3b43fbad6c",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s34-058d4b0078",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s34-058d4b0078",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s35-4e6bc74bce",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s35-f84da0eeeb",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s35-51efc20c54",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s35-51efc20c54",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s35-62179d6eba",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s35-62179d6eba",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s35-6dfb4deed2",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s35-6dfb4deed2",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s36-e9895a905c",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s36-1d5fc652de",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s36-126cc67bd7",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s36-126cc67bd7",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s36-5356ac3199",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s36-5356ac3199",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s36-174bb27c87",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s36-174bb27c87",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      },
+      {
+        "prefix_id": "hidden_memory-s37-c51f9b9348",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.604236900806427,
+        "target_score": -0.604236900806427,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s37-aacab598cd",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23926860094070435,
+        "target_score": -0.22597265243530273,
+        "delta": 0.013295948505401611
+      },
+      {
+        "prefix_id": "hidden_memory-s37-9629f26cde",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6225908994674683,
+        "target_score": -0.6155272722244263,
+        "delta": 0.007063627243041992
+      },
+      {
+        "prefix_id": "hidden_memory-s37-9629f26cde",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3309032618999481,
+        "target_score": -0.32386311888694763,
+        "delta": 0.007040143013000488
+      },
+      {
+        "prefix_id": "hidden_memory-s37-e734e1e1d4",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.548097550868988,
+        "target_score": -0.49026820063591003,
+        "delta": 0.057829350233078
+      },
+      {
+        "prefix_id": "hidden_memory-s37-e734e1e1d4",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4231516122817993,
+        "target_score": -0.44864794611930847,
+        "delta": -0.025496333837509155
+      },
+      {
+        "prefix_id": "hidden_memory-s37-9bdd42fbc2",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6112066507339478,
+        "target_score": -0.589363157749176,
+        "delta": 0.02184349298477173
+      },
+      {
+        "prefix_id": "hidden_memory-s37-9bdd42fbc2",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.31959500908851624,
+        "target_score": -0.3393761217594147,
+        "delta": -0.019781112670898438
+      },
+      {
+        "prefix_id": "hidden_memory-s38-cfe7c9900f",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6841086745262146,
+        "target_score": -0.6841086745262146,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s38-4fa0dc1618",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.2324153482913971,
+        "target_score": -0.24378114938735962,
+        "delta": -0.011365801095962524
+      },
+      {
+        "prefix_id": "hidden_memory-s38-a90022900b",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6458905339241028,
+        "target_score": -0.6354312896728516,
+        "delta": 0.01045924425125122
+      },
+      {
+        "prefix_id": "hidden_memory-s38-a90022900b",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3125500977039337,
+        "target_score": -0.3021019399166107,
+        "delta": 0.010448157787322998
+      },
+      {
+        "prefix_id": "hidden_memory-s38-73b1757688",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.678673505783081,
+        "target_score": -0.664595365524292,
+        "delta": 0.014078140258789062
+      },
+      {
+        "prefix_id": "hidden_memory-s38-73b1757688",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.3036821484565735,
+        "target_score": -0.28962406516075134,
+        "delta": 0.014058083295822144
+      },
+      {
+        "prefix_id": "hidden_memory-s38-5cd36b6554",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5306004881858826,
+        "target_score": -0.48033201694488525,
+        "delta": 0.050268471240997314
+      },
+      {
+        "prefix_id": "hidden_memory-s38-5cd36b6554",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4472943842411041,
+        "target_score": -0.4803377687931061,
+        "delta": -0.03304338455200195
+      },
+      {
+        "prefix_id": "hidden_memory-s39-97540e7a3e",
+        "task_family": "hidden_memory",
+        "action": "continue",
+        "baseline_score": -0.6527027487754822,
+        "target_score": -0.6527027487754822,
+        "delta": 0.0
+      },
+      {
+        "prefix_id": "hidden_memory-s39-211c815f75",
+        "task_family": "hidden_memory",
+        "action": "acknowledge",
+        "baseline_score": -0.23479300737380981,
+        "target_score": -0.23592911660671234,
+        "delta": -0.0011361092329025269
+      },
+      {
+        "prefix_id": "hidden_memory-s39-63fd3d76e4",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.5256057381629944,
+        "target_score": -0.4831787347793579,
+        "delta": 0.042427003383636475
+      },
+      {
+        "prefix_id": "hidden_memory-s39-63fd3d76e4",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.4422895610332489,
+        "target_score": -0.4832076132297516,
+        "delta": -0.040918052196502686
+      },
+      {
+        "prefix_id": "hidden_memory-s39-82234027ff",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.6299168467521667,
+        "target_score": -0.6281658411026001,
+        "delta": 0.0017510056495666504
+      },
+      {
+        "prefix_id": "hidden_memory-s39-82234027ff",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.33829525113105774,
+        "target_score": -0.33653518557548523,
+        "delta": 0.0017600655555725098
+      },
+      {
+        "prefix_id": "hidden_memory-s39-f1f9ea38be",
+        "task_family": "hidden_memory",
+        "action": "submit",
+        "baseline_score": -0.583907425403595,
+        "target_score": -0.575698733329773,
+        "delta": 0.008208692073822021
+      },
+      {
+        "prefix_id": "hidden_memory-s39-f1f9ea38be",
+        "task_family": "hidden_memory",
+        "action": "cancel",
+        "baseline_score": -0.37561213970184326,
+        "target_score": -0.36739328503608704,
+        "delta": 0.008218854665756226
+      }
+    ]
+  }
+}
