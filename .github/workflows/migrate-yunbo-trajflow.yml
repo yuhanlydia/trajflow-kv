@@ -1,0 +1,99 @@
+name: Migrate legacy TrajFlow-KV
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/migrate-yunbo-trajflow.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trajflow-legacy-migration
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    if: github.repository == 'yuhanlydia/trajflow-kv'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out destination
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Import pinned source and preserve both histories
+        shell: bash
+        env:
+          SOURCE_SHA: 131014ab50d6bbccff4c5ecb1332679256fa40b7
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch --no-tags https://github.com/Yunbo-max/trajflow-kv.git "$SOURCE_SHA"
+          test "$(git rev-parse FETCH_HEAD)" = "$SOURCE_SHA"
+          if git merge-base --is-ancestor "$SOURCE_SHA" HEAD; then
+            echo 'Pinned source is already present in destination history.'
+            exit 0
+          fi
+          export DESTINATION_BEFORE="$(git rev-parse HEAD)"
+          cp README.md /tmp/sigma-destination-readme.md
+          sha256sum docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md > /tmp/sigma-plan.sha256
+          git merge --allow-unrelated-histories --no-commit -s ours "$SOURCE_SHA"
+          git archive "$SOURCE_SHA" | tar -x
+          mkdir -p docs/migration
+          cp README.md docs/migration/YUNBO_README_ORIGINAL.md
+          cp /tmp/sigma-destination-readme.md docs/migration/SIGMA_README_BEFORE_MIGRATION.md
+          python - <<'PY'
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+          source = os.environ['SOURCE_SHA']
+          destination_before = os.environ['DESTINATION_BEFORE']
+          records = []
+          for entry in subprocess.check_output(['git', 'ls-tree', '-r', '-z', source]).split(b'\0'):
+              if not entry:
+                  continue
+              meta, name = entry.split(b'\t', 1)
+              mode, kind, sha = meta.decode().split()
+              path = name.decode()
+              if kind != 'blob':
+                  raise RuntimeError('Unexpected non-blob source entry: ' + path)
+              actual = subprocess.check_output(['git', 'hash-object', '--no-filters', '--', path], text=True).strip()
+              if actual != sha:
+                  raise RuntimeError('Source content mismatch: ' + path)
+              records.append({'path': path, 'mode': mode, 'blob_sha': sha})
+          readme = Path('README.md').read_text()
+          intro = '''# SIGMA / TrajFlow-KV\n\nCanonical working repository: `yuhanlydia/trajflow-kv`.\n\nThe original tracked code, configuration, tests, and result files from\n`Yunbo-max/trajflow-kv` are imported below, together with their Git history.\nThe source repository has not been changed or deleted.\n\n## SIGMA ICLR 2027 execution\n\n- [Pending experiments, S00 and E01-E17](docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md)\n- [Machine-readable experiment plan](experiments/sigma_iclr2027_pending.json)\n- [Migration manifest](docs/migration/YUNBO_IMPORT.json)\n\nStart with S00 to reconcile the existing implementation and the newer manuscript\nconfiguration. Migration is not evidence that the pending experiments were run.\nModel weights, generated screenshots, local datasets, and uncommitted files were\nnot present in the source Git tree and are not fabricated by this migration.\nThe previously delivered TANGO ICLR code overlay is a separate artifact; this\ncommit imports the legacy repository only.\n\n## Original project documentation\n\n'''
+          Path('README.md').write_text(intro + readme)
+          plan_path = Path('experiments/sigma_iclr2027_pending.json')
+          plan = json.loads(plan_path.read_text())
+          plan['repository_bootstrap']['code_migrated_in_this_commit'] = True
+          plan['repository_bootstrap']['source_commit'] = source
+          plan['repository_bootstrap']['note'] = 'Original tracked source and full reachable Git history imported; code overlay and manuscript alignment still require S00. No experiments rerun.'
+          plan['source_repository']['migrated_commit'] = source
+          plan['publication_status']['scope'] = 'Pending experiment plans plus migrated legacy source, configs, tests, and committed results; no new experiment results.'
+          plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
+          manifest = {
+              'schema': 'sigma.repository_migration.v1',
+              'source_repository': 'Yunbo-max/trajflow-kv',
+              'source_commit': source,
+              'destination_repository': 'yuhanlydia/trajflow-kv',
+              'destination_before_migration': destination_before,
+              'source_history_preserved': True,
+              'source_repository_modified': False,
+              'source_file_count': len(records),
+              'verification': 'All tracked source blobs matched before README integration.',
+              'original_readme_copy': 'docs/migration/YUNBO_README_ORIGINAL.md',
+              'code_overlay_imported': False,
+              'gpu_or_gui_experiments_run': False,
+              'source_files': records,
+          }
+          Path('docs/migration/YUNBO_IMPORT.json').write_text(json.dumps(manifest, indent=2) + '\n')
+          print('Verified source files:', len(records))
+          PY
+          sha256sum --check /tmp/sigma-plan.sha256
+          git add -A
+          git diff --cached --check
+          git commit -m 'Migrate Yunbo-max TrajFlow-KV source and history; retain SIGMA experiment plans'
+          git merge-base --is-ancestor "$SOURCE_SHA" HEAD
+          git push origin HEAD:main
