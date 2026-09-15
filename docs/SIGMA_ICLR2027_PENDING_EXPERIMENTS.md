@@ -183,8 +183,8 @@ shuffled/sign-flipped仅改训练标签，评价仍用独立真实标签；保�
 - E01的Template C untouched test；新nonce、layout、update count、distractor count；历史5/8/12 past screens。
 - 包含latest observation无关、较旧记录仍权威、查询previous value的retrospective任务。任务有效性由任务定义，不由预想gate符号决定。
 - 不更改所有arm共同的可见信息；截断规则固定，不用gold选择保留哪些图。
-- 主指标critical accuracy、native task success、sign macro-F1和harmful detection；分别报告ID与各OOD轴，不把多种OOD混成一个均值。
-- 产物：`results/sigma/E12/ood_summary.csv`、逐prefix与逐task记录；正文 `sec:ablation`，Figure F5/F6。
+- 主指标critical accuracy和受控任务success；真实任务中按预定义memory-heavy标签分层，不按SIGMA获益事后筛选。
+- 产物：`results/sigma/E12/ood_history.csv`，与CE、recency-only、Action Advantage、SIGMA配对；Figure F5/F6。
 
 ### E13 — 从局部score到真实future return的验证
 
