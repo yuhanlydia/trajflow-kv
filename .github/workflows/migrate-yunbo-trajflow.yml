@@ -45,7 +45,7 @@ jobs:
           cp README.md docs/migration/YUNBO_README_ORIGINAL.md
           cp /tmp/sigma-destination-readme.md docs/migration/SIGMA_README_BEFORE_MIGRATION.md
           python - <<'PY'
-          import hashlib, json, os, subprocess
+          import json, os, subprocess
           from pathlib import Path
           source = os.environ['SOURCE_SHA']
           destination_before = os.environ['DESTINATION_BEFORE']
@@ -80,9 +80,10 @@ jobs:
               'destination_repository': 'yuhanlydia/trajflow-kv',
               'destination_before_migration': destination_before,
               'source_history_preserved': True,
+              'source_reachable_commit_count': int(subprocess.check_output(['git', 'rev-list', '--count', source], text=True)),
               'source_repository_modified': False,
               'source_file_count': len(records),
-              'verification': 'All tracked source blobs matched before README integration.',
+              'verification': 'All tracked source blobs matched before README integration; staged blobs and modes checked before commit.',
               'original_readme_copy': 'docs/migration/YUNBO_README_ORIGINAL.md',
               'code_overlay_imported': False,
               'gpu_or_gui_experiments_run': False,
@@ -90,10 +91,25 @@ jobs:
           }
           Path('docs/migration/YUNBO_IMPORT.json').write_text(json.dumps(manifest, indent=2) + '\n')
           print('Verified source files:', len(records))
+          print('Preserved source commits:', manifest['source_reachable_commit_count'])
           PY
           sha256sum --check /tmp/sigma-plan.sha256
           git add -A
-          git diff --cached --check
+          # Legacy files intentionally retain their original trailing blank lines.
+          git diff --cached --check -- README.md docs/migration/YUNBO_IMPORT.json experiments/sigma_iclr2027_pending.json
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          manifest = json.loads(Path('docs/migration/YUNBO_IMPORT.json').read_text())
+          for record in manifest['source_files']:
+              path = record['path']
+              if path == 'README.md':
+                  path = manifest['original_readme_copy']
+              staged = subprocess.check_output(['git', 'ls-files', '--stage', '--', path], text=True).split()
+              if staged[:2] != [record['mode'], record['blob_sha']]:
+                  raise RuntimeError('Staged content/mode mismatch: ' + path)
+          print('All 170 source file contents and modes preserved in the staged tree.')
+          PY
           git commit -m 'Migrate Yunbo-max TrajFlow-KV source and history; retain SIGMA experiment plans'
           git merge-base --is-ancestor "$SOURCE_SHA" HEAD
           git push origin HEAD:main
