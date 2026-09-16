@@ -1,0 +1,39 @@
+# Formal native-GUI PRIMARY profile. Input files must come from real demonstrations.
+# The single demonstration action supplies token SFT, not fake 100% candidate accuracy.
+model: Qwen/Qwen2.5-VL-3B-Instruct
+revision: null  # Resolved hub revision is saved by QwenEngine; pin locally for final runs.
+train: data/sigma_real/train.jsonl
+validation: data/sigma_real/validation.jsonl
+test: data/sigma_real/test.jsonl
+output: outputs/sigma_real_gui
+seeds: [11, 23, 37]
+credit_kind: local_action_logprob
+history_limit: 5
+max_steps: 40
+enable_distillation: false
+methods: [action_sft, memory, unsigned, shuffle_memory, flip_memory, uniform]
+online_manifests:
+  - data/sigma_real/androidworld_test.jsonl
+  - data/sigma_real/browser_test.jsonl
+base:
+  layers: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+  target: k
+  rank: 8
+  alpha: 8.0
+  controller: gru
+  hidden: 256
+  credit_epochs: 5
+  policy_epochs: 5
+  credit_lr: 0.0003
+  policy_lr: 0.0001
+  accumulation: 8
+  # A COMMON cap for all images and methods. Dual per-image budgets are not implemented.
+  max_pixels: 100352
+  max_tokens: 8192
+  lambda_energy: 0.01  # normalized-residual convention, not the legacy raw-energy coefficient
+  lambda_credit: 1.0
+  lambda_kl: 0.0  # candidate KL is zero on one demonstrated action; not a vocabulary retention claim
+  credit_deadzone: 0.002
+  memory_policy_objective: action_sft
+  group_key: task_id
+  four_bit: false

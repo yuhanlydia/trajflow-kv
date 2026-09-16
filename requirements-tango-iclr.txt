@@ -1,0 +1,14 @@
+# Install a CUDA-appropriate torch wheel first using the official PyTorch selector.
+# This recipe targets Python 3.11/3.12. The offline CPU tests here ran on Python 3.13.
+torch>=2.5,<3
+transformers==4.57.1
+peft>=0.17,<0.19
+accelerate>=1.10,<2
+numpy>=1.26,<3
+Pillow>=10,<12
+PyYAML>=6,<7
+pytest>=8,<10
+requests>=2.32,<3
+# Optional online BrowserGym: install browsergym==0.14.3 and playwright browsers
+# in the benchmark environment. MemGUI-Bench uses its own uv.lock and Python 3.12.
+# Optional NF4 model: install a compatible bitsandbytes on supported CUDA hardware.

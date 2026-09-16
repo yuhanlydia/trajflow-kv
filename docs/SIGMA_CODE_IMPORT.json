@@ -1,0 +1,147 @@
+{
+  "schema": "sigma.code_import.v1",
+  "archive_sha256": "6688080d2f58485b408d7079f9d10bcb153d6f7c34660816ee82c59cfba237de",
+  "files": [
+    {
+      "path": "configs/sigma_real_gui.yaml",
+      "sha256": "5ca89df0ac212e5c71c1de2c66de58b8a516dedfd40eb5f0118760b990e2dd58"
+    },
+    {
+      "path": "configs/tango_iclr_release.yaml",
+      "sha256": "de78d2049cd352af72a1c907f81ef354d40c9632708c4db9a462924b919e09af"
+    },
+    {
+      "path": "docs/SIGMA_CODE_READINESS.md",
+      "sha256": "9417b38ad3bd87c9a9e29548ee9aaa38aed3177028b2c01c2bf1462e6473aa99"
+    },
+    {
+      "path": "docs/SIGMA_CODE_VERIFICATION.json",
+      "sha256": "7694c78f1db60067cc66aaad265e8847ec56e5e953898afc106408922d273cf0"
+    },
+    {
+      "path": "docs/TANGO_RUN_AGENT.md",
+      "sha256": "cbede185a6dbed09ff8dcbf0423f5dfb1df5d2b4e4935368a61823be07098812"
+    },
+    {
+      "path": "requirements-tango-iclr.txt",
+      "sha256": "7e782bef197ae9b69bc05c79de21f7d85de92aa0d45fddae73ffd7b25ac16fae"
+    },
+    {
+      "path": "scripts/run_sigma_iclr.sh",
+      "sha256": "6b9f5b1deb60ebd6766ded3106fa481bc48b98507e6cb4f316833704fef0e4ba"
+    },
+    {
+      "path": "scripts/run_tango_iclr.sh",
+      "sha256": "042195e104cc0bd753a733295b22ce760a8fb1283fb39ebfcf23e12b800bf70e"
+    },
+    {
+      "path": "scripts/run_tango_memgui.sh",
+      "sha256": "a345a4f2d624ae487cb8bf43eeea21adb5203114a327f3c6ff9785e3be3930e3"
+    },
+    {
+      "path": "tango_iclr/__init__.py",
+      "sha256": "2baf98ea347f097c63f2a6fae309a0cd09327cfa190e3074b78032f7fe57a76c"
+    },
+    {
+      "path": "tango_iclr/controller.py",
+      "sha256": "1add8f28ebd4c4d98b5ee269cf29d962be2a21ae0f180938c8b9876c9428af5a"
+    },
+    {
+      "path": "tango_iclr/distill.py",
+      "sha256": "ea512be9c0e9fe45f252db81dee176565637c8e71d3c250758b5d3d51251a0c1"
+    },
+    {
+      "path": "tango_iclr/evaluate.py",
+      "sha256": "1621e5a9830d9f567e5316be55bd653155dc348c133ca0048a207b0ff9ead92e"
+    },
+    {
+      "path": "tango_iclr/interventions.py",
+      "sha256": "8aa421d9db41aa7cbe90c310f96725bb9b048ffb320b1778f33b82f9e267dca1"
+    },
+    {
+      "path": "tango_iclr/objectives.py",
+      "sha256": "e22bc3fc1b8786e920c6265b70d7fb52b91802a5eb921f6a5c8a6339bdd055f4"
+    },
+    {
+      "path": "tango_iclr/online.py",
+      "sha256": "febeca10da0a73393803338279532c30ce546501228886fce7b1a85f4594e3aa"
+    },
+    {
+      "path": "tango_iclr/preflight.py",
+      "sha256": "1b1a6e070a992c9abe12dee9a9422a5c65c44cf9cc66ee893cfa4cf417a5dc53"
+    },
+    {
+      "path": "tango_iclr/prepare.py",
+      "sha256": "e82c98c275749d1df831ace1d0dcb35ea21ccfb731958e5a8558d5ee0cf4e6eb"
+    },
+    {
+      "path": "tango_iclr/qwen.py",
+      "sha256": "f65bc2bc621c65a05fbcbbf4154857d316d96ee14a9a6cb5261f1a5cf4249eae"
+    },
+    {
+      "path": "tango_iclr/real_data.py",
+      "sha256": "55bb080abe8b4d12f351fbcb104dce9c746e247600464562a01440a253b4b0e2"
+    },
+    {
+      "path": "tango_iclr/report.py",
+      "sha256": "2e3ddf1937cfba76875a4aa53935bee5c3905dbebe2ae34b36ad0277dd67069e"
+    },
+    {
+      "path": "tango_iclr/rollout_credit.py",
+      "sha256": "a44119ef7175e721b6e432185c1128f23249b5fe30d6083c18f590d1abcc247b"
+    },
+    {
+      "path": "tango_iclr/runtime.py",
+      "sha256": "4bbd82908575b6cf2cf3d9cb86c49274f722a2672ee9ff45b4540b5a9f257e6c"
+    },
+    {
+      "path": "tango_iclr/schema.py",
+      "sha256": "31ddb43c0e0a2239a1e9d9ad5ac99bf2c1200713acc0edcaa3d0c639c92fcf3d"
+    },
+    {
+      "path": "tango_iclr/serve.py",
+      "sha256": "b5973a8b558c715223e75df2e2fcc6ad113a7bdd26c6ad39d5a3e60a54726d50"
+    },
+    {
+      "path": "tango_iclr/spd_control.py",
+      "sha256": "5983586ac457bd4bc02d762faad76807e17a6eafddcf17a4a710f9ea6d7d2a6b"
+    },
+    {
+      "path": "tango_iclr/stats.py",
+      "sha256": "d0a2a0b6bf68b21465032a0e393ccf5291bc9d85755afc3b923c4e37de673ca2"
+    },
+    {
+      "path": "tango_iclr/suite.py",
+      "sha256": "0a03c4e366f0958fe61d8efc688360165a26772d72489ac57d06d92a572af1c7"
+    },
+    {
+      "path": "tango_iclr/teacher.py",
+      "sha256": "1bfa4fb3d6c89d67df9f1b312c800a7bba829836cc2c93080b97c8f2fdf8e299"
+    },
+    {
+      "path": "tango_iclr/train.py",
+      "sha256": "8054716808f4cb1c182c0c5d7ca217995f7e0fc4d1ae2eaba3b43a0538baea5a"
+    },
+    {
+      "path": "tests_iclr/test_core.py",
+      "sha256": "7709a74f29135f0cca24d59a9f0d001f936e3997792178af3060bd2dc4074860"
+    },
+    {
+      "path": "tests_iclr/test_formal_delivery.py",
+      "sha256": "cb2ed9f9c4f61b1ac022bd172f4da82d29e5df6f3ffc5df475bf556172f0ac5d"
+    },
+    {
+      "path": "tests_iclr/test_runtime.py",
+      "sha256": "edc68f5bf2a608e8d34582764590b0e4a08c5589a27513f0f0ad8f53e147b731"
+    },
+    {
+      "path": "tests_iclr/test_smoke_training.py",
+      "sha256": "8f6ebb905a23b27a73fa6bf2bf6e17920bd0f8b5ab0286c3ae243677d44e58c0"
+    },
+    {
+      "path": "tests_iclr/test_suite.py",
+      "sha256": "e11451e6283910765c3e8f4ebbac13ab2b8fd0d89798949a962fd3e1bbee5950"
+    }
+  ],
+  "new_gpu_or_gui_results": false
+}

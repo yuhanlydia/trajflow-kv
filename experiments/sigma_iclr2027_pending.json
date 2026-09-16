@@ -407,6 +407,14 @@
     "code_migrated_in_this_commit": true,
     "required_stage": "S00",
     "note": "Original tracked source and full reachable Git history imported; code overlay and manuscript alignment still require S00. No experiments rerun.",
-    "source_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7"
+    "source_commit": "131014ab50d6bbccff4c5ecb1332679256fa40b7",
+    "code_overlay_imported": true
+  },
+  "code_delivery": {
+    "package": "tango_iclr",
+    "readiness": "docs/SIGMA_CODE_READINESS.md",
+    "formal_gpu_runs": "NOT_RUN",
+    "all_paper_experiments_implemented": false,
+    "primary_entrypoint": "bash scripts/run_sigma_iclr.sh --profile primary"
   }
 }

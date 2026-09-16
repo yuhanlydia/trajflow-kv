@@ -16,8 +16,22 @@ Start with S00 to reconcile the existing implementation and the newer manuscript
 configuration. Migration is not evidence that the pending experiments were run.
 Model weights, generated screenshots, local datasets, and uncommitted files were
 not present in the source Git tree and are not fabricated by this migration.
-The previously delivered TANGO ICLR code overlay is a separate artifact; this
-commit imports the legacy repository only.
+The formerly separate formal experiment package is now available in `tango_iclr/`.
+See the code-readiness document for implemented entrypoints and remaining gaps.
+
+## Formal SIGMA experiment code
+
+The previously separate package is integrated, with action-token SFT and single-candidate evaluation fixes. Start with [code readiness](docs/SIGMA_CODE_READINESS.md), [real-GUI config](configs/sigma_real_gui.yaml), and [CPU verification](docs/SIGMA_CODE_VERIFICATION.json).
+
+```bash
+python -m pytest -q tests_iclr
+bash scripts/run_sigma_iclr.sh --profile primary
+# After real data, models, dependencies, and native environments are ready:
+bash scripts/run_sigma_iclr.sh --profile smoke --execute
+bash scripts/run_sigma_iclr.sh --profile primary --execute --continue-on-error
+```
+
+`primary` compares Base, matched action SFT, and SIGMA. `all` schedules implemented controls, not every proposed paper experiment. Full external baseline reproduction and native GPU/GUI validation remain separate. No new GUI success results are claimed.
 
 ## Original project documentation
 

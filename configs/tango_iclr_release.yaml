@@ -1,0 +1,35 @@
+# Native run inputs. Missing files are BLOCKED, not silently replaced by toy data.
+model: Qwen/Qwen2.5-VL-3B-Instruct
+revision: null  # Agent must freeze the downloaded model revision in the final run record.
+train: data/tango_release/train.jsonl
+validation: data/tango_release/validation.jsonl
+test: data/tango_release/test.jsonl
+output: outputs/tango_iclr2027
+seeds: [0, 1, 2]
+credit_kind: candidate_value_proxy
+history_limit: 8
+max_steps: 30
+online_manifests:
+  - data/tango_release/androidworld_test.jsonl
+  - data/tango_release/browser_test.jsonl
+base:
+  layers: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+  target: k
+  rank: 8
+  alpha: 8.0
+  controller: gru
+  hidden: 128
+  credit_epochs: 20
+  policy_epochs: 3
+  credit_lr: 0.001
+  policy_lr: 0.0001
+  accumulation: 4
+  max_pixels: 100352
+  max_tokens: 8192
+  lambda_energy: 0.01
+  lambda_credit: 0.2
+  lambda_kl: 0.05
+  credit_deadzone: 0.002
+  memory_policy_objective: ce
+  group_key: task_id
+  four_bit: false

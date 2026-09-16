@@ -1,0 +1,67 @@
+{
+  "scope": "extension CPU contracts and CLI parsing only",
+  "source_repo_commit": "47e8c91f4dd761b012fb2b3cd24af46fd0e6e1cc",
+  "source_overlay_sha256": "f21338224823ba2e6a1e3e265e5f23585b083be51a308f40e5fe13332c0c0bc0",
+  "cpu_tests": 45,
+  "cpu_result": "passed",
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "cuda_available": false,
+  "gpu_training_run": false,
+  "native_gui_run": false,
+  "full_iclr_experiment_code_complete": false,
+  "cli_checks": [
+    {
+      "module": "real_data",
+      "returncode": 0
+    },
+    {
+      "module": "prepare",
+      "returncode": 0
+    },
+    {
+      "module": "teacher",
+      "returncode": 0
+    },
+    {
+      "module": "train",
+      "returncode": 0
+    },
+    {
+      "module": "evaluate",
+      "returncode": 0
+    },
+    {
+      "module": "online",
+      "returncode": 0
+    },
+    {
+      "module": "serve",
+      "returncode": 0
+    },
+    {
+      "module": "suite",
+      "returncode": 0
+    },
+    {
+      "module": "distill",
+      "returncode": 0
+    },
+    {
+      "module": "rollout_credit",
+      "returncode": 0
+    },
+    {
+      "module": "report",
+      "returncode": 0
+    },
+    {
+      "module": "spd_control",
+      "returncode": 0
+    },
+    {
+      "module": "preflight",
+      "returncode": 0
+    }
+  ]
+}
