@@ -1,0 +1,110 @@
+name: Import and test SIGMA formal code
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/import-sigma-formal-code.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sigma-formal-code-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    if: github.repository == 'yuhanlydia/trajflow-kv'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out destination
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Verify and materialize reviewed source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import base64, hashlib, json, lzma, subprocess
+          from pathlib import Path, PurePosixPath
+          root = Path('.delivery/sigma_formal_20260916')
+          encoded = ''.join((root / f'part{i}.b64').read_text().strip() for i in range(5))
+          raw = base64.b64decode(encoded, validate=True)
+          archive_sha = '6688080d2f58485b408d7079f9d10bcb153d6f7c34660816ee82c59cfba237de'
+          if hashlib.sha256(raw).hexdigest() != archive_sha:
+              raise RuntimeError('Source archive checksum mismatch')
+          decoded = lzma.decompress(raw)
+          if hashlib.sha256(decoded).hexdigest() != '2e8bdf06d333203d3ad400ae059db0572c5f21328be81f24ffc3a69362c9bb8b':
+              raise RuntimeError('Decoded source checksum mismatch')
+          files = json.loads(decoded)
+          if len(files) != 35:
+              raise RuntimeError('Unexpected source file count')
+          allowed = {'tango_iclr', 'tests_iclr', 'configs', 'scripts', 'docs'}
+          for name, text in files.items():
+              p = PurePosixPath(name)
+              if p.is_absolute() or '..' in p.parts or (p.parts[0] not in allowed and name != 'requirements-tango-iclr.txt'):
+                  raise RuntimeError('Unsafe source path: ' + name)
+              if not isinstance(text, str):
+                  raise TypeError('Expected UTF-8 source text')
+              target = Path(name)
+              if target.is_symlink():
+                  raise RuntimeError('Refuse symlink: ' + name)
+              if target.exists() and target.read_bytes() != text.encode('utf-8'):
+                  raise RuntimeError('Do not overwrite a differing file: ' + name)
+          records = []
+          for name, text in files.items():
+              target = Path(name)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(text.encode('utf-8'))
+              target.chmod(0o755 if target.suffix == '.sh' else 0o644)
+              records.append({'path': name, 'sha256': hashlib.sha256(target.read_bytes()).hexdigest()})
+          readme = Path('README.md')
+          text = readme.read_text()
+          marker = '## Formal SIGMA experiment code'
+          if marker not in text:
+              text = text.replace('The previously delivered TANGO ICLR code overlay is a separate artifact; this\ncommit imports the legacy repository only.', 'The formerly separate formal experiment package is now available in `tango_iclr/`.\nSee the code-readiness document for implemented entrypoints and remaining gaps.')
+              notice = '''## Formal SIGMA experiment code\n\nThe previously separate package is integrated, with action-token SFT and single-candidate evaluation fixes. Start with [code readiness](docs/SIGMA_CODE_READINESS.md), [real-GUI config](configs/sigma_real_gui.yaml), and [CPU verification](docs/SIGMA_CODE_VERIFICATION.json).\n\n```bash\npython -m pytest -q tests_iclr\nbash scripts/run_sigma_iclr.sh --profile primary\n# After real data, models, dependencies, and native environments are ready:\nbash scripts/run_sigma_iclr.sh --profile smoke --execute\nbash scripts/run_sigma_iclr.sh --profile primary --execute --continue-on-error\n```\n\n`primary` compares Base, matched action SFT, and SIGMA. `all` schedules implemented controls, not every proposed paper experiment. Full external baseline reproduction and native GPU/GUI validation remain separate. No new GUI success results are claimed.\n\n'''
+              text = text.replace('## Original project documentation', notice + '## Original project documentation', 1)
+              readme.write_text(text)
+          plan_path = Path('experiments/sigma_iclr2027_pending.json')
+          plan = json.loads(plan_path.read_text())
+          plan['code_delivery'] = {'package': 'tango_iclr', 'readiness': 'docs/SIGMA_CODE_READINESS.md', 'formal_gpu_runs': 'NOT_RUN', 'all_paper_experiments_implemented': False, 'primary_entrypoint': 'bash scripts/run_sigma_iclr.sh --profile primary'}
+          plan['repository_bootstrap']['code_overlay_imported'] = True
+          plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
+          manifest = {'schema': 'sigma.code_import.v1', 'archive_sha256': archive_sha, 'files': records, 'new_gpu_or_gui_results': False}
+          Path('docs/SIGMA_CODE_IMPORT.json').write_text(json.dumps(manifest, indent=2) + '\n')
+          Path('/tmp/sigma-import-paths.json').write_text(json.dumps(list(files) + ['README.md', str(plan_path), 'docs/SIGMA_CODE_IMPORT.json', 'docs/SIGMA_CODE_CI.txt']))
+          print('Materialized and verified', len(files), 'source files')
+          PY
+          python -m compileall -q tango_iclr tests_iclr
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'numpy>=1.26,<3' 'Pillow>=10,<12' 'PyYAML>=6,<7' 'pytest>=8,<10' 'requests>=2.32,<3'
+      - name: Run regression tests without model downloads
+        env:
+          OMP_NUM_THREADS: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pytest -q tests_iclr | tee docs/SIGMA_CODE_CI.txt
+      - name: Commit tested files without rewriting history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python - <<'PY'
+          import json, subprocess
+          paths = json.load(open('/tmp/sigma-import-paths.json'))
+          subprocess.run(['git', 'add', '--', *paths], check=True)
+          PY
+          if git diff --cached --quiet; then
+            echo 'Source already integrated.'
+            exit 0
+          fi
+          git commit -m 'feat: integrate SIGMA formal code with real-action SFT and native GUI evaluation'
+          git push origin HEAD:main
