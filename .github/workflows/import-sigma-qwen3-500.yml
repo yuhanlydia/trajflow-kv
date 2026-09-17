@@ -1,0 +1,133 @@
+name: Publish and verify SIGMA Qwen3 500
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-sigma-qwen3-500.yml
+      - .delivery/sigma_qwen3_500_20260917/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sigma-qwen3-500-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'yuhanlydia/trajflow-kv'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main without truncating history
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Verify preimages and expand approved code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import base64, hashlib, json, lzma, os, subprocess
+          from pathlib import Path, PurePosixPath
+          root = Path('.delivery/sigma_qwen3_500_20260917')
+          encoded = ''.join((root / f'part{i}.b64').read_text().strip() for i in range(5))
+          raw = base64.b64decode(encoded, validate=True)
+          if hashlib.sha256(raw).hexdigest() != 'dd91b77b1d7f8aa37623371fe67b73002b9aa7a0b352c4e7e5fc00140e81beaf':
+              raise RuntimeError('Archive checksum mismatch')
+          decoded = lzma.decompress(raw)
+          if hashlib.sha256(decoded).hexdigest() != '49acfa7168ef9e3c0fd9c3e360f09929751aa9b3207b867e104a292d42e163e4':
+              raise RuntimeError('Decoded checksum mismatch')
+          bundle = json.loads(decoded)
+          manifest, files = bundle['manifest'], bundle['files']
+          if manifest['repository'] != 'yuhanlydia/trajflow-kv' or len(files) != 19:
+              raise RuntimeError('Unexpected repository or file count')
+          records = {r['path']: r for r in manifest['files']}
+          if set(records) != set(files):
+              raise RuntimeError('Manifest path mismatch')
+          allowed = {'configs', 'docs', 'experiments', 'scripts', 'tango_iclr', 'tests_iclr'}
+          for name, text in files.items():
+              p = PurePosixPath(name)
+              if p.is_absolute() or '..' in p.parts or (p.parts[0] not in allowed and name != 'requirements-sigma-qwen3.txt'):
+                  raise RuntimeError('Unsafe path: ' + name)
+              target = Path(name)
+              if any(part.is_symlink() for part in [target, *target.parents]):
+                  raise RuntimeError('Symlink path: ' + name)
+              if not isinstance(text, str) or hashlib.sha256(text.encode()).hexdigest() != records[name]['new_sha256']:
+                  raise RuntimeError('New content checksum mismatch: ' + name)
+              current = hashlib.sha256(target.read_bytes()).hexdigest() if target.exists() else None
+              if current not in (records[name]['old_sha256'], records[name]['new_sha256']):
+                  raise RuntimeError('Concurrent or unexpected content; refusing overwrite: ' + name)
+          for name, text in files.items():
+              target = Path(name)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(text.encode())
+              target.chmod(0o755 if target.suffix == '.sh' else 0o644)
+          readme = Path('README.md')
+          text = readme.read_text()
+          marker = '## Active Qwen3-VL 500/50/50 experiment'
+          notice = '''## Active Qwen3-VL 500/50/50 experiment\n\nThe Qwen3-VL upgrade is now integrated as source code on `main`.\nUse [the current protocol](docs/SIGMA_QWEN3_500_NEXT_EXPERIMENTS.md),\n[configuration](configs/sigma_qwen3_500.yaml), and\n[CPU checks](docs/SIGMA_QWEN3_500_CI.txt).\n\n```bash\nbash scripts/run_sigma_qwen3_500.sh --stage prepare --execute\nbash scripts/run_sigma_qwen3_500.sh --stage smoke --seeds 11 --execute\nbash scripts/run_sigma_qwen3_500.sh --stage train --execute\n# Optional: --stage ablations --execute before locking.\nbash scripts/run_sigma_qwen3_500.sh --stage lock --execute\nbash scripts/run_sigma_qwen3_500.sh --stage test --execute\nbash scripts/run_sigma_qwen3_500.sh --stage report --execute\n```\n\nThis protocol uses Qwen/Qwen3-VL-8B-Instruct, 500 training A prefixes,\n50 validation B prefixes, and 50 fresh held-out D prefixes. The default is\nNF4 with a cross-GRU controller, local-score single-donor teacher, K12-23/rank8,\nand separately checkpointed credit learning and frozen-controller policy refinement.\nCPU checks do not establish pretrained GPU or native-GUI performance.\nThe controlled data are synthetic screenshots, not native benchmark episodes.\nInstall CUDA-compatible PyTorch and requirements-sigma-qwen3.txt on the experiment host.\n\n'''
+          if marker not in text:
+              text = text.replace('## SIGMA ICLR 2027 execution', notice + '## SIGMA ICLR 2027 execution', 1)
+              readme.write_text(text)
+          plan_path = Path('experiments/sigma_iclr2027_pending.json')
+          plan = json.loads(plan_path.read_text())
+          plan['active_controlled_protocol'] = {
+              'config': 'configs/sigma_qwen3_500.yaml',
+              'documentation': 'docs/SIGMA_QWEN3_500_NEXT_EXPERIMENTS.md',
+              'model': 'Qwen/Qwen3-VL-8B-Instruct',
+              'train_prefixes': 500, 'validation_prefixes': 50, 'test_prefixes': 50,
+              'test_template': 'D', 'new_gpu_runs': 'NOT_RUN',
+              'entrypoint': 'bash scripts/run_sigma_qwen3_500.sh',
+              'scope': 'controlled synthetic upgrade; native GUI plans remain separate'
+          }
+          plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
+          audit = {
+              'schema': 'sigma.qwen3_500_delivery.v1', 'source_base': manifest['remote_base'],
+              'parent_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'archive_sha256': hashlib.sha256(raw).hexdigest(),
+              'verified_files': manifest['files'], 'new_gpu_or_gui_results': False,
+              'workflow_run_id': os.environ['GITHUB_RUN_ID']
+          }
+          audit_path = 'docs/SIGMA_QWEN3_500_DELIVERY.json'
+          Path(audit_path).write_text(json.dumps(audit, indent=2) + '\n')
+          paths = list(files) + ['README.md', str(plan_path), audit_path, 'docs/SIGMA_QWEN3_500_CI.txt']
+          Path('/tmp/sigma-qwen3-publish-paths.json').write_text(json.dumps(paths))
+          print('Verified preimages and materialized', len(files), 'approved files')
+          PY
+          python -m compileall -q tango_iclr tests_iclr
+          bash -n scripts/run_sigma_qwen3_500.sh
+      - name: Install CPU test dependencies only
+        run: |
+          python -m pip install 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'numpy>=1.26,<3' 'Pillow>=10,<12' 'PyYAML>=6,<7' 'pytest>=8,<10' 'requests>=2.32,<3'
+      - name: Run regressions and command-line checks
+        env:
+          OMP_NUM_THREADS: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pytest -q tests_iclr | tee docs/SIGMA_QWEN3_500_CI.txt
+          bash scripts/run_sigma_qwen3_500.sh --help > /tmp/sigma-qwen3-help.txt
+          bash scripts/run_sigma_qwen3_500.sh --stage prepare > /tmp/sigma-qwen3-prepare-plan.txt
+          cat /tmp/sigma-qwen3-prepare-plan.txt
+      - name: Commit tested source to main without force push
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python - <<'PY'
+          import json, subprocess
+          paths = json.load(open('/tmp/sigma-qwen3-publish-paths.json'))
+          subprocess.run(['git', 'add', '--', *paths], check=True)
+          PY
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Approved source is already present.'
+            exit 0
+          fi
+          git commit -m 'feat: publish tested SIGMA Qwen3-VL 500/50/50 training and ablation code'
+          git push origin HEAD:main
