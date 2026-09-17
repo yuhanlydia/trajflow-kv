@@ -48,7 +48,9 @@ else
   exit 1
 fi
 
-/root/.local/bin/uv venv --python 3.11 /root/android_world/.venv
+/root/.local/bin/uv venv --python 3.11 --allow-existing /root/android_world/.venv
+/root/.local/bin/uv pip install --python /root/android_world/.venv/bin/python \
+  -r /root/android_world/requirements.txt
 /root/.local/bin/uv pip install --python /root/android_world/.venv/bin/python /root/android_world
 /root/.local/bin/uv pip install --python /root/android_world/.venv/bin/python pillow
 echo 'AndroidWorld software-emulation environment installed.'

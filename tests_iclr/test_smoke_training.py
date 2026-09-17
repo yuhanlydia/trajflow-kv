@@ -18,6 +18,9 @@ class FakeEngine:
     def score(self,c,a,controlled=False,**kwargs):
         x=torch.arange(24.).reshape(1,3,8)/24
         if controlled:
+            if torch.is_grad_enabled():
+                assert self.controller.training
+                assert self.bank.training
             self.bank.reset_energy();g=gate_values(self.controller(c.features,c.query),self.mode)
             x=self.bank.apply('k',x,c.spans,g)
         return x.sum()*(1 if a=='A' else -1)

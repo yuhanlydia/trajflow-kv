@@ -171,3 +171,27 @@ def test_teacher_signature_changes_with_measurement_protocol():
     assert a!=generation_signature(e,'local_action_logprob',3,'mean')
     e.revision='different'
     assert a!=generation_signature(e,'candidate_value_proxy',3,'mean')
+
+
+def test_local_teacher_scores_only_the_labelled_action():
+    from types import SimpleNamespace
+    from tango_iclr.teacher import label_record
+
+    class FakeEngine:
+        model_path='fake';revision='rev';target='k';layers=[0]
+        max_pixels=1;max_tokens=32;four_bit=False
+
+        def __init__(self): self.calls=[]
+        def context(self,row,keep_donors=False):
+            assert keep_donors
+            return SimpleNamespace(spans=[(0,2),(2,4)],donors={'x':[]})
+        def score(self,context,action,patch=None,normalization='mean'):
+            self.calls.append((action,patch))
+            return torch.tensor(1.0 if patch is None else 0.5)
+
+    engine=FakeEngine()
+    row=dict(prefix_id='p',instruction='i',candidates=['a','b','c'],target_index=1,
+             history_images=['one','two'],action_values=[0,1,0])
+    labelled=label_record(engine,row,'local_action_logprob',donor_limit=1)
+    assert labelled['credits']==[0.5,0.5]
+    assert engine.calls==[('b',None),('b',(0,1)),('b',(1,0))]

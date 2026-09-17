@@ -15,16 +15,21 @@ def generation_signature(engine,kind,donor_limit,normalization):
 @torch.no_grad()
 def label_record(engine,row,kind,donor_limit=3,normalization='mean'):
     context=engine.context(row,keep_donors=True)
-    actions=row['candidates']; scores=torch.stack([engine.score(context,a,normalization=normalization) for a in actions])
+    actions=row['candidates']
     if kind=='local_action_logprob':
         if 'target_index' not in row: raise ValueError('Local teacher requires training-only target action')
-        utility=lambda x:x[row['target_index']]
+        target_action=actions[row['target_index']]
+        baseline=engine.score(context,target_action,normalization=normalization)
+        reference_probs=None
     elif kind=='candidate_value_proxy':
         if 'action_values' not in row: raise ValueError('Candidate-value teacher requires labelled continuation values')
+        scores=torch.stack([engine.score(context,a,normalization=normalization) for a in actions])
         values=torch.tensor(row['action_values'],device=scores.device)
         utility=lambda x:(torch.softmax(x,0)*values).sum()
+        baseline=utility(scores)
+        reference_probs=torch.softmax(scores,0).cpu().tolist()
     else: raise ValueError('Live paired return labels must be collected by an environment rollout, not this script')
-    baseline=float(utility(scores)); credits=[]; records=[]
+    baseline=float(baseline); credits=[]; records=[]
     for j,span in enumerate(context.spans):
         # No semantic ground-truth donor role is required at inference or used by the controller.
         eligible=row.get('donor_indices',list(range(len(context.spans))))
@@ -33,12 +38,16 @@ def label_record(engine,row,kind,donor_limit=3,normalization='mean'):
         if not donors: raise ValueError(f'{row["prefix_id"]}: no equal-length donor for block {j}')
         effects=[]
         for d in donors:
-            changed=torch.stack([engine.score(context,a,patch=(j,d),normalization=normalization) for a in actions])
-            effects.append(baseline-float(utility(changed)))
+            if kind=='local_action_logprob':
+                changed_utility=engine.score(context,target_action,patch=(j,d),normalization=normalization)
+            else:
+                changed=torch.stack([engine.score(context,a,patch=(j,d),normalization=normalization) for a in actions])
+                changed_utility=utility(changed)
+            effects.append(baseline-float(changed_utility))
         credits.append(sum(effects)/len(effects))
         records.append(dict(block=j,donors=donors,effects=effects,mean=credits[-1],
             donor_std=float(torch.tensor(effects).std(unbiased=True)) if len(effects)>1 else None))
-    out=dict(row,teacher_source_hash=digest(row),generation_signature=generation_signature(engine,kind,donor_limit,normalization),credits=credits,credit_kind=kind,reference_probs=torch.softmax(scores,0).cpu().tolist(),
+    out=dict(row,teacher_source_hash=digest(row),generation_signature=generation_signature(engine,kind,donor_limit,normalization),credits=credits,credit_kind=kind,reference_probs=reference_probs,
         teacher_context_hash=digest(public_record(row)),teacher_protocol=dict(kind=kind,normalization=normalization,
         model_path=engine.model_path,model_revision=engine.revision,target=engine.target,layers=engine.layers,donor_capture='clean_pre_rope',records=records,
         donor_relative=True,not_live_rollout=True))

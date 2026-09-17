@@ -79,8 +79,11 @@ def train(config):
     baselines={k:sum(v)/len(v) for k,v in groups.items()}
     for epoch in range(cfg.get('policy_epochs',3)):
         indices=list(range(len(train_rows)));random.shuffle(indices);opt.zero_grad(set_to_none=True);losses=[]
-        # eval keeps controller dropout deterministic for the exact two-pass VJP; gradients still enabled.
-        e.controller.eval();e.bank.eval()
+        # Policy refinement backpropagates through the controller and bank.
+        # These modules are deterministic (the Transformer explicitly uses
+        # dropout=0), so training mode preserves exact VJP replay while also
+        # retaining the cuDNN GRU state required for backward.
+        e.controller.train();e.bank.train()
         for step,i in enumerate(indices):
             r=train_rows[i];c=e.context(r); n=len(r['candidates'])
             objective=method if method in {'action_sft','ce','successful_ce','global_return','action_advantage'} else cfg.get('memory_policy_objective','ce')
