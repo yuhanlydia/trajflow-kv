@@ -53,6 +53,8 @@ class QwenEngine:
         self.feature_dim=next(iter(self.widths.values()))
         self.image_token_id=int(getattr(cfg,'image_token_id',self.processor.tokenizer.convert_tokens_to_ids('<|image_pad|>')))
         self.controller=None; self.bank=None; self.gate_mode='signed'; self.temperature=1.; self.metadata={}
+        self.feature_mode='pooled';self.feature_chunks=8;self.feature_layers=list(self.layers)
+        self.model_type=cfg.model_type;self.num_hidden_layers=n
 
     def _batch(self,messages,generation_prompt=False):
         b=self.processor.apply_chat_template(messages,tokenize=True,add_generation_prompt=generation_prompt,
@@ -68,25 +70,45 @@ class QwenEngine:
         if not spans: raise ValueError('No image tokens: this path must remain a visual GUI evaluation')
         # Contract: the last image is the current observation, all preceding images are history.
         history=spans[:-1]; pooled=[]; queries=[]; donors={}
+        from .features import pool_chunks
+        import re
         def callback(name):
             def capture(_m,_i,x):
-                pooled.append(torch.stack([x[0,s:e].float().mean(0) for s,e in history]) if history else x.new_empty((0,x.shape[-1]),dtype=torch.float32))
-                queries.append(x[0,-1].float())
+                layer=int(re.search(r'layers\.(\d+)',name)[1])
+                if self.feature_mode=='pooled':
+                    pooled.append(torch.stack([x[0,s:e].float().mean(0) for s,e in history]) if history else x.new_empty((0,x.shape[-1]),dtype=torch.float32))
+                    queries.append(x[0,-1].float())
+                elif layer in self.feature_layers:
+                    pooled.append(torch.stack([pool_chunks(x[0,s:e],self.feature_chunks) for s,e in history]) if history else x.new_empty((0,self.feature_chunks,x.shape[-1]),dtype=torch.float32))
+                    s,e=spans[-1]
+                    queries.append(torch.cat([pool_chunks(x[0,s:e],self.feature_chunks),x[0,-1:].float()],0))
                 if keep_donors: donors[name]=[x[:,s:e].detach().clone() for s,e in history]
                 return x
             return capture
         with hooks(self.model,{n:callback(n) for n in self.names}):
             self.model(**batch,use_cache=False,logits_to_keep=1)
-        features=torch.stack(pooled).mean(0).detach(); query=torch.stack(queries).mean(0).detach()
+        if not pooled:raise ValueError('No feature probe layers captured')
+        if self.feature_mode=='pooled':
+            features=torch.stack(pooled).mean(0).detach();query=torch.stack(queries).mean(0).detach()
+        else:
+            features=torch.cat(pooled,dim=1).detach();query=torch.cat(queries,dim=0).detach()
         return Context(messages,batch,history,features,query,donors,batch['input_ids'].detach())
 
-    def setup(self,kind='gru',hidden=128,rank=8,alpha=8.,gate_mode='signed'):
+    def setup(self,kind='gru',hidden=128,rank=8,alpha=8.,gate_mode='signed',
+              feature_layers=None,feature_chunks=8,gate_temperature=1.):
+        self.feature_mode='layer_chunks' if kind=='cross_gru' else 'pooled'
+        self.feature_layers=list(feature_layers or [self.layers[0],self.layers[len(self.layers)//2],self.layers[-1]])
+        if not set(self.feature_layers).issubset(self.layers):raise ValueError('Feature probes must be selected intervention layers')
+        if feature_chunks<1 or gate_temperature<=0:raise ValueError('Invalid feature/gate settings')
+        self.feature_chunks=int(feature_chunks);self.temperature=float(gate_temperature)
         self.controller=CreditController(self.feature_dim,hidden=hidden,kind=kind).to(self.device)
         self.bank=LowRankBank(self.widths,rank,alpha).to(self.device)
         self.gate_mode=gate_mode
         self.metadata=dict(model_path=self.model_path,revision=self.revision,layers=self.layers,target=self.target,
             max_pixels=self.max_pixels,max_tokens=self.max_tokens,kind=kind,hidden=hidden,rank=rank,alpha=alpha,
             gate_mode=gate_mode,four_bit=self.four_bit,feature_dim=self.feature_dim,
+            feature_mode=self.feature_mode,feature_layers=self.feature_layers,feature_chunks=self.feature_chunks,
+            gate_temperature=self.temperature,model_type=self.model_type,num_hidden_layers=self.num_hidden_layers,
             control='pre_rope_history_lowrank_residual',prefill='clean_features_then_controlled_prefill')
 
     def gates(self,context):
@@ -158,6 +180,7 @@ class QwenEngine:
     def from_checkpoint(cls,path,device='cuda',model_override=None):
         p=torch.load(path,map_location='cpu',weights_only=True); m=p['metadata']
         e=cls(model_override or m['model_path'],m['layers'],m['target'],device,m['max_pixels'],m['max_tokens'],m['revision'],m.get('four_bit',False))
-        e.setup(m['kind'],m['hidden'],m['rank'],m['alpha'],m['gate_mode'])
+        e.setup(m['kind'],m['hidden'],m['rank'],m['alpha'],m['gate_mode'],
+            feature_layers=m.get('feature_layers'),feature_chunks=m.get('feature_chunks',8),gate_temperature=m.get('gate_temperature',1.))
         e.controller.load_state_dict(p['controller']);e.bank.load_state_dict(p['bank']);e.metadata=m
         e.controller.eval();e.bank.eval();return e

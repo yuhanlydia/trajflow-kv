@@ -6,6 +6,31 @@ The original tracked code, configuration, tests, and result files from
 `Yunbo-max/trajflow-kv` are imported below, together with their Git history.
 The source repository has not been changed or deleted.
 
+## Active Qwen3-VL 500/50/50 experiment
+
+The Qwen3-VL upgrade is now integrated as source code on `main`.
+Use [the current protocol](docs/SIGMA_QWEN3_500_NEXT_EXPERIMENTS.md),
+[configuration](configs/sigma_qwen3_500.yaml), and
+[CPU checks](docs/SIGMA_QWEN3_500_CI.txt).
+
+```bash
+bash scripts/run_sigma_qwen3_500.sh --stage prepare --execute
+bash scripts/run_sigma_qwen3_500.sh --stage smoke --seeds 11 --execute
+bash scripts/run_sigma_qwen3_500.sh --stage train --execute
+# Optional: --stage ablations --execute before locking.
+bash scripts/run_sigma_qwen3_500.sh --stage lock --execute
+bash scripts/run_sigma_qwen3_500.sh --stage test --execute
+bash scripts/run_sigma_qwen3_500.sh --stage report --execute
+```
+
+This protocol uses Qwen/Qwen3-VL-8B-Instruct, 500 training A prefixes,
+50 validation B prefixes, and 50 fresh held-out D prefixes. The default is
+NF4 with a cross-GRU controller, local-score single-donor teacher, K12-23/rank8,
+and separately checkpointed credit learning and frozen-controller policy refinement.
+CPU checks do not establish pretrained GPU or native-GUI performance.
+The controlled data are synthetic screenshots, not native benchmark episodes.
+Install CUDA-compatible PyTorch and requirements-sigma-qwen3.txt on the experiment host.
+
 ## SIGMA ICLR 2027 execution
 
 - [Pending experiments, S00 and E01-E17](docs/SIGMA_ICLR2027_PENDING_EXPERIMENTS.md)

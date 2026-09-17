@@ -416,5 +416,17 @@
     "formal_gpu_runs": "NOT_RUN",
     "all_paper_experiments_implemented": false,
     "primary_entrypoint": "bash scripts/run_sigma_iclr.sh --profile primary"
+  },
+  "active_controlled_protocol": {
+    "config": "configs/sigma_qwen3_500.yaml",
+    "documentation": "docs/SIGMA_QWEN3_500_NEXT_EXPERIMENTS.md",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "train_prefixes": 500,
+    "validation_prefixes": 50,
+    "test_prefixes": 50,
+    "test_template": "D",
+    "new_gpu_runs": "NOT_RUN",
+    "entrypoint": "bash scripts/run_sigma_qwen3_500.sh",
+    "scope": "controlled synthetic upgrade; native GUI plans remain separate"
   }
 }

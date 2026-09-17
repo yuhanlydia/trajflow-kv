@@ -1,0 +1,105 @@
+{
+  "schema": "sigma.qwen3_500_delivery.v1",
+  "source_base": "767d033706098e55545e925d96ecec6a1531d677",
+  "parent_revision": "d029e9affcf3478c60ad0fdc0e0836bfbb596379",
+  "archive_sha256": "dd91b77b1d7f8aa37623371fe67b73002b9aa7a0b352c4e7e5fc00140e81beaf",
+  "verified_files": [
+    {
+      "path": "configs/sigma_qwen3_500.yaml",
+      "old_sha256": null,
+      "new_sha256": "a3cb49ebf137f9878e461830b2de88c6cda15fe580a0e4aff1b427aefbf78130"
+    },
+    {
+      "path": "docs/SIGMA_QWEN3_500_NEXT_EXPERIMENTS.md",
+      "old_sha256": null,
+      "new_sha256": "704e5e0bf84baec07d054567385582669326782e3ce96a4c2438c6603b5b205b"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-17-qwen3-500.md",
+      "old_sha256": null,
+      "new_sha256": "fd8de47d4ba610e980727f5e65621d6bb9d35478aea4de1de6b8a404b50879a5"
+    },
+    {
+      "path": "experiments/sigma_qwen3_500_protocol.json",
+      "old_sha256": null,
+      "new_sha256": "917744ab19105f4c42b015b8f269f63b2d7741d703664f6702b52029a2797112"
+    },
+    {
+      "path": "requirements-sigma-qwen3.txt",
+      "old_sha256": null,
+      "new_sha256": "e51e2d0448858648f237d29723b6b96a1668f1dd2f55bbf89cdbc659904023d1"
+    },
+    {
+      "path": "scripts/run_sigma_qwen3_500.sh",
+      "old_sha256": null,
+      "new_sha256": "9fb0594e83be6e12aa08fa763a8a4b0caab5ffe813e765fa1282c9fa733a76e9"
+    },
+    {
+      "path": "tango_iclr/controlled.py",
+      "old_sha256": null,
+      "new_sha256": "f4b618d4669ffdfb86c4b7cd707927aead0eb8694f85641c9dc0ae2fc2b42a67"
+    },
+    {
+      "path": "tango_iclr/controlled_data.py",
+      "old_sha256": null,
+      "new_sha256": "b00db1242f90ce4046c2c25c0ab92f07612fef99565fc530d1463ff224e4271c"
+    },
+    {
+      "path": "tango_iclr/controlled_report.py",
+      "old_sha256": null,
+      "new_sha256": "d87400285b0286c167766a6a2c378e46ae10f3919ecafaeb31599d2dcc1ab495"
+    },
+    {
+      "path": "tango_iclr/controller.py",
+      "old_sha256": "1add8f28ebd4c4d98b5ee269cf29d962be2a21ae0f180938c8b9876c9428af5a",
+      "new_sha256": "4c296101b2b4688d07530caf9491d536ff25b9432832a804940fe7b9418a0b05"
+    },
+    {
+      "path": "tango_iclr/credit_diagnostics.py",
+      "old_sha256": null,
+      "new_sha256": "16301b84df7e6da11e47405bd84249f34a756f3464db63dafb53a8afb49b87ee"
+    },
+    {
+      "path": "tango_iclr/features.py",
+      "old_sha256": null,
+      "new_sha256": "9d87e307d05f6aa342a2b781f1014b5381844df870d786209acea47efaa9e9e7"
+    },
+    {
+      "path": "tango_iclr/model_smoke.py",
+      "old_sha256": null,
+      "new_sha256": "c845ac4fee7bdb1be886290f7d1be97758c01eef76876f4f222b181e7bb59fe6"
+    },
+    {
+      "path": "tango_iclr/objectives.py",
+      "old_sha256": "e22bc3fc1b8786e920c6265b70d7fb52b91802a5eb921f6a5c8a6339bdd055f4",
+      "new_sha256": "e317efd5c0410a0e94f5370e4e33ce77e837543bbe690ec1b547c5b2a925f807"
+    },
+    {
+      "path": "tango_iclr/qwen.py",
+      "old_sha256": "f65bc2bc621c65a05fbcbbf4154857d316d96ee14a9a6cb5261f1a5cf4249eae",
+      "new_sha256": "f5de3a168623a4822df6fc5e9990c73b83462fecf1591ec2f9a9fbd1796a9ef2"
+    },
+    {
+      "path": "tango_iclr/schema.py",
+      "old_sha256": "31ddb43c0e0a2239a1e9d9ad5ac99bf2c1200713acc0edcaa3d0c639c92fcf3d",
+      "new_sha256": "6619fad37efea1d467e32cf9fc11c18d32f8145a266559d9829ef12ab1c7d252"
+    },
+    {
+      "path": "tango_iclr/teacher.py",
+      "old_sha256": "57dd86e8d3ca0f9841b51b99a40ad788c0c72942d2cb10a1e6f3b10b41679bb4",
+      "new_sha256": "3d97e7165d5c90a2bacb7c8f699126b451e8231c11dd6cfb2b7c4f793ef10068"
+    },
+    {
+      "path": "tango_iclr/train.py",
+      "old_sha256": "1166771fbb4d43945bde5fd08eadfa8725ef5477511e5e8dda5e4dcf46218adc",
+      "new_sha256": "55c8bd0171cc0ee4bd8a9ef293c2154b9c19628c107404b77dda2b963d9d2efb"
+    },
+    {
+      "path": "tests_iclr/test_qwen3_revision.py",
+      "old_sha256": null,
+      "new_sha256": "d47ca9b852bc1535b3b2cb95d4ef205d2f41ee3a3a862253a7aa78ff7fdc6da1"
+    }
+  ],
+  "new_gpu_or_gui_results": false,
+  "workflow_run_id": "35240426735"
+}

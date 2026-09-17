@@ -1,0 +1,3 @@
+-r requirements-tango-iclr.txt
+# NF4 option in configs/sigma_qwen3_500.yaml; install on supported CUDA hardware.
+bitsandbytes>=0.48,<0.50

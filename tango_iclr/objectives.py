@@ -38,7 +38,7 @@ def action_objective(scores:torch.Tensor,objective:str,*,target_index:int|None=N
 
 
 def credit_loss(prediction:torch.Tensor,target:torch.Tensor,*,scale:float,deadzone:float=.005,
-                rank_weight:float=.1) -> torch.Tensor:
+                rank_weight:float=.1,sign_weight:float=0.) -> torch.Tensor:
     if scale<=0 or deadzone<0: raise ValueError('invalid credit calibration')
     if prediction.shape!=target.shape: raise ValueError('credit shape mismatch')
     if prediction.numel()==0: return prediction.sum()*0.
@@ -50,6 +50,13 @@ def credit_loss(prediction:torch.Tensor,target:torch.Tensor,*,scale:float,deadzo
     if valid.any():
         p=prediction[:,None]-prediction[None,:]
         loss=loss+rank_weight*F.softplus(-delta.sign()[valid]*p[valid]).mean()
+    if sign_weight<0:raise ValueError('Sign weight must be nonnegative')
+    if sign_weight:
+        terms=[]
+        for sign in [-1,1]:
+            mask=target*sign>deadzone
+            if mask.any():terms.append(F.softplus(-sign*prediction[mask].float()).mean())
+        if terms:loss=loss+sign_weight*torch.stack(terms).mean()
     return loss
 
 

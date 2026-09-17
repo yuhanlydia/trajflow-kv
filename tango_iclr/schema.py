@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 PUBLIC_KEYS = ('instruction', 'image', 'history_images', 'history_actions', 'prompt', 'messages')
-CREDIT_KINDS = {'local_action_logprob', 'candidate_value_proxy', 'paired_rollout_return'}
+CREDIT_KINDS = {'local_action_logprob', 'candidate_value_proxy', 'paired_rollout_return','contrastive_action'}
 
 
 def read_jsonl(path: str | Path) -> list[dict]:
