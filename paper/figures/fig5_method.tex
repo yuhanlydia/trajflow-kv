@@ -1,0 +1,76 @@
+% The SIGMA pipeline. Inline vector art so labels stay editable and no raster
+% step enters the manuscript. Two lanes: (A) measures credit, (B) consumes it.
+%
+% Geometry note: the lane labels sit in a left gutter at x=-1.52 with anchor
+% east, clear of the first box, whose left edge is at x=-1.30. An earlier
+% revision placed them at x=-1.02, inside that box, where the fill hid them.
+% \resizebox pins the picture to the text width so it cannot reach the margin.
+\begin{figure}[tbp]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\scriptsize,
+  x=1cm, y=1cm,
+  box/.style={draw=linegray, line width=0.5pt, rounded corners=1.4pt,
+              fill=pale, minimum height=0.86cm, minimum width=2.60cm,
+              align=center, inner sep=2.2pt, text=ink},
+  meas/.style={box, fill=white, draw=harmful!55},
+  adap/.style={box, fill=white, draw=useful!55},
+  srcline/.style={box, fill=white, draw=linegray},
+  ar/.style={-{Stealth[length=3.4pt,width=2.6pt]}, line width=0.65pt,
+             draw=ink!70},
+  lab/.style={font=\tiny, text=muted, inner sep=1pt},
+  lane/.style={font=\tiny\bfseries, text=ink2, inner sep=0pt},
+]
+
+% ---------------- lane A: measurement (supervision) ----------------
+\node[lane, anchor=east] at (-1.52, 1.62) {(A) measurement};
+\node[srcline] (A1) at (0.00, 1.62) {Controlled\\prefix};
+\node[meas] (A2) at (3.30, 1.62) {Matched\\replacement of block $j$};
+\node[meas] (A3) at (6.60, 1.62) {Effect\\$u(M)-u(M_{j,d})$};
+\node[meas] (A4) at (9.90, 1.62) {Signed credit\\$\hat c^{\,u}_{t,j}$};
+
+\draw[ar] (A1) -- (A2);
+\draw[ar] (A2) -- (A3);
+\draw[ar] (A3) -- (A4);
+
+% the donor that feeds the replacement
+\node[lab, anchor=south] at (3.30, 2.14) {donor block $d$ from the same prefix};
+\draw[ar, draw=harmful!70] (3.30, 2.09) -- (3.30, 2.05);
+
+% ---------------- lane B: adaptation (deployment) ----------------
+\node[lane, anchor=east] at (-1.52, -0.42) {(B) adaptation};
+\node[srcline] (B1) at (0.00, -0.42) {Clean\\prefix pass};
+\node[adap] (B2) at (3.30, -0.42) {GRU controller\\$z_j,s_j\mapsto\hat c_{t,j}$};
+\node[adap] (B3) at (6.60, -0.42) {Gate\\$g=\tanh(\hat c/T_g)$};
+\node[adap] (B4) at (9.90, -0.42) {Gated low-rank residual\\on historical $K,V$};
+
+\draw[ar] (B1) -- (B2);
+\draw[ar] (B2) -- (B3);
+\draw[ar] (B3) -- (B4);
+
+% supervision flows from the measurement lane into the controller
+\draw[ar, draw=harmful!75, dashed] (A4.south) --
+  node[lab, right, pos=0.62, text=harmful!85, fill=white, inner sep=1.2pt]
+  {credit targets} (B2.north);
+
+% the frozen backbone applies to both lanes. The note sits below the lane-B
+% boxes (whose bottom edge is y=-0.85) rather than under an arrowhead, which
+% would have landed inside the last box.
+\node[lab, anchor=north west] at (-1.52, -1.04)
+  {backbone $\theta$ frozen; only $\phi$ and $\{A_\ell,B_\ell\}$ train};
+
+\end{tikzpicture}%
+}
+\caption{\textbf{The \method\ pipeline.} Lane (A) is the measurement: a frozen
+model scores a controlled prefix, one historical block's key span is replaced by
+a matched donor, and the utility difference averaged over donors becomes the
+credit target of Eq.~\eqref{eq:credit}. Lane (B) is the adaptation that consumes
+it: a controller reads clean prefix features, predicts credit for every
+historical block, and turns the prediction into a gate on a low-rank residual
+applied to historical keys and values of Eq.~\eqref{eq:adapt}. The two lanes
+share the intervention operator but not the tensors---the controller never sees
+donor, effect or target-action information---and the weights of the frozen
+backbone are never updated.}
+\label{fig:pipeline}
+\end{figure}

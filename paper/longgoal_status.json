@@ -1,0 +1,44 @@
+{
+  "goal": "SIGMA / Memory Is Signed -- ICLR 2027 submission",
+  "opened": "2026-09-18",
+  "scope": "paper_ICLR27/trajflow-kv/ only",
+  "scope_confirmed_by_author": true,
+  "governing_directive": "Rewrite from the problem and the problematic experiment; aim at the contribution no one else has made; negatives = one main-text sentence + appendix detail; existing methods' limitations may be stated freely, our own must stay honest.",
+  "definition_of_done": {
+    "D1_manuscript": "compiles clean; main text <= 9 pages; every number traced to a record read by plotting/extract_evidence.py",
+    "D2_no_placeholders": "no [RESULT NEEDED], no NR presented as a result, no visible bracketed placeholder",
+    "D3_anonymity": "snapshot builds, anonymity scan clean, staged extraction runs standalone",
+    "D4_ledger_closed": "every DELIVERY_PACKAGE section 12 issue resolved or explicitly parked with a reason"
+  },
+  "resume_order": [
+    "DELIVERY_PACKAGE.md",
+    "longgoal_status.json",
+    "VERIFICATION.json",
+    "EVIDENCE_AND_REVISIONS.md"
+  ],
+  "steps": [
+    {"id": "S1", "name": "Full phenomenon-led rewrite, sections 1-8 + appendices A-G", "status": "done"},
+    {"id": "S2", "name": "Single verified evidence path (extract_evidence.py, MISSING SOURCE hard-fail)", "status": "done"},
+    {"id": "S3", "name": "Five production figures + six tables", "status": "done"},
+    {"id": "S4", "name": "Main text within the 9-page limit", "status": "done", "evidence": "main-text-end -> page 9"},
+    {"id": "S5", "name": "Clean two-pass build", "status": "done", "evidence": "exit 0, 0 overfull, 0 undefined"},
+    {"id": "S6", "name": "O5 -- eliminate remaining [RESULT NEEDED] markers", "status": "done", "evidence": "converted to prose limitations; only a source comment retains the string"},
+    {"id": "S7", "name": "O4 -- anonymised supplementary snapshot", "status": "done", "evidence": "sigma_supplementary_anonymous.tar.gz, 24 files, scan clean, staged extraction runs"},
+    {"id": "S8", "name": "O1 -- re-verify venue rules against the live site", "status": "done", "evidence": "9-page limit confirmed; style sha256 797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6 matches official"},
+    {"id": "S9", "name": "O3 -- rewrite the AI use statement", "status": "done", "evidence": "categories named and specific; authors' sign-off sentence outstanding (author action)"},
+    {"id": "S10", "name": "Bibliography defect fixes (FocusMem ID, uncited entry)", "status": "done"},
+    {"id": "S11", "name": "O2 -- arXiv metadata audit of the 12 entries", "status": "done", "evidence": "All 12 verified against primary arXiv abs pages 2026-09-18 (title + author list + ID; 12/12 agree). The arXiv API returned HTTP 406, so the abs-page route was used."},
+    {"id": "S12", "name": "O6 -- second seed for the hidden-memory gate family", "status": "parked_needs_experiment", "package": "experiments/closure_20260918/o6_seed17.sh + o6_seed17_8gpu_request.json", "blocked_on": "Qwen2.5-VL-3B-Instruct weights absent; also needs download + preflight dataset regeneration", "caveat": "the stage-2 training input critical_memory_q.jsonl has INFERRED provenance (mapped to prepare_credit_diagnostics --balanced-memory-output)"},
+    {"id": "S13", "name": "O7 -- held-out template for the C5 AUROC", "status": "parked_needs_experiment", "package": "experiments/closure_20260918/o7_heldout_credit.sh + o7_heldout_templates_8gpu_request.json", "blocked_on": "Qwen2.5-VL-3B-Instruct weights absent; also needs download + preflight dataset regeneration", "reconstruction": "original confirmed as template A, 200 seeds, horizon 8, mean aggregation - reproduces the recorded 200 prefix ids with exact set equality; B/C/D are genuinely held out"},
+    {"id": "S14", "name": "O8 -- Figure 4 has no plotting code (vector spec only)", "status": "no_action_required"},
+    {"id": "S15", "name": "Author sign-off on the AI use statement", "status": "parked_author_action"},
+    {"id": "S16", "name": "Register all authors as reviewers; submit by the deadlines", "status": "parked_author_action", "note": "abstract Sep 18 2026 23:59 AOE; full paper Sep 25 2026; desk-reject risk if authors are not registered as reviewers"}
+  ],
+  "counts": {"done": 11, "in_flight": 0, "parked_needs_experiment": 2, "parked_author_action": 2, "no_action_required": 1, "total": 16},
+  "red_lines": [
+    "Never fabricate a number; NR never becomes a value",
+    "No bracketed placeholders in final art or visible prose",
+    "No internal artifacts, absolute paths, or author identity in the manuscript or snapshot",
+    "Negatives: one main-text sentence, appendix detail -- neither promoted nor deleted"
+  ]
+}

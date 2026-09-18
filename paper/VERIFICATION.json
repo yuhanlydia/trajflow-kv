@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-18",
+  "title": "SIGMA: Memory Adaptation with Signed Causal Credit for Vision-Language GUI Agents",
+  "manuscript": "main.tex",
+  "main_source_files": 3,
+  "main_source_file_list": [
+    "main.tex",
+    "figures/fig1_block.tex",
+    "figures/fig5_method.tex"
+  ],
+  "clean_compile_command": "pdflatex -interaction=nonstopmode -halt-on-error main.tex (two passes)",
+  "clean_build_inputs": [
+    "main.tex",
+    "iclr2027_conference.sty",
+    "figures/fig1_block.tex",
+    "figures/fig5_method.tex",
+    "figures/fig1_intervention.pdf",
+    "figures/fig2_signed_credit.pdf",
+    "figures/fig3_per_prefix.pdf",
+    "figures/fig4_divergence.pdf"
+  ],
+  "clean_compile_passed": true,
+  "main_text_pages": 9,
+  "main_text_end_label": "main-text-end -> section.8 (Conclusion), page 9",
+  "complete_pdf_pages": 16,
+  "undefined_citations": 0,
+  "undefined_references": 0,
+  "overfull_boxes": 0,
+  "cited_bibliography_entries": 12,
+  "tables": 6,
+  "figures": 5,
+  "figures_inline_tikz_floats": 1,
+  "figures_raster_pdf": 4,
+  "external_float_dependencies": 2,
+  "external_float_dependency_list": [
+    "figures/fig1_block.tex (Figure 1 float wrapper)",
+    "figures/fig5_method.tex (pipeline diagram, rendered as Figure 4)"
+  ],
+  "figure_numbering_note": "Filenames fig4_*/fig5_* do not match the printed figure numbers: the pipeline (fig5_method.tex, source line 474) prints as Figure 4 and the divergence plot (fig4_divergence.pdf, source line 487) prints as Figure 5. Documented in the snapshot README.",
+  "external_bibliography_dependencies": 0,
+  "bibliography_style": "manual thebibliography, 12 bibitems",
+  "placeholders_present": 0,
+  "placeholder_note": "No [RESULT NEEDED] marker appears in visible text; the only remaining occurrence is in a source comment. No NR cell is presented as a result.",
+  "numbers_provenance": "plotting/extract_evidence.py reads results/*.json and writes data/*.csv; it raises MISSING SOURCE rather than defaulting. Tables 1-6 and Figures 1,2,3,5 are produced from those CSVs.",
+  "official_style_sha256": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6",
+  "official_style_modified": false,
+  "official_style_verification": "sha256 matches the official ICLR 2027 release; only \\usepackage additions were made, with no geometry, size, or spacing overrides",
+  "anonymised_snapshot": {
+    "path": "../sigma_supplementary_anonymous.tar.gz",
+    "size_bytes": 139892,
+    "files": 24,
+    "anonymity_scan": "clean",
+    "self_containment": "staged extraction runs standalone without error"
+  },
+  "new_gpu_experiments": 0,
+  "new_gui_episodes": 0,
+  "github_modified_this_rewrite": false,
+  "unrun_performance_cells": "NR; no performance superiority is fabricated",
+  "known_minor_typesetting_notes": "Nonfatal underfull boxes can occur in narrow abstract/table cells. No overfull boxes or missing references.",
+  "supersedes": "VERIFICATION.json @ 2026-09-14, which recorded 15 PDF pages and 0 external float dependencies; both were stale after the figures and the appendix Algorithm float were added."
+}
