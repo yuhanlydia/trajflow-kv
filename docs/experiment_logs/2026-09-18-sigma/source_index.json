@@ -1,0 +1,502 @@
+{
+  "cutoff": "2026-09-18T11:56:08.402010+08:00",
+  "entries": [
+    {
+      "source": "results/sigma/S00/hourly_supervision/20260918T115608+0800.json",
+      "sha256": "ad0cc1c3249fe288791794d179ea10e18931930a6b265b2ff01aa702ca3d705b",
+      "bytes": 35412
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/f045bfcf47a93e4e5208/episode.json",
+      "sha256": "579fd862b4ee151ed0d06b77a08a6e5a25b401937778d1a48ddcae7b1eb69c22",
+      "bytes": 116308
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/8ac7cc0f2537b7d1c8c5/episode.json",
+      "sha256": "3c08fc483371bcfea1836341e8b6e9580c41d6e787727185aa43dfeb973a9a79",
+      "bytes": 116365
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/084c9a23ec8ad51322da/episode.json",
+      "sha256": "28d9f39dae6a53e87c06346d7b1207ea674236908243a3ffd9605cdc44c8b69c",
+      "bytes": 134707
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/db1098c1c8b357057002/episode.json",
+      "sha256": "b47f0e3329c018afa9b3f247b6c098f73ffe5141bf65337ba36953d9b5ac73cc",
+      "bytes": 134704
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/26e32009dc39578df232/episode.json",
+      "sha256": "e2e99a04bb95a7c3500e403ee5d99fc843159e684fed89d1f35aebaa6f5a2a12",
+      "bytes": 134701
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/ef6124dd446566d3513d/episode.json",
+      "sha256": "4d8d79b62a0a9db25722c08e9f661e4f73d082dd89c55d3b71c3512e363480a4",
+      "bytes": 104153
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/e14afd349d20ca31e031/episode.json",
+      "sha256": "6708db0bbfc300be0a2d46e9e871f3e6b9ff9ae5f80ca2b516443eed696d806a",
+      "bytes": 104150
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/6fb190687b5bb91ec996/episode.json",
+      "sha256": "8c8faf5adf0c535a6370b6f91e7c295d22312c108987999e7b57ae57027d847d",
+      "bytes": 104154
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/7d858a5776d8e1cbad15/episode.json",
+      "sha256": "a9b5553659fc0b43fd1b2c770d4eec488e5e306fa266aece876d29262bab7656",
+      "bytes": 105356
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/4de8f3f1c79cafe1c8f1/episode.json",
+      "sha256": "b554b7108e39b40f16d9adcd2e8ceeac2fcac48783e66063edae5c46ace417b8",
+      "bytes": 105362
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/126a3afa753cdab88be2/episode.json",
+      "sha256": "d7e3684147597259aa43ffe3465547b3c2d0a239fa8bc9dea01b6ec77e72d3d3",
+      "bytes": 105360
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/acb013d1e7b906d66fdd/episode.json",
+      "sha256": "f6e497a7c5878d6acdd31ea923a4ef6ce2e9abc6b50df1c2f085cf2f40070c29",
+      "bytes": 107688
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/191bb36ad143f20fd206/episode.json",
+      "sha256": "067860a66089edc43b077b5395432bcbb51bd3e80e677f30a0aec7a22e8a37c5",
+      "bytes": 107600
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/d33e4ff799d8d420b62b/episode.json",
+      "sha256": "3d57bb30dbf44d7901e3062b94291f23083be002790c8394718d0e11e0257378",
+      "bytes": 107682
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/6992e6d55873fc586183/episode.json",
+      "sha256": "21460e5a0572051862066ed0a86641938bc5e4f81b080d1222e3d8f08ea4e614",
+      "bytes": 107687
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/2f3ddea8ffa2944670b6/episode.json",
+      "sha256": "5ffc076f50164d89dd5d273e74f5fb0e16b9b55c19ce9878bbb000bdc1d4cae7",
+      "bytes": 107845
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/dda7ee929798895e87c7/episode.json",
+      "sha256": "3d69bdee4f673cdcd3b2c77d494f8265da9a3408baae74ccb13e741bd2dcdfd6",
+      "bytes": 107685
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/f96fd85d4571595a27da/episode.json",
+      "sha256": "6d2ccfe1bbea493c9bffedf3df54c14a1af6cffb812680394ce34bc6e1878dcf",
+      "bytes": 108293
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/350a27494e4ceb810a12/episode.json",
+      "sha256": "a934a7602d7b4ad648bdf8c1a53e12cbaffb61f84e838d16e7706b954e60d451",
+      "bytes": 108374
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/f1169087c0520497862a/episode.json",
+      "sha256": "3e5497b478b9799aaac6a0665195882c0e9aa48403feffd95ad3b3ac122fd134",
+      "bytes": 106234
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/4ed833a9a82c72ffe1f2/episode.json",
+      "sha256": "5d90e6c74991985235ced62cd92a1f7f322015addda8ee1a2c4a90c9e2c47304",
+      "bytes": 104837
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/ad46b68b4f302d38551b/episode.json",
+      "sha256": "9e5649e6bc2dee3a5c8dafc0aa6e6ca16d1c2cb68f6f22768e5431a3c0a98868",
+      "bytes": 104675
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/f91a36d47e23929509eb/episode.json",
+      "sha256": "b00caa05a1ce6caba351d6dba1142722ce752c33b76c82fae5c62db04feb08c7",
+      "bytes": 104759
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/001-FindProductAndFilter/sigma_history/attempt_1/final_decision.json",
+      "sha256": "3ac7971c571cce65486f0ef89024fe40f1d040603a088f5c5627e93d7e9912e6",
+      "bytes": 608
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/002-FindProductAndFilter/sigma_history/attempt_1/final_decision.json",
+      "sha256": "ad713a64ad5831822d0f8f7e037c3fc534c77207f291e3e3aed33e2ef28f6f67",
+      "bytes": 505
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/003-RecordAndNameAudio/sigma_history/attempt_1/final_decision.json",
+      "sha256": "ece819561ebe5a9f7c9945987befefe4d93db8adbcf6cdb2a911fcfd5ac72fe0",
+      "bytes": 881
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/004-ConfigureRecordAndNameAudio/sigma_history/attempt_1/final_decision.json",
+      "sha256": "ed4793f83cb344944189ff6b9b13206e0e7817b4a68eedd0025c644f8eb9f927",
+      "bytes": 870
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/005-SearchSportsScores/sigma_history/attempt_1/final_decision.json",
+      "sha256": "c55da125d5b2cd3a39977c0c9808ef97199583d9a907c4c7cfe5b85971d70710",
+      "bytes": 667
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/006-SearchSportsScores/sigma_history/attempt_1/final_decision.json",
+      "sha256": "45d2c3e7ff5906d367899a506db4eb7c734234b2834e7c35705c6c342298706f",
+      "bytes": 583
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/007-AddDetailedTransaction/sigma_history/attempt_1/final_decision.json",
+      "sha256": "fce8e107d855adeca78c0dcf5b1a1b7ccb6c560b53856921e2a5d40a483983df",
+      "bytes": 711
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/008-AddDetailedTransaction/sigma_history/attempt_1/final_decision.json",
+      "sha256": "3cec46cc3fad84a5fdf392f1bd4261989674eb7911b1b34e634b0564d293b37e",
+      "bytes": 669
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/009-MultiClockFunctions/sigma_history/attempt_1/final_decision.json",
+      "sha256": "8fd5dd9afebd318e8c60ee3a1d7a1c83ff894cc54e1f55debfbb33bd4c809aa6",
+      "bytes": 697
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/010-SetTimersAndManageWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "0b951f6adf7748837b5056c597ddadfd9bd51b49b6a534a18c6194fd5d744199",
+      "bytes": 787
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/011-SetMeetingAlarmByWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "90ff30929812bb282515557bf9e04676f3b670d02c8741aeb6e70ead6522c01e",
+      "bytes": 810
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/012-SetMeetingAlarmByWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "42226fad9ec9f7f11f0778a455a63984b6b26040077b96e6fc90a721b0d442d9",
+      "bytes": 660
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/013-CompareCourseInfo/sigma_history/attempt_1/final_decision.json",
+      "sha256": "9ed38c30130fc820494c942d63fb29d5b5f55336b0354484b728e3f5254f8c47",
+      "bytes": 986
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/014-CompareCourseInfo/sigma_history/attempt_1/final_decision.json",
+      "sha256": "dd6bd4333ff4924a7773e48b97a73331c86851fb9cc184e2531475e4286fea5f",
+      "bytes": 913
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/015-CreateSimpleNote/sigma_history/attempt_1/final_decision.json",
+      "sha256": "091df71f45ce5e0185fa64f14f9272deb428291371a215953bf1db7fd492e429",
+      "bytes": 494
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/016-CreateSimpleNote/sigma_history/attempt_1/final_decision.json",
+      "sha256": "3895d856439a9e6bb0f3bb7383e42dde7518f9938fc804f632b70207861ad3b7",
+      "bytes": 567
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/017-SearchAndCompareRatings/sigma_history/attempt_1/final_decision.json",
+      "sha256": "0bd7dc46ef27ab36b2ca441982dc283d536e794c65a77f5bf86aaa0148691a6f",
+      "bytes": 852
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/018-SearchAndCompareRatings/sigma_history/attempt_1/final_decision.json",
+      "sha256": "94d66cb2b4540fc293b12f038d8e8b2a5abd6f0b3004ecaf6c7b987f00901efe",
+      "bytes": 643
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/019-NavigateAndCompareItems/sigma_history/attempt_1/final_decision.json",
+      "sha256": "5cd348c3c59cc3c8ffbcf47e4b41560041733d41df3ecb634ceb08de3d9ec85c",
+      "bytes": 815
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/020-NavigateAndCompareItems/sigma_history/attempt_1/final_decision.json",
+      "sha256": "d49768746e086352b651b48c98520f2df9f28ba2c143f72aa9b96527a8d8fe16",
+      "bytes": 643
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_memgui_eval/021-NavigateAndComparePrices/sigma_history/attempt_1/final_decision.json",
+      "sha256": "c92350630f4cf861075789a65a15bbec632ef553a6f042b9f357f96dae0c8916",
+      "bytes": 870
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/001-FindProductAndFilter/sigma_history/attempt_1/final_decision.json",
+      "sha256": "19e81b8e2bb0a37137db5eeaab64854fed33b8ef79f12b26d7c5e56a97493597",
+      "bytes": 662
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/002-FindProductAndFilter/sigma_history/attempt_1/final_decision.json",
+      "sha256": "442491f7dc03824a092ffe81af6abba953acb0ad507f33216bac5a76545b6354",
+      "bytes": 662
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/003-RecordAndNameAudio/sigma_history/attempt_1/final_decision.json",
+      "sha256": "264acaf10894d12925e0d191984e3ff220666a79fbdce7a04150e50a60be3e08",
+      "bytes": 838
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/004-ConfigureRecordAndNameAudio/sigma_history/attempt_1/final_decision.json",
+      "sha256": "27539a1d7c767177eb21739d02017e2379c9c8fb35329ea0c1cfcb93372f8ae7",
+      "bytes": 862
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/005-SearchSportsScores/sigma_history/attempt_1/final_decision.json",
+      "sha256": "38fda53e3bf2b48a2cb3c50e151c894ec9f3a27ad6740f0c690bd35afd81a3ee",
+      "bytes": 833
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/006-SearchSportsScores/sigma_history/attempt_1/final_decision.json",
+      "sha256": "c40eef82800ce7ac3f6e48b14f0cdc5bb55dcffad41d2e7d4e47976a99124925",
+      "bytes": 586
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/007-AddDetailedTransaction/sigma_history/attempt_1/final_decision.json",
+      "sha256": "eaa68a0480864dcbedd11887151d18ca8f762b3fd9044f79fabd7aab1d1ea511",
+      "bytes": 805
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/008-AddDetailedTransaction/sigma_history/attempt_1/final_decision.json",
+      "sha256": "bb12e4a6497cb43a9623f747d6c6cf98e5c03574862c2e45129e258eee2d0984",
+      "bytes": 534
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/009-MultiClockFunctions/sigma_history/attempt_1/final_decision.json",
+      "sha256": "769ca50c00e0bd748178a0b6e4305aa16ceee8df560beac3b6b304ddb8fd6a28",
+      "bytes": 1026
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/010-SetTimersAndManageWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "515e260b3531b2d7b5f54dca10503332e32f5db4bb704609ff08aba3b5a08d6d",
+      "bytes": 992
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/011-SetMeetingAlarmByWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "9ba603b4c1bf3ba57f78a6784281d55f337a112f3d2cd30b4ab4b5b6139144ee",
+      "bytes": 679
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/012-SetMeetingAlarmByWorldClock/sigma_history/attempt_1/final_decision.json",
+      "sha256": "3520557698f4655c599f2280782a28fe158efaa2386552e1d58a37c010ab82aa",
+      "bytes": 759
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/013-CompareCourseInfo/sigma_history/attempt_1/final_decision.json",
+      "sha256": "3056f0bdb3fc87de973aaf14cd7389b15f38bc60c89f6d681ea8d62612266d1f",
+      "bytes": 1019
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/014-CompareCourseInfo/sigma_history/attempt_1/final_decision.json",
+      "sha256": "25fcd30ceb3d695f7d31594127cfe032fe8d87e24683d831dadcd0ef15aeb399",
+      "bytes": 1093
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/015-CreateSimpleNote/sigma_history/attempt_1/final_decision.json",
+      "sha256": "42e6cb3fff82f0d63af0135fd8e72bf118c0f636ad8716fb0e11358db761bb4c",
+      "bytes": 325
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/016-CreateSimpleNote/sigma_history/attempt_1/final_decision.json",
+      "sha256": "9c84f69ebafe49888151099755947ebebfb36a624284fba20956ed110d41b38e",
+      "bytes": 587
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/017-SearchAndCompareRatings/sigma_history/attempt_1/final_decision.json",
+      "sha256": "142aeef596f569dc30eaf882b29ac1c27b0954ae372750774e2d71a31594450b",
+      "bytes": 685
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/018-SearchAndCompareRatings/sigma_history/attempt_1/final_decision.json",
+      "sha256": "1f2799c0b2aeeec47db5a425c5ad1c861427b6fe90a259ee8ebc8ee12c0cb42b",
+      "bytes": 774
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/019-NavigateAndCompareItems/sigma_history/attempt_1/final_decision.json",
+      "sha256": "42d84d5691ea1fa02149d862b36f123a187015ced7a14977f92389c8cd899797",
+      "bytes": 705
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/020-NavigateAndCompareItems/sigma_history/attempt_1/final_decision.json",
+      "sha256": "596983e75e1872a4032241a9e15907bcb079a920a8d6f8e79f14ac07b1e2f4d1",
+      "bytes": 882
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_memgui_eval/021-NavigateAndComparePrices/sigma_history/attempt_1/final_decision.json",
+      "sha256": "66fabe8bd7bf39b0ea4a14a8946ec9035dbac1fa39d1f165650a6eaecd9c9b7a",
+      "bytes": 834
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s11/config.json",
+      "sha256": "4574bda493fc611ffeace13474e3cea5ffdf501880c168eea3d491662fafed9c",
+      "bytes": 1736
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s11/checkpoint_selection.json",
+      "sha256": "16714d09a16715da2c627273dfa3a68eaa49d6e2b55be629f0f2c13e3fe481be",
+      "bytes": 313627
+    },
+    {
+      "source": "results/sigma/S00/trained_native_7b_v2/checkpoint_bindings.json",
+      "sha256": "69494f19988231cc46cf50a8252b5c4ea540a8b48c0907f4c6ea8fc2dd696ad4",
+      "bytes": 30197
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s11/config.json",
+      "sha256": "c6150ee1f016ff6262ed471e2accfb8d9597e146055bb8c647555f994142b402",
+      "bytes": 1688
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s11/checkpoint_selection.json",
+      "sha256": "b859ac482b2abf542151f66cc5f4d20bd9e9868f4cc05715ed8477c98356ca75",
+      "bytes": 312242
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s23/config.json",
+      "sha256": "86f4f2b2d61e3c9cf57074b8c6cb2045cbfbeea4d2b54e7d6c6e74c64ed2d8cd",
+      "bytes": 1736
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s23/checkpoint_selection.json",
+      "sha256": "963da7011883fec0c641c35d05efd33ad00578bbbfc435a599e917d611383f52",
+      "bytes": 313344
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s23/config.json",
+      "sha256": "70210d2086447f9b0c5c19d7ccfef428932ab3b3da0fc470682ed424fb494322",
+      "bytes": 1688
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s23/checkpoint_selection.json",
+      "sha256": "da662462bcb136106085bf6dbffd00aeb52dbb501f43823cccc449984bfaa4da",
+      "bytes": 312234
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s37/config.json",
+      "sha256": "96c5ed83b863040df0786e657e332a30637b25258a3a7629eeaa37a8f6fcdf07",
+      "bytes": 1736
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/memory_s37/checkpoint_selection.json",
+      "sha256": "cf86afac19c4ac3a76e182aac5024d018ab3157fa5bd3493ea91329b4e153bca",
+      "bytes": 313448
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s37/config.json",
+      "sha256": "3ed5612e8faf0a676052a1e131963d54add84d3cf90cecfda7627781330900d3",
+      "bytes": 1688
+    },
+    {
+      "source": "outputs/sigma_controlled_7b_20260917/ce_s37/checkpoint_selection.json",
+      "sha256": "59a3958cde2c9ce8b74c09228da20080ad81558f97ef6bb3e7f386e2f3a018f7",
+      "bytes": 310935
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/preregistered_plan.json",
+      "sha256": "e8d96c2cfaa1c30203fd8c11009a5f1ebb38e7de62ddb8906a179b2d29a4687e",
+      "bytes": 59253
+    },
+    {
+      "source": "results/sigma/E05/memory_s11_qwen7b_compat_v3/preregistered_plan.json",
+      "sha256": "b40cc496a6c0733cd768438cd8b7cd5042cfce44de2e2acbc5dba85e41f734e5",
+      "bytes": 271582
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/preregistered_plan.json",
+      "sha256": "bc6f5908ab568fbcf9775d7ddf7988b0089efd6650e50b510e1b2f2d0d817335",
+      "bytes": 272592
+    },
+    {
+      "source": "results/sigma/S00/android_swipe_repair_v1/cpu_validation.json",
+      "sha256": "8f8c2d761834f3cb618527727128f9b9e5548411c1ba45964c60d7913e93f525",
+      "bytes": 1061
+    },
+    {
+      "source": "results/sigma/S00/android_swipe_repair_v1/backend_validation.json",
+      "sha256": "92b6dc60620b2d79ef32290535a7a8371f062fbd4c9b40cad87a5670499f9c6a",
+      "bytes": 2594
+    },
+    {
+      "source": "results/sigma/S00/android_swipe_repair_v1/comparison_audit.json",
+      "sha256": "f9508b9fbaabb4b96ee9aad1fae6a43047dc5312f9c7054cecdd634b68d0813a",
+      "bytes": 1710
+    },
+    {
+      "source": "results/sigma/S00/memgui_snapshot_clock_v1/cpu_validation.json",
+      "sha256": "005625ec924b291b339810b98de8ff708156d56c61733c41a03f69c8fbd3ac42",
+      "bytes": 80
+    },
+    {
+      "source": "results/sigma/S00/memgui_snapshot_clock_v1/registration.json",
+      "sha256": "74ee9f229014bd6df32d110ee564856e34924213cb12300eae0e6d6308b2ca63",
+      "bytes": 4389
+    },
+    {
+      "source": "results/sigma/S00/memgui_snapshot_clock_v1/live_verification.json",
+      "sha256": "7c14a326eb6ee533cba20568049578fe3f9b03b2606e6f913da9d0ec04952c50",
+      "bytes": 20324
+    },
+    {
+      "source": "results/sigma/S00/memgui_empty_input_v1/cpu_validation.json",
+      "sha256": "cffdb38cd843ce571f792f8c5d27bb558c5505da0badd5105476cfb73bc8ac16",
+      "bytes": 101
+    },
+    {
+      "source": "results/sigma/S00/memgui_empty_input_v1/registration.json",
+      "sha256": "80c15dd4867eaa12278d847ae0bac7cfb943d50cd0bfd2029b70eb2aa1df42f4",
+      "bytes": 865
+    },
+    {
+      "source": "results/sigma/S00/poor_performance_audit_iteration80/audit.json",
+      "sha256": "f9694142f6471c32de0b01fe19462e61fa153d172a9c63b8259e18d101839e58",
+      "bytes": 7115
+    },
+    {
+      "source": "results/sigma/S00/hourly_review_iteration83/clock_and_connectivity.json",
+      "sha256": "dde259612337778e326867f07c15ddd31be50b3ce6883f950bb0b3e5c6fbf290",
+      "bytes": 4812
+    },
+    {
+      "source": "results/sigma/S00/hourly_review_iteration83/dependency_and_identity_checks.json",
+      "sha256": "a948f9b55f9d1931b29af06deeae680717f2368b8d42f4ab07962721cc0c953a",
+      "bytes": 894
+    },
+    {
+      "source": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/019-NavigateAndCompareItems/screenshots/019-NavigateAndCompareItems-0-5.png",
+      "sha256": "426eaab583728750c1248003735d07e05d6a0fc23b0578d5cc56d70bdf7590ab",
+      "bytes": 118052,
+      "export": "meesho_network_error.png"
+    },
+    {
+      "source": "results/sigma/S00/memgui_empty_input_v1/server_empty_input.patch",
+      "sha256": "310af8a724709b51180b7cae2ed7f30ea48004675434e16794ff48933bb4c6dd",
+      "bytes": 393,
+      "export": "repairs/empty_input_text.patch"
+    },
+    {
+      "source": "results/sigma/S00/memgui_snapshot_clock_v1/snapshot_clock.py",
+      "sha256": "97fcda1450f85e9084561e022c595b43c1e141866b13f7fe3aca48906be44b72",
+      "bytes": 2945,
+      "export": "repairs/snapshot_clock.py"
+    },
+    {
+      "source": "tango_iclr/android_gestures.py",
+      "sha256": "42420e2ef39ef34cfeccc126706a891babffe8fada878c3a19084965b9436d44",
+      "bytes": 1302,
+      "export": "repairs/android_gestures.py"
+    },
+    {
+      "source": "results/sigma/E06/memory_s11_qwen7b_compat_v2/episodes/5c4cab428f6d292f684e/episode.json",
+      "sha256": "650c4815cbd54648e890e16970417635b0eb757c1a60856adbbdc67a603aff94",
+      "bytes": 106459
+    }
+  ],
+  "source_root_on_server": "/data/cwj/trajflow-kv-longgoal",
+  "note": "SHA256 values identify server source bytes. JSON exports are field-selected/path-normalized, not byte-identical source copies. Final decisions are frozen to the cutoff; running rounds are excluded.",
+  "legacy_android_index_note": "Retirement followed terminal episode close: old aggregate index has 18 rows, raw terminal episode.json files and retirement partition have 19. CSV uses all 19 raw terminals, without replay."
+}

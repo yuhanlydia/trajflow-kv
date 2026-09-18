@@ -1,0 +1,117 @@
+{
+  "schema": "sigma.benchmark_review_log.v1",
+  "cutoff_time": "2026-09-18T11:56:08.402010+08:00",
+  "timezone": "Asia/Shanghai",
+  "metrics_are_partial": true,
+  "execution_worktree_head": "2683fb80d9e0c990d18c9f7f252661c576141cd4",
+  "publication_base_head": "95a625161b6678547be771dde45c2fbf5845ccf8",
+  "allowed_physical_gpus": [
+    1,
+    2,
+    3
+  ],
+  "current_progress": {
+    "android_memory_s11": {
+      "terminal_rows": 5,
+      "successes": 0,
+      "in_progress_episode_directories": [
+        "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/beb412ef973284888936"
+      ],
+      "status_counts": {
+        "complete": 5
+      },
+      "planned_arm": 329,
+      "artifact_root": "results/sigma/E06/memory_s11_qwen7b_gesture_v1",
+      "arm": "memory",
+      "training_seed": 11,
+      "checkpoint_sha256": "d9b5f71547c5bf6066a66e119d9ff16edb96c667a6d0b51092f0eae6eccf3fc4",
+      "scope": "Existing 7B checkpoint/native Base with mechanically verified finger-swipe compatibility; only unstarted arm-specific cases. Compare matched cases under this protocol; preserve old outcomes separately.",
+      "action_format": "json_wrappers_v1",
+      "coordinate_frame": "model_pixels_v1",
+      "gesture_policy": "finger_swipe_v1"
+    },
+    "memgui_memory_s11": {
+      "raw_terminal_judgments": 21,
+      "trace_tasks_started": 22,
+      "successes": 0,
+      "task_failures": 21,
+      "failure_attribution": "Not inferred from score: a zero may include app availability, action, or policy failures.",
+      "judge_errors": 0,
+      "planned_arm": 384,
+      "artifact_root": "results/sigma/E05/memory_s11_qwen7b_compat_v3",
+      "arm": "memory",
+      "training_seed": 11,
+      "checkpoint_sha256": "d9b5f71547c5bf6066a66e119d9ff16edb96c667a6d0b51092f0eae6eccf3fc4",
+      "judge_transport_observations": {
+        "connection_error_lines": 56,
+        "rate_limit_lines": 198
+      },
+      "latest_thread_log_mtime": 1789703766.941514,
+      "scope": "Raw live progress; final conversion and provenance validation still required"
+    },
+    "memgui_ce_s11": {
+      "raw_terminal_judgments": 21,
+      "trace_tasks_started": 22,
+      "successes": 1,
+      "task_failures": 20,
+      "failure_attribution": "Not inferred from score: a zero may include app availability, action, or policy failures.",
+      "judge_errors": 0,
+      "planned_arm": 384,
+      "artifact_root": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1",
+      "arm": "ce",
+      "training_seed": 11,
+      "checkpoint_sha256": "7f1d4ecfb6ed3ae152368a35700e2942555d15280ac6a4a3ebd0427d04734ba0",
+      "judge_transport_observations": {
+        "connection_error_lines": 140,
+        "rate_limit_lines": 181
+      },
+      "latest_thread_log_mtime": 1789703590.1974242,
+      "scope": "Raw live progress; final conversion and provenance validation still required"
+    }
+  },
+  "clock_repair_receipts": {
+    "sigma_memgui_0": {
+      "completed": 1,
+      "failures": 0,
+      "latest": {
+        "changed": true,
+        "device": "emulator-5554",
+        "guest_epoch_after": 1789702781,
+        "guest_epoch_before": 1789578498,
+        "host_epoch": 1789702781.3799217,
+        "parent_pid": 78516,
+        "pid": 127511,
+        "protocol": "snapshot_host_clock_v1",
+        "skew_after_seconds": -0.5185079574584961,
+        "skew_before_seconds": -124283.37992167473,
+        "stage": "synchronized",
+        "target_epoch_ms": 1789702781382
+      },
+      "helper_sha256": "72678530ed4f3535715b205849a125d59a865bffb34c0e6a0b7c5376406c0ddc"
+    },
+    "sigma_memgui_gpu2_0": {
+      "completed": 1,
+      "failures": 0,
+      "latest": {
+        "changed": true,
+        "device": "emulator-5554",
+        "guest_epoch_after": 1789702582,
+        "guest_epoch_before": 1789692149,
+        "host_epoch": 1789702582.9167557,
+        "parent_pid": 1262,
+        "pid": 22378,
+        "protocol": "snapshot_host_clock_v1",
+        "skew_after_seconds": -0.9887275695800781,
+        "skew_before_seconds": -10433.91675567627,
+        "stage": "synchronized",
+        "target_epoch_ms": 1789702582918
+      },
+      "helper_sha256": "72678530ed4f3535715b205849a125d59a865bffb34c0e6a0b7c5376406c0ddc"
+    }
+  },
+  "claims": {
+    "native_sigma_gain_established": false,
+    "all_benchmarks_complete": false,
+    "clock_fix_success_gain_established": false
+  }
+}

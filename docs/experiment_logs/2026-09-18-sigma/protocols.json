@@ -1,0 +1,130 @@
+{
+  "android": {
+    "scope": "Existing 7B checkpoint/native Base with mechanically verified finger-swipe compatibility; only unstarted arm-specific cases. Compare matched cases under this protocol; preserve old outcomes separately.",
+    "planned_episodes": 329,
+    "training_seed": 11,
+    "decode_attempts": [
+      101,
+      202,
+      303
+    ],
+    "environment_suite_seed": 42,
+    "max_steps": 30,
+    "max_new_tokens": 160,
+    "history_limit": 5,
+    "history_max_pixels": 100352,
+    "current_max_pixels": 401408,
+    "temperature": 0,
+    "code_snapshot": "run_snapshots/d333d8f2b9216278b2ad7d0913012b9ededd2dddc3bec3e92777c768cd9fe798",
+    "argv": [
+      "<shared-data>/.venv/bin/python",
+      "-m",
+      "tango_iclr.online",
+      "--manifest",
+      "results/sigma/E06/memory_s11_qwen7b_gesture_v1/remaining_manifest.jsonl",
+      "--output",
+      "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes",
+      "--model",
+      "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "--revision",
+      "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "--history-limit",
+      "5",
+      "--max-steps",
+      "30",
+      "--temperature",
+      "0",
+      "--max-tokens",
+      "8192",
+      "--history-max-pixels",
+      "100352",
+      "--current-max-pixels",
+      "401408",
+      "--action-format",
+      "json_wrappers_v1",
+      "--coordinate-frame",
+      "model_pixels_v1",
+      "--checkpoint",
+      "outputs/sigma_controlled_7b_20260917/memory_s11/best.pt",
+      "--gesture-policy",
+      "finger_swipe_v1"
+    ],
+    "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "action_format": "json_wrappers_v1",
+    "coordinate_frame": "model_pixels_v1",
+    "arm": "memory",
+    "gesture_policy": "finger_swipe_v1",
+    "preregistered_plan_sha256": "e8d96c2cfaa1c30203fd8c11009a5f1ebb38e7de62ddb8906a179b2d29a4687e"
+  },
+  "memgui_sigma": {
+    "arm": "memory",
+    "protocol_id": "memgui_qwen2_5vl7b_displayed_pixel_open_app_compat_alternate_judge_v3",
+    "code_snapshot": "run_snapshots/6f2608c77474c7c8f549657a91bc0c77a1654a2555957deecc06e010a0651229",
+    "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+    "planned_episodes": 384,
+    "tasks_per_attempt": 128,
+    "decode_seeds": [
+      101,
+      202,
+      303
+    ],
+    "judge_configuration": {
+      "MEMGUI_STEP_DESC_MODEL": "gpt-4.1-mini-2025-04-14",
+      "MEMGUI_FINAL_DECISION_MODEL": "gpt-4.1-mini-2025-04-14",
+      "MEMGUI_STEP_DESC_BASE_URL": "https://api.openai.com/v1",
+      "MEMGUI_FINAL_DECISION_BASE_URL": "https://api.openai.com/v1",
+      "MEMGUI_STEP_DESC_PROVIDER": "openai_compatible",
+      "MEMGUI_FINAL_DECISION_PROVIDER": "openai_compatible",
+      "MEMGUI_MAX_RETRIES": 1
+    },
+    "coordinate_frame": "model_pixels_v1",
+    "scope": "Full native transfer of controlled-trained7B checkpoint; offline selection. Only matching corrected Base support can enter comparisons; not manuscript-trained equivalence.",
+    "training_seed": 11,
+    "effective_inference_settings": {
+      "TANGO_HISTORY_LIMIT": "5",
+      "TANGO_HISTORY_MAX_PIXELS": "100352",
+      "TANGO_CURRENT_MAX_PIXELS": "401408",
+      "TANGO_MAX_TOKENS": "8192",
+      "TANGO_FOUR_BIT": "0",
+      "TANGO_DISABLE_RESIDUAL": "0",
+      "TANGO_MAX_STEPS": "official"
+    },
+    "preregistered_plan_sha256": "b40cc496a6c0733cd768438cd8b7cd5042cfce44de2e2acbc5dba85e41f734e5"
+  },
+  "memgui_ce": {
+    "arm": "ce",
+    "protocol_id": "memgui_qwen2_5vl7b_displayed_pixel_open_app_compat_alternate_judge_v3",
+    "code_snapshot": "run_snapshots/6f2608c77474c7c8f549657a91bc0c77a1654a2555957deecc06e010a0651229",
+    "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+    "planned_episodes": 384,
+    "tasks_per_attempt": 128,
+    "decode_seeds": [
+      101,
+      202,
+      303
+    ],
+    "judge_configuration": {
+      "MEMGUI_STEP_DESC_MODEL": "gpt-4.1-mini-2025-04-14",
+      "MEMGUI_FINAL_DECISION_MODEL": "gpt-4.1-mini-2025-04-14",
+      "MEMGUI_STEP_DESC_BASE_URL": "https://api.openai.com/v1",
+      "MEMGUI_FINAL_DECISION_BASE_URL": "https://api.openai.com/v1",
+      "MEMGUI_STEP_DESC_PROVIDER": "openai_compatible",
+      "MEMGUI_FINAL_DECISION_PROVIDER": "openai_compatible",
+      "MEMGUI_MAX_RETRIES": 1
+    },
+    "coordinate_frame": "model_pixels_v1",
+    "scope": "Full native transfer of controlled-trained7B checkpoint; offline selection. Only matching corrected Base support can enter comparisons; not manuscript-trained equivalence.",
+    "training_seed": 11,
+    "effective_inference_settings": {
+      "TANGO_HISTORY_LIMIT": "5",
+      "TANGO_HISTORY_MAX_PIXELS": "100352",
+      "TANGO_CURRENT_MAX_PIXELS": "401408",
+      "TANGO_MAX_TOKENS": "8192",
+      "TANGO_FOUR_BIT": "0",
+      "TANGO_DISABLE_RESIDUAL": "0",
+      "TANGO_MAX_STEPS": "official"
+    },
+    "preregistered_plan_sha256": "bc6f5908ab568fbcf9775d7ddf7988b0089efd6650e50b510e1b2f2d0d817335"
+  }
+}

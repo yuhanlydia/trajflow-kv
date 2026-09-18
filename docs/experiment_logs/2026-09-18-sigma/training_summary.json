@@ -1,0 +1,644 @@
+[
+  {
+    "name": "memory_s11",
+    "checkpoint_sha256": "d9b5f71547c5bf6066a66e119d9ff16edb96c667a6d0b51092f0eae6eccf3fc4",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.88,
+        "mean_action_nll": 2.6799812269210816
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6234755992889403
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.60311948299408
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.5803964281082155
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.5358616971969603
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 11,
+      "method": "memory",
+      "train": "results/sigma/E16/cross_instance_teacher_7b_v2/teacher_candidate_value_proxy_middle_k.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/memory_s11",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  },
+  {
+    "name": "ce_s11",
+    "checkpoint_sha256": "7f1d4ecfb6ed3ae152368a35700e2942555d15280ac6a4a3ebd0427d04734ba0",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.7,
+        "mean_action_nll": 2.789568991661072
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6331780767440796
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6078860998153686
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.611242456436157
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.9511541891098023
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 11,
+      "method": "ce",
+      "train": "data/sigma/manifests/interference_chain/train.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/ce_s11",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  },
+  {
+    "name": "memory_s23",
+    "checkpoint_sha256": "f594d21236b9156d366338777d625a6a8ad18941a3579b54430c1254f73946a7",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.88,
+        "mean_action_nll": 2.6871141386032105
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.620791311264038
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.600764832496643
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.578675875663757
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.524111442565918
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 23,
+      "method": "memory",
+      "train": "results/sigma/E16/cross_instance_teacher_7b_v2/teacher_candidate_value_proxy_middle_k.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/memory_s23",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  },
+  {
+    "name": "ce_s23",
+    "checkpoint_sha256": "1b70d21f9b45e8dfc58ef93bc91ae1dff95531d16583dd33199a6a113300cda9",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.7,
+        "mean_action_nll": 2.7733853244781494
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.636781277656555
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.613065309524536
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6452108001708985
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 3.169625997543335
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 23,
+      "method": "ce",
+      "train": "data/sigma/manifests/interference_chain/train.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/ce_s23",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  },
+  {
+    "name": "memory_s37",
+    "checkpoint_sha256": "4cebd3b8cdadc948a5e567370dd6ef8aed3f9fbf981a1bd27cded8fa2f2a8b16",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.86,
+        "mean_action_nll": 2.687586102485657
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6222886133193968
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.602437596321106
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.573914895057678
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.5104544591903686
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 37,
+      "method": "memory",
+      "train": "results/sigma/E16/cross_instance_teacher_7b_v2/teacher_candidate_value_proxy_middle_k.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/memory_s37",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  },
+  {
+    "name": "ce_s37",
+    "checkpoint_sha256": "338209548a8722be8b84b3ecd7934d531f66c8851139e2490682db6804f3f507",
+    "selected_epoch_index": 1,
+    "selection_track": "offline_validation",
+    "test_used_for_selection": false,
+    "training_prefixes": 200,
+    "validation_prefixes": 50,
+    "parameter_counts": {
+      "controller": 856577,
+      "bank": 73728
+    },
+    "native_success_selection": false,
+    "epochs": [
+      {
+        "epoch_index": 0,
+        "accuracy": 0.68,
+        "mean_action_nll": 2.792928123474121
+      },
+      {
+        "epoch_index": 1,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6281498575210573
+      },
+      {
+        "epoch_index": 2,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6040758514404296
+      },
+      {
+        "epoch_index": 3,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.6060862731933594
+      },
+      {
+        "epoch_index": 4,
+        "accuracy": 1.0,
+        "mean_action_nll": 2.9737434911727907
+      }
+    ],
+    "config": {
+      "model": "<shared-data>/models/Qwen2.5-VL-7B-Instruct",
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "target": "k",
+      "rank": 8,
+      "alpha": 8,
+      "controller": "gru",
+      "hidden": 256,
+      "controller_layers": 1,
+      "credit_epochs": 5,
+      "policy_epochs": 5,
+      "credit_lr": 0.0003,
+      "controller_lr": 0.0003,
+      "residual_lr": 0.0001,
+      "accumulation": 8,
+      "max_pixels": 100352,
+      "history_max_pixels": 100352,
+      "current_max_pixels": 401408,
+      "max_tokens": 8192,
+      "lambda_energy": 0.0,
+      "lambda_credit": 1.0,
+      "lambda_sign": 0.0,
+      "lambda_rank": 0.1,
+      "lambda_kl": 0.0,
+      "gate_temperature": 0.5,
+      "credit_deadzone": 0.002,
+      "memory_policy_objective": "ce",
+      "group_key": "task_id",
+      "four_bit": false,
+      "device": "cuda",
+      "checkpoint_selection": "offline_validation",
+      "validation": "data/sigma/manifests/interference_chain/validation.jsonl",
+      "experiment_track": "controlled_7b_scale_replication_not_native_paper_main",
+      "seed": 37,
+      "method": "ce",
+      "train": "data/sigma/manifests/interference_chain/train.jsonl",
+      "output": "outputs/sigma_controlled_7b_20260917/ce_s37",
+      "resolved_gate_mode": "signed",
+      "training_objective_scope": "policy_refinement",
+      "parameter_counts": {
+        "controller": {
+          "total": 856577,
+          "trainable": 856577
+        },
+        "residual": {
+          "total": 73728,
+          "trainable": 73728
+        }
+      },
+      "resolved_learning_rates": {
+        "credit_controller": 0.0003,
+        "joint_controller": 0.0003,
+        "joint_residual": 0.0001
+      }
+    }
+  }
+]
