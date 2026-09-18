@@ -2,6 +2,11 @@
 
 Canonical working repository: `yuhanlydia/trajflow-kv`.
 
+Latest server benchmark handoff: [AndroidWorld / MemGUI experiment log,
+2026-09-18](docs/SIGMA_BENCHMARK_EXPERIMENT_LOG_2026-09-18.md), with partial
+Qwen2.5-VL-7B results, failure evidence, repair status, and checkpoint provenance.
+This is a separate running configuration from the Qwen3-VL protocol below.
+
 The original tracked code, configuration, tests, and result files from
 `Yunbo-max/trajflow-kv` are imported below, together with their Git history.
 The source repository has not been changed or deleted.

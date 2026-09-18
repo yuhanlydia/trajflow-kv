@@ -1,0 +1,10 @@
+--- a/src/mobile_world/core/server.py
++++ b/src/mobile_world/core/server.py
+@@ -418,6 +418,7 @@
+                 ret = ctr.text(text)
+             else:
+                 logger.warning("[STEP] Text input is empty, skipping")
++                ret = "OK"  # Empty input is an explicit no-op.
+ 
+         elif action_type == NAVIGATE_BACK:
+             logger.info("[STEP] Executing back button")

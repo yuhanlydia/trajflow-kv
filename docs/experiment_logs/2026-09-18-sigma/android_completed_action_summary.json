@@ -1,0 +1,77 @@
+[
+  {
+    "case_id": "androidworld:CameraTakeVideo:suite42:0:attempt202",
+    "goal": "Take one video.",
+    "steps": 30,
+    "success": false,
+    "invalid_actions": 0,
+    "action_counts": {
+      "answer": 30
+    },
+    "first_action": "{\"action_type\":\"answer\",\"text\":\"The task is completed.\"}",
+    "last_action": "Action: {\"action_type\":\"answer\",\"text\":\"The task is completed.\"}",
+    "elapsed_seconds": 497.1551566250855,
+    "model_generation_seconds": 36.045553699019365,
+    "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/f045bfcf47a93e4e5208/episode.json"
+  },
+  {
+    "case_id": "androidworld:CameraTakeVideo:suite42:0:attempt303",
+    "goal": "Take one video.",
+    "steps": 30,
+    "success": false,
+    "invalid_actions": 0,
+    "action_counts": {
+      "answer": 30
+    },
+    "first_action": "{\"action_type\":\"answer\",\"text\":\"The task is completed.\"}",
+    "last_action": "Action: {\"action_type\":\"answer\",\"text\":\"The task is completed.\"}",
+    "elapsed_seconds": 489.74162308103405,
+    "model_generation_seconds": 34.514753689523786,
+    "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/8ac7cc0f2537b7d1c8c5/episode.json"
+  },
+  {
+    "case_id": "androidworld:ClockStopWatchPausedVerify:suite42:0:attempt101",
+    "goal": "Pause the stopwatch.",
+    "steps": 30,
+    "success": false,
+    "invalid_actions": 0,
+    "action_counts": {
+      "answer": 30
+    },
+    "first_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "last_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "elapsed_seconds": 502.92566584201995,
+    "model_generation_seconds": 42.050302983727306,
+    "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/084c9a23ec8ad51322da/episode.json"
+  },
+  {
+    "case_id": "androidworld:ClockStopWatchPausedVerify:suite42:0:attempt202",
+    "goal": "Pause the stopwatch.",
+    "steps": 30,
+    "success": false,
+    "invalid_actions": 0,
+    "action_counts": {
+      "answer": 30
+    },
+    "first_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "last_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "elapsed_seconds": 498.08138368302025,
+    "model_generation_seconds": 41.860224325209856,
+    "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/db1098c1c8b357057002/episode.json"
+  },
+  {
+    "case_id": "androidworld:ClockStopWatchPausedVerify:suite42:0:attempt303",
+    "goal": "Pause the stopwatch.",
+    "steps": 30,
+    "success": false,
+    "invalid_actions": 0,
+    "action_counts": {
+      "answer": 30
+    },
+    "first_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "last_action": "{\"action_type\":\"answer\",\"text\":\"The current screen does not show a stopwatch. The task cannot be completed with the given information.\"}",
+    "elapsed_seconds": 499.5700069159502,
+    "model_generation_seconds": 41.928803555085324,
+    "source": "results/sigma/E06/memory_s11_qwen7b_gesture_v1/episodes/26e32009dc39578df232/episode.json"
+  }
+]

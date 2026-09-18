@@ -1,0 +1,676 @@
+{
+  "android_swipe": {
+    "cpu_validation.json": {
+      "status": "passed",
+      "tests": 126,
+      "gpu_used": false,
+      "command": "CUDA_VISIBLE_DEVICES='' PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <shared-data>/.venv/bin/python -m pytest -q tests_iclr/test_android_gestures.py tests_iclr/test_native_actions.py tests_iclr/test_qwen25_compatibility.py tests_iclr/test_online_provenance.py",
+      "test_seconds": 29.06,
+      "source_sha256": {
+        "tango_iclr/online.py": "c1ac57165b3fa0b817c315dc2f467249fcaa4686f56b29e8c063878253e8f7a9",
+        "tango_iclr/android_gestures.py": "42420e2ef39ef34cfeccc126706a891babffe8fada878c3a19084965b9436d44",
+        "tests_iclr/test_android_gestures.py": "ab5bff8cfb5556902f0407e8262c2f88ef58a61c104143b24175adfd80a10c98"
+      },
+      "backend_validation": {
+        "path": "results/sigma/S00/android_swipe_repair_v1/backend_validation.json",
+        "sha256": "92b6dc60620b2d79ef32290535a7a8371f062fbd4c9b40cad87a5670499f9c6a"
+      },
+      "environment_note": "Disabled unrelated ROS pytest auto-load after lark plugin import error; no test or evaluation dependency modified."
+    },
+    "backend_validation.json": {
+      "status": "passed",
+      "mechanical_cases": 8,
+      "independent_model_outputs_correct_after_mapping": 4,
+      "upstream_source": "<shared-data>/data/sigma/external/android_world/android_world/env/actuation.py",
+      "upstream_sha256": "b979caca453f4b0885f94fd2a2a27073bfe7ba4522086bc61338fd3dc3f81360",
+      "rows": [
+        {
+          "raw": {
+            "action_type": "swipe",
+            "direction": "left"
+          },
+          "native": {
+            "action_type": "swipe",
+            "direction": "right"
+          },
+          "physical_finger_direction": "left",
+          "expected": "left",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "swipe",
+            "direction": "right"
+          },
+          "native": {
+            "action_type": "swipe",
+            "direction": "left"
+          },
+          "physical_finger_direction": "right",
+          "expected": "right",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "swipe",
+            "direction": "up"
+          },
+          "native": {
+            "action_type": "swipe",
+            "direction": "up"
+          },
+          "physical_finger_direction": "up",
+          "expected": "up",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "swipe",
+            "direction": "down"
+          },
+          "native": {
+            "action_type": "swipe",
+            "direction": "down"
+          },
+          "physical_finger_direction": "down",
+          "expected": "down",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "scroll",
+            "direction": "left"
+          },
+          "native": {
+            "action_type": "scroll",
+            "direction": "left"
+          },
+          "physical_finger_direction": "right",
+          "expected": "right",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "scroll",
+            "direction": "right"
+          },
+          "native": {
+            "action_type": "scroll",
+            "direction": "right"
+          },
+          "physical_finger_direction": "left",
+          "expected": "left",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "scroll",
+            "direction": "up"
+          },
+          "native": {
+            "action_type": "scroll",
+            "direction": "up"
+          },
+          "physical_finger_direction": "down",
+          "expected": "down",
+          "passed": true
+        },
+        {
+          "raw": {
+            "action_type": "scroll",
+            "direction": "down"
+          },
+          "native": {
+            "action_type": "scroll",
+            "direction": "down"
+          },
+          "physical_finger_direction": "up",
+          "expected": "up",
+          "passed": true
+        }
+      ],
+      "gpu_used": false,
+      "formal_cases_used": 0,
+      "native_environment_calls": 0
+    },
+    "comparison_audit.json": {
+      "time": 1789701028.425354,
+      "all_arms_share_action_and_budget_contract": true,
+      "contract": {
+        "gesture_policy": "finger_swipe_v1",
+        "max_steps": 30,
+        "history_limit": 5,
+        "max_new_tokens": 160,
+        "current_max_pixels": 401408,
+        "history_max_pixels": 100352,
+        "temperature": 0
+      },
+      "counts": {
+        "memory_s11": {
+          "planned": 329,
+          "arm": "memory",
+          "checkpoint": "d9b5f71547c5bf6066a66e119d9ff16edb96c667a6d0b51092f0eae6eccf3fc4"
+        },
+        "ce_s11": {
+          "planned": 348,
+          "arm": "ce",
+          "checkpoint": "7f1d4ecfb6ed3ae152368a35700e2942555d15280ac6a4a3ebd0427d04734ba0"
+        },
+        "memory_s23": {
+          "planned": 348,
+          "arm": "memory",
+          "checkpoint": "f594d21236b9156d366338777d625a6a8ad18941a3579b54430c1254f73946a7"
+        },
+        "ce_s23": {
+          "planned": 348,
+          "arm": "ce",
+          "checkpoint": "1b70d21f9b45e8dfc58ef93bc91ae1dff95531d16583dd33199a6a113300cda9"
+        },
+        "memory_s37": {
+          "planned": 348,
+          "arm": "memory",
+          "checkpoint": "4cebd3b8cdadc948a5e567370dd6ef8aed3f9fbf981a1bd27cded8fa2f2a8b16"
+        },
+        "ce_s37": {
+          "planned": 348,
+          "arm": "ce",
+          "checkpoint": "338209548a8722be8b84b3ecd7934d531f66c8851139e2490682db6804f3f507"
+        },
+        "base": {
+          "planned": 244,
+          "arm": "base",
+          "checkpoint": null
+        }
+      },
+      "seed11_sigma_ce_matched_cases": 329,
+      "seed11_sigma_ce_base_matched_cases": 244,
+      "protocol_mixing_allowed": false,
+      "historical_reference_base_plan_fields": "Inherited historical parent bindings. Active comparator runs and matched support are the new cohort_plan.json and case_partitions.json; do not compare old native_v1 Base to finger_swipe_v1 results."
+    }
+  },
+  "memgui_clock": {
+    "cpu_validation.json": {
+      "status": "passed",
+      "tests": 8,
+      "model_calls": 0,
+      "gpu_used": false
+    },
+    "registration.json": {
+      "schema": "sigma.prospective_environment_amendment.v1",
+      "registered_at": "2026-09-18T11:28:14.298636+08:00",
+      "authorization": "User authorizes compatibility/infrastructure debug; future unstarted cases only; preserve all original outcomes; no TEST tuning/replays.",
+      "protocol": "snapshot_host_clock_v1",
+      "root_cause": "Snapshot restoration resets guest clock; automatic time is enabled but guest stays stale. Native TLS logs contain OCSP validity interval failures.",
+      "limits": "Time skew is confirmed. Fixing it does not establish cause of all network/app/task failures. No success-rate gain claimed.",
+      "activation_boundary": "Existing synchronous post-snapshot ADB authorization, before initialization returns and before first policy observation. Never invoke manually on an in-progress guest.",
+      "method": "Android shell cmd alarm set-time host UTC milliseconds, with pre/post readback and append-only intent/result receipts. No timezone or UI changes.",
+      "all_future_arms_same_rule": true,
+      "parent_policy_plans_unchanged": true,
+      "original_helper_sha256": "d59c370cab93ccce5a074506ecb7b3fd5d67e9d2f5c5afceeb6765e80110f307",
+      "patched_helper_sha256": "72678530ed4f3535715b205849a125d59a865bffb34c0e6a0b7c5376406c0ddc",
+      "clock_module_sha256": "97fcda1450f85e9084561e022c595b43c1e141866b13f7fe3aca48906be44b72",
+      "mechanical_tests": 8,
+      "model_calls": 0,
+      "formal_replays": 0,
+      "lanes": [
+        {
+          "role": "memgui",
+          "container": "sigma_memgui_0",
+          "gpu": 3,
+          "job": "memory_s11",
+          "plan": {
+            "path": "results/sigma/E05/memory_s11_qwen7b_compat_v3/preregistered_plan.json",
+            "sha256": "b40cc496a6c0733cd768438cd8b7cd5042cfce44de2e2acbc5dba85e41f734e5"
+          },
+          "preserved_started_task_ids": [
+            "001-FindProductAndFilter",
+            "002-FindProductAndFilter",
+            "003-RecordAndNameAudio",
+            "004-ConfigureRecordAndNameAudio",
+            "005-SearchSportsScores",
+            "006-SearchSportsScores",
+            "007-AddDetailedTransaction",
+            "008-AddDetailedTransaction",
+            "009-MultiClockFunctions",
+            "010-SetTimersAndManageWorldClock",
+            "011-SetMeetingAlarmByWorldClock",
+            "012-SetMeetingAlarmByWorldClock",
+            "013-CompareCourseInfo",
+            "014-CompareCourseInfo",
+            "015-CreateSimpleNote",
+            "016-CreateSimpleNote",
+            "017-SearchAndCompareRatings",
+            "018-SearchAndCompareRatings",
+            "019-NavigateAndCompareItems",
+            "020-NavigateAndCompareItems",
+            "021-NavigateAndComparePrices"
+          ],
+          "decode_seed": 101
+        },
+        {
+          "role": "memgui_gpu2",
+          "container": "sigma_memgui_gpu2_0",
+          "gpu": 2,
+          "job": "ce_s11",
+          "plan": {
+            "path": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/preregistered_plan.json",
+            "sha256": "bc6f5908ab568fbcf9775d7ddf7988b0089efd6650e50b510e1b2f2d0d817335"
+          },
+          "preserved_started_task_ids": [
+            "001-FindProductAndFilter",
+            "002-FindProductAndFilter",
+            "003-RecordAndNameAudio",
+            "004-ConfigureRecordAndNameAudio",
+            "005-SearchSportsScores",
+            "006-SearchSportsScores",
+            "007-AddDetailedTransaction",
+            "008-AddDetailedTransaction",
+            "009-MultiClockFunctions",
+            "010-SetTimersAndManageWorldClock",
+            "011-SetMeetingAlarmByWorldClock",
+            "012-SetMeetingAlarmByWorldClock",
+            "013-CompareCourseInfo",
+            "014-CompareCourseInfo",
+            "015-CreateSimpleNote",
+            "016-CreateSimpleNote",
+            "017-SearchAndCompareRatings",
+            "018-SearchAndCompareRatings",
+            "019-NavigateAndCompareItems",
+            "020-NavigateAndCompareItems",
+            "021-NavigateAndComparePrices"
+          ],
+          "decode_seed": 101
+        }
+      ],
+      "receipt_path": "/app/artifacts/sigma_snapshot_clock_v1/receipts.jsonl",
+      "comparison_rule": "Keep every raw result. Stratify task outcomes by effective clock protocol inferred from reset receipt before first observation. Compare arms only on common cases and matching clock protocol; historical runs cannot be silently pooled as repaired.",
+      "runtime_identity_limitation": "Existing native runtime hash does not include /app/docker authorization helper; this separately hashed amendment is required in effective provenance and final comparisons."
+    },
+    "live_verification.json": {
+      "time": "2026-09-18T11:53:38.132784+08:00",
+      "lanes": {
+        "memgui": {
+          "container": "sigma_memgui_0",
+          "job": "memory_s11",
+          "plan": {
+            "path": "results/sigma/E05/memory_s11_qwen7b_compat_v3/preregistered_plan.json",
+            "sha256": "b40cc496a6c0733cd768438cd8b7cd5042cfce44de2e2acbc5dba85e41f734e5"
+          },
+          "receipt_sha256": "fbd5de5e5a7640305c09f3218e8c14421374a9080a5280a24f35ffe98ad5d310",
+          "clock_receipts_completed": 1,
+          "failures": [],
+          "cases": [
+            {
+              "case_id": "memgui:001-FindProductAndFilter:attempt101",
+              "task_id": "001-FindProductAndFilter",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/001-FindProductAndFilter_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:002-FindProductAndFilter:attempt101",
+              "task_id": "002-FindProductAndFilter",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/002-FindProductAndFilter_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:003-RecordAndNameAudio:attempt101",
+              "task_id": "003-RecordAndNameAudio",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/003-RecordAndNameAudio_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:004-ConfigureRecordAndNameAudio:attempt101",
+              "task_id": "004-ConfigureRecordAndNameAudio",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/004-ConfigureRecordAndNameAudio_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:005-SearchSportsScores:attempt101",
+              "task_id": "005-SearchSportsScores",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/005-SearchSportsScores_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:006-SearchSportsScores:attempt101",
+              "task_id": "006-SearchSportsScores",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/006-SearchSportsScores_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:007-AddDetailedTransaction:attempt101",
+              "task_id": "007-AddDetailedTransaction",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/007-AddDetailedTransaction_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:008-AddDetailedTransaction:attempt101",
+              "task_id": "008-AddDetailedTransaction",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/008-AddDetailedTransaction_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:009-MultiClockFunctions:attempt101",
+              "task_id": "009-MultiClockFunctions",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/009-MultiClockFunctions_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:010-SetTimersAndManageWorldClock:attempt101",
+              "task_id": "010-SetTimersAndManageWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/010-SetTimersAndManageWorldClock_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:011-SetMeetingAlarmByWorldClock:attempt101",
+              "task_id": "011-SetMeetingAlarmByWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/011-SetMeetingAlarmByWorldClock_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:012-SetMeetingAlarmByWorldClock:attempt101",
+              "task_id": "012-SetMeetingAlarmByWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/012-SetMeetingAlarmByWorldClock_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:013-CompareCourseInfo:attempt101",
+              "task_id": "013-CompareCourseInfo",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/013-CompareCourseInfo_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:014-CompareCourseInfo:attempt101",
+              "task_id": "014-CompareCourseInfo",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/014-CompareCourseInfo_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:015-CreateSimpleNote:attempt101",
+              "task_id": "015-CreateSimpleNote",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/015-CreateSimpleNote_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:016-CreateSimpleNote:attempt101",
+              "task_id": "016-CreateSimpleNote",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/016-CreateSimpleNote_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:017-SearchAndCompareRatings:attempt101",
+              "task_id": "017-SearchAndCompareRatings",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/017-SearchAndCompareRatings_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:018-SearchAndCompareRatings:attempt101",
+              "task_id": "018-SearchAndCompareRatings",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/018-SearchAndCompareRatings_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:019-NavigateAndCompareItems:attempt101",
+              "task_id": "019-NavigateAndCompareItems",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/019-NavigateAndCompareItems_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:020-NavigateAndCompareItems:attempt101",
+              "task_id": "020-NavigateAndCompareItems",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/020-NavigateAndCompareItems_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:021-NavigateAndComparePrices:attempt101",
+              "task_id": "021-NavigateAndComparePrices",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/021-NavigateAndComparePrices_131476145306496.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:022-NavigateAndComparePrices:attempt101",
+              "task_id": "022-NavigateAndComparePrices",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/memory_s11_qwen7b_compat_v3/attempt_101/official_logs/_thread_logs/022-NavigateAndComparePrices_131476145306496.log",
+              "clock_protocol": "snapshot_host_clock_v1",
+              "clock_receipt": {
+                "changed": true,
+                "device": "emulator-5554",
+                "guest_epoch_after": 1789702781,
+                "guest_epoch_before": 1789578498,
+                "host_epoch": 1789702781.3799217,
+                "parent_pid": 78516,
+                "pid": 127511,
+                "protocol": "snapshot_host_clock_v1",
+                "skew_after_seconds": -0.5185079574584961,
+                "skew_before_seconds": -124283.37992167473,
+                "stage": "synchronized",
+                "target_epoch_ms": 1789702781382
+              }
+            }
+          ]
+        },
+        "memgui_gpu2": {
+          "container": "sigma_memgui_gpu2_0",
+          "job": "ce_s11",
+          "plan": {
+            "path": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/preregistered_plan.json",
+            "sha256": "bc6f5908ab568fbcf9775d7ddf7988b0089efd6650e50b510e1b2f2d0d817335"
+          },
+          "receipt_sha256": "7a1899c97554e96d3598a9d45ad03e2a42bfcd09de1e7ddce0e33e411b8a43de",
+          "clock_receipts_completed": 1,
+          "failures": [],
+          "cases": [
+            {
+              "case_id": "memgui:001-FindProductAndFilter:attempt101",
+              "task_id": "001-FindProductAndFilter",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/001-FindProductAndFilter_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:002-FindProductAndFilter:attempt101",
+              "task_id": "002-FindProductAndFilter",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/002-FindProductAndFilter_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:003-RecordAndNameAudio:attempt101",
+              "task_id": "003-RecordAndNameAudio",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/003-RecordAndNameAudio_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:004-ConfigureRecordAndNameAudio:attempt101",
+              "task_id": "004-ConfigureRecordAndNameAudio",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/004-ConfigureRecordAndNameAudio_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:005-SearchSportsScores:attempt101",
+              "task_id": "005-SearchSportsScores",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/005-SearchSportsScores_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:006-SearchSportsScores:attempt101",
+              "task_id": "006-SearchSportsScores",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/006-SearchSportsScores_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:007-AddDetailedTransaction:attempt101",
+              "task_id": "007-AddDetailedTransaction",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/007-AddDetailedTransaction_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:008-AddDetailedTransaction:attempt101",
+              "task_id": "008-AddDetailedTransaction",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/008-AddDetailedTransaction_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:009-MultiClockFunctions:attempt101",
+              "task_id": "009-MultiClockFunctions",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/009-MultiClockFunctions_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:010-SetTimersAndManageWorldClock:attempt101",
+              "task_id": "010-SetTimersAndManageWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/010-SetTimersAndManageWorldClock_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:011-SetMeetingAlarmByWorldClock:attempt101",
+              "task_id": "011-SetMeetingAlarmByWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/011-SetMeetingAlarmByWorldClock_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:012-SetMeetingAlarmByWorldClock:attempt101",
+              "task_id": "012-SetMeetingAlarmByWorldClock",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/012-SetMeetingAlarmByWorldClock_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:013-CompareCourseInfo:attempt101",
+              "task_id": "013-CompareCourseInfo",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/013-CompareCourseInfo_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:014-CompareCourseInfo:attempt101",
+              "task_id": "014-CompareCourseInfo",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/014-CompareCourseInfo_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:015-CreateSimpleNote:attempt101",
+              "task_id": "015-CreateSimpleNote",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/015-CreateSimpleNote_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:016-CreateSimpleNote:attempt101",
+              "task_id": "016-CreateSimpleNote",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/016-CreateSimpleNote_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:017-SearchAndCompareRatings:attempt101",
+              "task_id": "017-SearchAndCompareRatings",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/017-SearchAndCompareRatings_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:018-SearchAndCompareRatings:attempt101",
+              "task_id": "018-SearchAndCompareRatings",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/018-SearchAndCompareRatings_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:019-NavigateAndCompareItems:attempt101",
+              "task_id": "019-NavigateAndCompareItems",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/019-NavigateAndCompareItems_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:020-NavigateAndCompareItems:attempt101",
+              "task_id": "020-NavigateAndCompareItems",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/020-NavigateAndCompareItems_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:021-NavigateAndComparePrices:attempt101",
+              "task_id": "021-NavigateAndComparePrices",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/021-NavigateAndComparePrices_130639620995968.log",
+              "clock_protocol": "legacy_snapshot_clock"
+            },
+            {
+              "case_id": "memgui:022-NavigateAndComparePrices:attempt101",
+              "task_id": "022-NavigateAndComparePrices",
+              "decode_seed": 101,
+              "thread_log": "results/sigma/E05/ce_s11_qwen7b_gpu2_parallel_v1/attempt_101/official_logs/_thread_logs/022-NavigateAndComparePrices_130639620995968.log",
+              "clock_protocol": "snapshot_host_clock_v1",
+              "clock_receipt": {
+                "changed": true,
+                "device": "emulator-5554",
+                "guest_epoch_after": 1789702582,
+                "guest_epoch_before": 1789692149,
+                "host_epoch": 1789702582.9167557,
+                "parent_pid": 1262,
+                "pid": 22378,
+                "protocol": "snapshot_host_clock_v1",
+                "skew_after_seconds": -0.9887275695800781,
+                "skew_before_seconds": -10433.91675567627,
+                "stage": "synchronized",
+                "target_epoch_ms": 1789702582918
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "empty_input": {
+    "cpu_validation.json": {
+      "status": "passed",
+      "tests": 5,
+      "model_calls": 0,
+      "device_calls": 0,
+      "gpu_used": false
+    },
+    "registration.json": {
+      "time": "2026-09-18T11:34:05.804603+08:00",
+      "stage": "prepared_not_deployed_into_frozen_runtime",
+      "root_cause": "Empty input_text branch logs a no-op but leaves ret uninitialized, then raises UnboundLocalError while constructing the response.",
+      "repair": "Return OK for the existing empty-input no-op; no text, clicks, goal substitution or model calls.",
+      "original_sha256": "42d34c6756a2f001006b8644dc156889d357896732ea21cf19580da3bbb989a0",
+      "patched_sha256": "83db3acde2a24fd90b272c730d64bd1760a69ccede52ac7ac3a69bf0ad750aaa",
+      "deployment_gate": "Backend server source is frozen and hashed by live batch. Apply only with registered replacement runtime/plan at a completed boundary; never mutate live frozen source or repeat a formal task.",
+      "scope_limit": "Eliminates HTTP500 for empty input; does not make an empty model action solve a task."
+    }
+  }
+}
